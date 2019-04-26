@@ -3,18 +3,19 @@
 
 <head>
   <meta charset="utf-8">
-  <title></title>
-  <meta name="description" content="">
+  <title>Avrom Farm Party | Green Lake music and food festival</title>
+  <meta name="description" content="Avrom Farm Party is a family-friendly music and food festival in the heart of Wisconsin.">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <link rel="manifest" href="site.webmanifest">
   <link rel="apple-touch-icon" href="icon.png">
   <!-- Place favicon.ico in the root directory -->
 
+  <link rel="stylesheet" href="https://use.typekit.net/ffu2pok.css">
   <link rel="stylesheet" href="css/normalize.css">
   <link rel="stylesheet" href="css/main.css">
 
-  <meta name="theme-color" content="#fafafa">
+  <meta name="theme-color" content="#FAEDCA">
 </head>
 
 <body>
@@ -23,19 +24,104 @@
   <![endif]-->
 
   <!-- Add your site or application content here -->
-  <p>Hello world! This is HTML5 Boilerplate.</p>
+  <header>
+    <h1>Avrom Farm Party</h1>
+  </header>
+
+  <section id="intro">
+    <div>
+      <h2>Back to <br>the farm.</h2>
+      <p><strong><span class="afp-red-text">Avrom</span> <span class="afp-blue-text">Farm</span> <span class="afp-green-text">Party</span> 2019 is <br>Saturday, August 17.</strong></p>
+      <p><a href="#tickets" class="button">Buy tickets</a></p>
+    </div>
+    <span id="scroll-arrow">&#10163;</span>
+  </section>
+
+  <section id="description">
+    <p>Avrom Farm Party is a family-friendly music and food festival in the heart of Wisconsin.</p>
+    <img src="https://afp-test.netlify.com/img/dancers.svg" class="dancing-people">
+  </section>
+
+  <section id="features">
+    <div class="feature">
+      <div class="feature-text">
+        <p><span>Hosted by Avrom Farm, the former home of renowned sculptor-painter Lester Schwartz.<br><small>(Now run by his grandson, Hayden.)</small></p></p>
+      </div>
+      <div class="feature-images">
+        <img src="https://afp-test.netlify.com/img/photos/lester.jpg">
+      </div>
+    </div>
+    <div class="feature">
+      <div class="feature-text">
+        <p><span>A day and night of music, farm-raised food, and great company.</span></p>
+      </div>
+      <div class="feature-images">
+        <img src="https://afp-test.netlify.com/img/photos/corn.jpg">
+        <img src="https://afp-test.netlify.com/img/photos/tom.jpg">
+      </div>
+    </div>
+    <div class="feature">
+      <div class="feature-text">
+        <p><span>…………On a cutting-edge regenerative farm.</span></p>
+      </div>
+      <div class="feature-images">
+        <img src="https://afp-test.netlify.com/img/photos/aerial.jpg">
+      </div>
+    </div>
+  </section>
+
+  <section id="tickets">
+    <h3>Earlybird tickets on sale now.</h3>
+    <div class="form-area">
+      <div>
+        <h5>Earlybird Admission</h5>
+        <p>Includes:</p>
+        <ul>
+          <li>…</li>
+        </ul>
+      </div>
+      <div>
+        <form id="ticket-form" action="/js/functions/checkout">
+          <fieldset class="ticket-quantity-controls">
+            <legend>Quantity of tickets:</legend>
+            <div>
+              <input type="text" min="1" value="1" name="">
+              <input type="button" value="Decrease" name="">
+              <input type="button" value="Increase" name="">
+            </div>
+          </fieldset>
+
+          <div>
+            <label>Choose your price:</label>
+            <p>We want Avrom Farm Party to be accessible to as many people as possible, so we’re making our tickets available on a sliding scale from $25 and up (suggested range: $30-$75). Purchasing at a higher level ensures we can provide for those with less, covers our festival costs, and helps us continue our mission of practicing and promoting regenerative agriculture.</p>
+            <div class="ticket-price-wrapper">
+              <input type="text" min="25" name="">
+            </div>
+          </div>
+
+          <div>
+            <label>Total:</label>
+            <output name="" for="">$XXX (zero fees)</output>
+          </div>
+          
+          <input type="submit" value="Checkout" name="">
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="footer-text">
+      <p><small>Copyright &copy; Avrom Farm Party 2019 &bull; <a href="#">Contact us</a> &bull; <a href="#intro">Scroll to top</a></small></p>
+    </div>
+  </footer>
+
   <script src="js/vendor/modernizr-3.7.1.min.js"></script>
   <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
   <script>window.jQuery || document.write('<script src="js/vendor/jquery-3.3.1.min.js"><\/script>')</script>
+  <script src="https://js.stripe.com/v3/"></script>
   <script src="js/plugins.js"></script>
   <script src="js/main.js"></script>
-
-  <!-- Google Analytics: change UA-XXXXX-Y to be your site's ID. -->
-  <script>
-    window.ga = function () { ga.q.push(arguments) }; ga.q = []; ga.l = +new Date;
-    ga('create', 'UA-XXXXX-Y', 'auto'); ga('set','transport','beacon'); ga('send', 'pageview')
-  </script>
-  <script src="https://www.google-analytics.com/analytics.js" async defer></script>
 </body>
 
 </html>
