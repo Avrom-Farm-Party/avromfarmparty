@@ -274,6 +274,14 @@ header nav a.button {
   display: inline-block;
 }
 
+/* Main style (used on non-index pages) */
+
+main {
+  max-width: 640px;
+  margin: 4em auto;
+  text-align: center;
+}
+
 
 /* Section styles */
 

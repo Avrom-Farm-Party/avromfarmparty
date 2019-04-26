@@ -8,11 +8,11 @@ exports.handler = function(event, context, callback) {
     var ticketPrice = obj.ticketPrice * 100;
 
     stripe.checkout.sessions.create({
-      success_url: "https://example.com/success",
-      cancel_url: "https://example.com/cancel",
+      success_url: "https://avromfarmparty.netlify.com/success",
+      cancel_url: "https://avromfarmparty.netlify.com",
       payment_method_types: ["card"],
       line_items: [{
-        name: "Avrom Farm Party 2019",
+        name: "Earlybird Admission",
         amount: ticketPrice,
         images: ["https://avromfarmparty.netlify.com/img/logo.png"],
         currency: "usd",
