@@ -16,6 +16,17 @@
   <link rel="stylesheet" href="css/main.css">
 
   <meta name="theme-color" content="#FAEDCA">
+
+  <!-- Social media tags -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Avrom Farm Party 2019">
+  <meta name="twitter:description" content="A family-friendly music and food festival in the heart of Wisconsin.">
+  <meta name="twitter:image" content="/img/social_preview.jpg">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://avromfarmparty.com/">
+  <meta property="og:title" content="Avrom Farm Party 2019">
+  <meta property="og:description" content="A family-friendly music and food festival in the heart of Wisconsin.">
+  <meta property="og:image" content="/img/social_preview.jpg">
 </head>
 
 <body>
@@ -39,7 +50,7 @@
 
   <section id="description">
     <p>Avrom Farm Party is a family-friendly music and food festival in the heart of Wisconsin.</p>
-    <img src="https://afp-test.netlify.com/img/dancers.svg" class="dancing-people">
+    <img src="img/dancers.svg" class="dancing-people">
   </section>
 
   <section id="features">
@@ -48,7 +59,7 @@
         <p><span>Hosted by Avrom Farm, the former home of renowned sculptor-painter Lester Schwartz.<br><small>(Now run by his grandson, Hayden.)</small></p></p>
       </div>
       <div class="feature-images">
-        <img src="https://afp-test.netlify.com/img/photos/lester.jpg">
+        <img src="img/photos/lester.jpg">
       </div>
     </div>
     <div class="feature">
@@ -56,16 +67,16 @@
         <p><span>A day and night of music, farm-raised food, and great company.</span></p>
       </div>
       <div class="feature-images">
-        <img src="https://afp-test.netlify.com/img/photos/corn.jpg">
-        <img src="https://afp-test.netlify.com/img/photos/tom.jpg">
+        <img src="img/photos/corn.jpg">
+        <img src="img/photos/tom.jpg">
       </div>
     </div>
     <div class="feature">
       <div class="feature-text">
-        <p><span>…………On a cutting-edge regenerative farm.</span></p>
+        <p><span>Promoting regenerative agriculture.</span></p>
       </div>
       <div class="feature-images">
-        <img src="https://afp-test.netlify.com/img/photos/aerial.jpg">
+        <img src="img/photos/aerial.jpg">
       </div>
     </div>
   </section>
@@ -77,34 +88,40 @@
         <h5>Earlybird Admission</h5>
         <p>Includes:</p>
         <ul>
-          <li>…</li>
+          <li>An afternoon and evening's worth of musical performances (lineup to be announced)</li>
+          <li>Dinner prepared with Avrom Farm produce and meats (we’ll be smoking a whole hog). Vegetarian option available</li>
+          <li>Family-friendly games and activities</li>
+          <li>Camp site access, portable restrooms, and parking</li>
+          <li>Walking tours of Avrom Farm’s regenerative agricultural practice</li>
+          <li>Free for earlybirds only: Avrom Farm Party 2019 can koozie</li>
         </ul>
+        <img src="img/photos/afp2019_koozie_small.jpg">
       </div>
       <div>
-        <form id="ticket-form" action="/js/functions/checkout">
+        <form id="ticket-form">
           <fieldset class="ticket-quantity-controls">
-            <legend>Quantity of tickets:</legend>
+            <legend>Quantity of Tickets</legend>
             <div>
-              <input type="text" min="1" value="1" name="">
-              <input type="button" value="Decrease" name="">
-              <input type="button" value="Increase" name="">
+              <input type="text" value="1" id="ticketQuantity" name="ticketQuantity">
+              <input type="button" value="Decrease" id="ticket-count-decrease">
+              <input type="button" value="Increase" id="ticket-count-increase">
             </div>
           </fieldset>
 
           <div>
-            <label>Choose your price:</label>
+            <label>Name Your Price</label>
             <p>We want Avrom Farm Party to be accessible to as many people as possible, so we’re making our tickets available on a sliding scale from $25 and up (suggested range: $30-$75). Purchasing at a higher level ensures we can provide for those with less, covers our festival costs, and helps us continue our mission of practicing and promoting regenerative agriculture.</p>
             <div class="ticket-price-wrapper">
-              <input type="text" min="25" name="">
+              <input type="text" id="ticketPrice" name="ticketPrice">
             </div>
           </div>
 
           <div>
-            <label>Total:</label>
-            <output name="" for="">$XXX (zero fees)</output>
+            <label>Total</label>
+            <p><output name="orderTotal" id="orderTotal" for="ticketQuantity ticketPrice">$0</output> (zero fees)</p>
           </div>
           
-          <input type="submit" value="Checkout" name="">
+          <input type="submit" value="Checkout" id="checkout-button">
         </form>
       </div>
     </div>
@@ -112,7 +129,7 @@
 
   <footer>
     <div class="footer-text">
-      <p><small>Copyright &copy; Avrom Farm Party 2019 &bull; <a href="#">Contact us</a> &bull; <a href="#intro">Scroll to top</a></small></p>
+      <p><small>Copyright &copy; Avrom Farm Party 2019 &bull; <a href="mailto:hello@avromfarm.com?subject=Avrom Farm Party 2019">Contact us</a> &bull; <a href="#intro">Scroll to top</a></small></p>
     </div>
   </footer>
 

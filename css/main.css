@@ -110,6 +110,7 @@ textarea {
   --afp-red: #F24307;
   --afp-blue: #0069C6;
   --afp-green: #01AD70;
+  --afp-black: #0F0A0A;
 }
 
 html {
@@ -155,12 +156,23 @@ h4 {
 h5, label, legend {
   font-size: 1.33em;
   font-weight: 700;
-  display: block;
-  margin: 0 0 0.4em;
+  display: inline-block;
+  width: auto;
+  padding-bottom: 0.1em;
+  border-bottom: 2px solid var(--afp-black);
+  margin: 0;
 }
 
 a {
   color: inherit;
+}
+
+p, ol, ul {
+  font-size: 1.11rem;
+}
+
+li {
+  margin: 0.3em 0;
 }
 
 strong {
@@ -240,7 +252,7 @@ header {
 header h1 {
   color: transparent; /* hide text */
   font-size: 0; /* hide text */
-  background: url("https://afp-test.netlify.com/img/logo_block.svg");
+  background: url("/img/logo_block.svg");
   display: block;
   width: 92px;
   height: 28px;
@@ -268,7 +280,7 @@ header nav a.button {
 /* Intro section */
 
 #intro {
-  background: url("https://afp-test.netlify.com/img/photos/cover.jpg");
+  background: url("/img/photos/cover.jpg");
   background-size: cover;
   background-position: center bottom;
   padding: 8vw 0 0;
@@ -416,8 +428,11 @@ header nav a.button {
   margin: 0 0 4rem;
 }
 
-#tickets p, #tickets ul, #tickets ol, #tickets blockquote {
-  margin: 0.4em 0;
+#tickets img {
+  width: 100%;
+  max-width: 300px;
+  margin: 1em auto 0;
+  display: block;
 }
 
 #tickets .form-area {
@@ -440,6 +455,7 @@ header nav a.button {
 #tickets .ticket-quantity-controls div {
   position: relative;
   display: inline-block;
+  margin-top: 1em;
 }
 
 #tickets .ticket-quantity-controls input[type="button"] {
@@ -462,18 +478,18 @@ header nav a.button {
 }
 
 #tickets .ticket-quantity-controls input[type="button"]:nth-child(2) {
-  background-image: url("https://afp-test.netlify.com/img/minus.svg");
+  background-image: url("/img/minus.svg");
   left: 11px;
 }
 
 #tickets .ticket-quantity-controls input[type="button"]:last-of-type {
-  background-image: url("https://afp-test.netlify.com/img/plus.svg");
+  background-image: url("/img/plus.svg");
   right: 11px;
 }
 
 #tickets .ticket-price-wrapper {
   position: relative;
-  margin-top: 1em;
+  margin-bottom: 0.5em;
 }
 
 #tickets .ticket-price-wrapper:before {
@@ -481,7 +497,7 @@ header nav a.button {
   display: block;
   font-weight: 700;
   position: absolute;
-  top: 0.7em;
+  top: 0.65em;
   left: 0.6em;
 }
 
@@ -489,7 +505,7 @@ header nav a.button {
 /* Footer styles */
 
 footer {
-  background: url("https://afp-test.netlify.com/img/photos/night-stage.jpg");
+  background: url("/img/photos/night-stage.jpg");
   background-size: cover;
   background-position: 33% top;
   width: 100%;
