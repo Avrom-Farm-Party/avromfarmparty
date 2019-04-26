@@ -86,7 +86,7 @@
             }),
             success: function(res){
             	// Stripe integration
-				var stripe = Stripe('pk_test_VhcNh7WHsTGlc6eajQSqcjOM00m9S3MAtS');
+				var stripe = Stripe('pk_live_ecGmKZ3U8636cHWaaoEoIEPD007kMBdziI');
                 var sessionID = res.trim(); // get rid of weird 0A 0A line break problem at end of session id
                 console.log(sessionID);
                 stripe.redirectToCheckout({

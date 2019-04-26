@@ -1,7 +1,7 @@
 exports.handler = function(event, context, callback) {
     // Set your secret key: remember to change this to your live secret key in production
     // See your keys here: https://dashboard.stripe.com/account/apikeys
-    var stripe = require("stripe")("sk_test_NxBFZhiuRth7jsK4JGmaDoDS00ebRADj39");
+    var stripe = require("stripe")("sk_live_HYvGIzzLeQF11Od0TtYhg5Ew00XAaeFDWI");
 
     var obj = JSON.parse(event.body);
     var ticketQuantity = obj.ticketQuantity;

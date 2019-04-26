@@ -1711,6 +1711,7 @@
       "resolved": "https://registry.npmjs.org/domain-browser/-/domain-browser-1.2.0.tgz",
       "version": "1.2.0"
     },
+    "dotenv": "^7.0.0",
     "duplexify": {
       "integrity": "sha512-07z8uv2wMyS51kKhD1KsdXJg5WQ6t93RneqRxUHnskXVtlYYkLqM0gqStQZ3pj073g687jPCHrqNfCzawLYh5g==",
       "requires": {
