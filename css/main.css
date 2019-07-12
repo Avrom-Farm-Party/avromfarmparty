@@ -252,7 +252,7 @@ header {
 header h1 {
   color: transparent; /* hide text */
   font-size: 0; /* hide text */
-  background: url("/img/logo_block.svg");
+  background: url("../img/logo_block.svg");
   display: block;
   width: 92px;
   height: 28px;
@@ -288,7 +288,7 @@ main {
 /* Intro section */
 
 #intro {
-  background: url("/img/photos/cover.jpg");
+  background: url("../img/photos/cover.jpg");
   background-size: cover;
   background-position: center bottom;
   padding: 8vw 0 0;
@@ -425,6 +425,45 @@ main {
 }
 
 
+/* Lineup section */
+
+#lineup {
+  padding: 4em 5vw 0;
+}
+
+#lineup h3 {
+  text-align: center;
+  margin: 0 0 4rem;
+}
+
+#lineup ol {
+  display: flex;
+  list-style-type: none;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: -1em 0 -1em -1em;
+  padding: 0;
+  width: calc(100% + 2em);
+}
+
+#lineup li {
+  background: var(--afp-red);
+  color: #fff;
+  padding: 1em;
+  font-weight: 700;
+  display: block;
+  width: calc(33% - 2em);
+  box-sizing: border-box;
+  text-align: center;
+  margin: 1em;
+}
+
+#lineup img {
+  max-width: calc(100% + 2em);
+  margin: -1em 0 1em -1em;
+}
+
+
 /* Tickets section */
 
 #tickets {
@@ -486,12 +525,12 @@ main {
 }
 
 #tickets .ticket-quantity-controls input[type="button"]:nth-child(2) {
-  background-image: url("/img/minus.svg");
+  background-image: url("../img/minus.svg");
   left: 11px;
 }
 
 #tickets .ticket-quantity-controls input[type="button"]:last-of-type {
-  background-image: url("/img/plus.svg");
+  background-image: url("../img/plus.svg");
   right: 11px;
 }
 
@@ -513,7 +552,7 @@ main {
 /* Footer styles */
 
 footer {
-  background: url("/img/photos/night-stage.jpg");
+  background: url("../img/photos/night-stage.jpg");
   background-size: cover;
   background-position: 33% top;
   width: 100%;
@@ -675,6 +714,10 @@ footer .footer-text {
 
   #intro .button {
     font-size: 0.8em;
+  }
+
+  #lineup li {
+    width: calc(100% - 2em);
   }
 
   #tickets h3 {
