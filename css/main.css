@@ -146,14 +146,7 @@ h3 {
   line-height: 1em;
 }
 
-h4 {
-  font-size: 2em;
-  line-height: 1.16em;
-  font-weight: 700;
-  letter-spacing: -0.02em;
-}
-
-h5, label, legend {
+h4, h5, label, legend {
   font-size: 1.33em;
   font-weight: 700;
   display: inline-block;
@@ -546,6 +539,22 @@ main {
   position: absolute;
   top: 0.65em;
   left: 0.6em;
+}
+
+/* About the Farm section */
+
+#about-farm {
+  padding: 4em 5vw 0;
+}
+
+#about-farm h3 {
+  text-align: center;
+  margin: 0 0 4rem;
+}
+
+#about-farm .about-area {
+  background-color: rgba(15,10,10,0.05);
+  padding: 2em 5vw;
 }
 
 
