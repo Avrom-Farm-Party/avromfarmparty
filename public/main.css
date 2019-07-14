@@ -550,6 +550,8 @@ main {
 
 #tickets input[type="submit"] + span {
   color: rgba(15,10,10,0.65);
+  display: inline-block;
+  margin: 0.5em 0;
 }
 
 #tickets #form-errors {
