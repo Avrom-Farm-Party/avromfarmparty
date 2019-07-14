@@ -1,0 +1,937 @@
+/*! HTML5 Boilerplate v7.1.0 | MIT License | https://html5boilerplate.com/ */
+
+/* main.css 1.0.0 | MIT License | https://github.com/h5bp/main.css#readme */
+/*
+ * What follows is the result of much research on cross-browser styling.
+ * Credit left inline and big thanks to Nicolas Gallagher, Jonathan Neal,
+ * Kroc Camen, and the H5BP dev community and team.
+ */
+
+ 
+/* ==========================================================================
+   Base styles: opinionated defaults
+   ========================================================================== */
+
+   html {
+    color: #222;
+    font-size: 1em;
+    line-height: 1.4;
+}
+
+/*
+ * Remove text-shadow in selection highlight:
+ * https://twitter.com/miketaylr/status/12228805301
+ *
+ * Vendor-prefixed and regular ::selection selectors cannot be combined:
+ * https://stackoverflow.com/a/16982510/7133471
+ *
+ * Customize the background color to match your design.
+ */
+
+::-moz-selection {
+    background: var(--afp-red);
+    color: #FAEDCA;
+    text-shadow: none;
+}
+
+::selection {
+    background: var(--afp-red);
+    color: #FAEDCA;
+    text-shadow: none;
+}
+
+/*
+ * A better looking default horizontal rule
+ */
+
+hr {
+    display: block;
+    height: 1px;
+    border: 0;
+    border-top: 1px solid #ccc;
+    margin: 1em 0;
+    padding: 0;
+}
+
+/*
+ * Remove the gap between audio, canvas, iframes,
+ * images, videos and the bottom of their containers:
+ * https://github.com/h5bp/html5-boilerplate/issues/440
+ */
+
+audio,
+canvas,
+iframe,
+img,
+svg,
+video {
+    vertical-align: middle;
+}
+
+/*
+ * Remove default fieldset styles.
+ */
+
+fieldset {
+    border: 0;
+    margin: 0;
+    padding: 0;
+}
+
+/*
+ * Allow only vertical resizing of textareas.
+ */
+
+textarea {
+    resize: vertical;
+}
+
+/* ==========================================================================
+   Browser Upgrade Prompt
+   ========================================================================== */
+
+.browserupgrade {
+    margin: 0.2em 0;
+    background: #ccc;
+    color: #000;
+    padding: 0.2em 0;
+}
+
+
+
+
+ /* ==========================================================================
+   Author's custom styles
+   ========================================================================== */
+
+/* General styles */
+
+:root {
+  --afp-red: #F24307;
+  --afp-blue: #0069C6;
+  --afp-green: #01AD70;
+  --afp-black: #0F0A0A;
+}
+
+html {
+  font-size: 18px;
+  transition: font-size 0.2s;
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: #FAEDCA;
+  color: #0F0A0A;
+  font-size: 1em;
+  font-family: franklin-gothic-urw, sans-serif;
+}
+
+h1 {
+
+}
+
+h2 {
+  font-family: maple-web, serif;
+  font-weight: 900;
+  font-size: 4.66em;
+  line-height: 0.9em;
+  letter-spacing: -0.02em;
+  margin: 0;
+}
+
+h3 {
+  font-family: maple-web, serif;
+  font-weight: 900;
+  font-size: 2.66em;
+  line-height: 1em;
+}
+
+h4, h5, label, legend {
+  font-size: 1.33em;
+  font-weight: 700;
+  display: inline-block;
+  width: auto;
+  padding-bottom: 0.1em;
+  border-bottom: 2px solid var(--afp-black);
+  margin: 0;
+}
+
+a {
+  color: inherit;
+}
+
+p, ol, ul {
+  font-size: 1.11rem;
+}
+
+li {
+  margin: 0.3em 0;
+}
+
+strong {
+  font-weight: 700;
+}
+
+input[type="text"] {
+  border: 2px solid #0F0A0A;
+  width: calc(5em - 36px);
+  padding: 0.66em calc(0.88em + 18px);
+  text-align: center;
+  font-weight: 700;
+}
+
+input[type="submit"] {
+  background-color: #01AD70;
+  border: none;
+  font-weight: 700;
+  font-size: 1.1em;
+  color: #ffffff;
+  border-radius: 4px;
+  padding: 0.66em 0.88em;
+  cursor: pointer;
+  margin-right: 0.5em; /* to push the Stripe thing away */
+  transition: background-color 0.1s, transform 0.1s;
+}
+
+input[type="submit"]:hover {
+  background-color: #019863;
+  transform: scale(1.02);
+}
+
+input[type="submit"]:active {
+  transform: scale(1.02) translateY(1px);
+}
+
+.button {
+  font-weight: 900;
+  padding: 0.66em 0.88em;
+  background-color: #0069C6;
+  border-radius: 0.22em;
+  color: #ffffff;
+  text-decoration: none;
+  transition: background-color 0.1s, transform 0.1s;
+}
+
+.button:hover {
+  background-color: #005bad;
+  transform: scale(1.02);
+}
+
+.button:active {
+  transform: scale(1.02) translateY(1px);
+}
+
+.afp-red-text {
+  color: var(--afp-red);
+}
+
+.afp-blue-text {
+  color: var(--afp-blue);
+}
+
+.afp-green-text {
+  color: var(--afp-green);
+}
+
+
+/* Header styles */
+
+header {
+  padding: 1em 5vw;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  box-sizing: border-box;
+}
+
+header h1 {
+  color: transparent; /* hide text */
+  font-size: 0; /* hide text */
+  background: url("../img/logo_block.svg");
+  display: block;
+  width: 92px;
+  height: 28px;
+}
+
+header nav {
+  white-space: nowrap;
+  font-weight: 700;
+}
+
+header nav a {
+  margin-right: 1em;
+  text-decoration: none;
+  color: rgba(15,10,10,0.6);
+}
+
+header nav a.button {
+  margin-right: 0;
+  display: inline-block;
+}
+
+/* Main style (used on non-index pages) */
+
+main {
+  max-width: 640px;
+  margin: 4em auto;
+  text-align: center;
+}
+
+
+/* Section styles */
+
+/* Intro section */
+
+#intro {
+  background: url("../img/photos/cover.jpg");
+  background-size: cover;
+  background-position: center bottom;
+  padding: 8vw 0 0;
+  width: 100%;
+  width: 100vw;
+  height: 100vh;
+  box-sizing: border-box;
+  margin-bottom: -1px;
+}
+
+#intro > div {
+  position: absolute;
+  right: 5vw;
+  padding-left: 5vw;
+}
+
+#intro p {
+  margin: 0.5em 0;
+  color: rgba(15,10,10,0.9);
+  font-size: 1.5em;
+}
+
+#intro p strong {
+  font-weight: 900;
+  line-height: 1.3em;
+  letter-spacing: -0.02em;
+}
+
+#intro .button {
+  display: inline-block;
+  margin-top: 0.5rem;
+  font-size: 1.1rem;
+}
+
+#intro #scroll-arrow {
+  display: block;
+  position: absolute;
+  transform: rotate(90deg);
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  width: 100vw;
+  font-size: 2rem;
+  text-align: center;
+  color: #FAEDCA;
+  animation: float 1s infinite alternate ease-in-out;
+  transition: opacity 0.2s;
+}
+
+/* Description section */
+
+#description {
+  background-color: #8E9115;
+  padding: 0 5vw 3em;
+}
+
+#description p {
+  font-size: 2em;
+  letter-spacing: -0.02em;
+  color: #FAEDCA;
+  font-weight: 700;
+  max-width: 500px;
+  text-align: center;
+  margin: 0 auto 1em;
+}
+
+#description img {
+  margin: 0 auto;
+  display: block;
+  animation: dance 0.5s steps(2) infinite alternate;
+}
+
+/* Features section */
+
+#features {
+  padding: 0em 5vw;
+}
+
+#features .feature {
+  margin: 5em 0;
+}
+
+#features .feature-text {
+  margin-bottom: 1em;
+}
+
+#features .feature-text p {
+  font-size: 2em;
+  line-height: 1.3em;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  margin: 0 0 1.6rem 0.6rem;
+}
+
+#features .feature-text span {
+  color: #fff;
+}
+
+#features .feature:nth-of-type(1) .feature-text span {
+  background-color: var(--afp-red);
+  box-shadow: 0 0 0 0.3rem var(--afp-red), -0.3rem 0 0 0.3rem var(--afp-red), 0.3rem 0 0 0.3rem var(--afp-red), 0.3rem 0.3rem 0 0.3rem var(--afp-red), -0.3rem 0.3rem 0 0.3rem var(--afp-red);
+}
+
+#features .feature:nth-of-type(2) .feature-text span {
+  background-color: var(--afp-blue);
+  box-shadow: 0 0 0 0.3rem var(--afp-blue), -0.3rem 0 0 0.3rem var(--afp-blue), 0.3rem 0 0 0.3rem var(--afp-blue), 0.3rem 0.3rem 0 0.3rem var(--afp-blue), -0.3rem 0.3rem 0 0.3rem var(--afp-blue);
+}
+
+#features .feature:nth-of-type(3) .feature-text span {
+  background-color: var(--afp-green);
+  box-shadow: 0 0 0 0.3rem var(--afp-green), -0.3rem 0 0 0.3rem var(--afp-green), 0.3rem 0 0 0.3rem var(--afp-green), 0.3rem 0.3rem 0 0.3rem var(--afp-green), -0.3rem 0.3rem 0 0.3rem var(--afp-green);
+}
+
+#features .feature-text small {
+  color: rgba(255,255,255,0.8);
+  font-size: 0.61em;
+}
+
+#features .feature-images img {
+  max-width: 100%;
+  box-shadow: 0 0 2em rgba(0,0,0,0.1);
+  margin-bottom: 1em;
+  transition: box-shadow 0.1s, transform 0.1s;
+  cursor: pointer;
+}
+
+#features .feature-images img:hover {
+  box-shadow: 0 0 3em rgba(0,0,0,0.13);
+  transform: scale(1.01);
+}
+
+#features .feature-images img:last-of-type {
+  margin-bottom: 0;
+}
+
+
+/* Lineup section */
+
+#lineup {
+  padding: 4em 5vw 0;
+}
+
+#lineup h3 {
+  text-align: center;
+  margin: 0 0 4rem;
+}
+
+#lineup ol {
+  display: flex;
+  list-style-type: none;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: -1em 0 -1em -1em;
+  padding: 0;
+  width: calc(100% + 2em);
+}
+
+#lineup li {
+  background: var(--afp-red);
+  color: #fff;
+  padding: 1em;
+  font-weight: 700;
+  display: block;
+  width: calc(33% - 2em);
+  box-sizing: border-box;
+  text-align: center;
+  margin: 1em;
+}
+
+#lineup img {
+  max-width: calc(100% + 2em);
+  margin: -1em 0 1em -1em;
+}
+
+
+/* Tickets section */
+
+#tickets {
+  padding: 4em 5vw 0;
+}
+
+#tickets h3 {
+  text-align: center;
+  margin: 0 0 4rem;
+}
+
+#tickets img {
+  width: 100%;
+  max-width: 300px;
+  margin: 1em auto 0;
+  display: block;
+}
+
+#tickets .form-area {
+  background-color: rgba(15,10,10,0.05);
+}
+
+#tickets .form-area > * {
+  flex-basis: 50%;
+  padding: 2em 5vw;
+}
+
+#tickets .form-area > *:first-child {
+  border-bottom: 1px solid rgba(15,10,10,0.1);
+}
+
+#tickets .ticket-quantity-controls, #tickets form > div {
+  margin-bottom: 2em;
+}
+
+#tickets .ticket-quantity-controls div {
+  position: relative;
+  display: inline-block;
+  margin-top: 1em;
+}
+
+#tickets .ticket-quantity-controls input[type="button"] {
+  border: none; /* hide default button style */
+  font-size: 0; /* hide default button style */
+  color: transparent; /* hide default button style */
+  appearance: none;  /* hide default button style */
+  background-repeat: no-repeat;
+  background-size: 18px 18px;
+  background-color: transparent;
+  width: 18px;
+  height: 18px;
+  cursor: pointer;
+  position: absolute;
+  top: calc(50% - 9px);
+}
+
+#tickets .ticket-quantity-controls input[type="button"]:active {
+  transform: translateY(1px);
+}
+
+#tickets .ticket-quantity-controls input[type="button"]:nth-child(2) {
+  background-image: url("../img/minus.svg");
+  left: 11px;
+}
+
+#tickets .ticket-quantity-controls input[type="button"]:last-of-type {
+  background-image: url("../img/plus.svg");
+  right: 11px;
+}
+
+#tickets .ticket-price-wrapper {
+  position: relative;
+  margin-top: 1em;
+}
+
+#tickets .ticket-price-wrapper:before {
+  content: "$";
+  display: block;
+  font-weight: 700;
+  position: absolute;
+  top: 0.65em;
+  left: 0.6em;
+}
+
+#tickets input[type="submit"] + span {
+  color: rgba(15,10,10,0.65);
+}
+
+#tickets #form-errors {
+  color: red;
+  margin-bottom: 0;
+  display: none;
+}
+
+
+/* About the Farm section */
+
+#about-farm {
+  padding: 4em 5vw 0;
+}
+
+#about-farm h3 {
+  text-align: center;
+  margin: 0 0 4rem;
+}
+
+#about-farm p {
+  max-width: 640px;
+}
+
+#about-farm .about-area {
+  background-color: rgba(15,10,10,0.05);
+  padding: 2em 5vw;
+}
+
+
+/* Footer styles */
+
+footer {
+  background: url("../img/photos/night-stage.jpg");
+  background-size: cover;
+  background-position: 33% top;
+  width: 100%;
+  width: 100vw;
+  height: 100vh;
+  margin-top: calc(2em + 300px);
+  box-sizing: border-box;
+  position: relative;
+}
+
+footer:before {
+  content: "";
+  background: -moz-linear-gradient(top, rgba(250,237,202,0) 0%, rgba(9,30,43,1) 100%); /* FF3.6-15 */
+  background: -webkit-linear-gradient(top, rgba(250,237,202,0) 0%,rgba(9,30,43,1) 100%); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to bottom, rgba(250,237,202,0) 0%,rgba(9,30,43,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00faedca', endColorstr='#091e2b',GradientType=0 ); /* IE6-9 */
+  width: 100%;
+  width: 100vw;
+  height: 300px;
+  position: absolute;
+  top: -300px;
+  display: block;
+}
+
+footer:after {
+  content: "";
+  width: 100%;
+  width: 100vw;
+  height: 500px;
+  position: absolute;
+  bottom: 0px;
+  display: none;
+  background-color: #0e0f10;
+  background-color: red;
+}
+
+footer .footer-text {
+  position: relative;
+  top: 100vh;
+  background-color: #0e0f10;
+  padding: 0 0 1em;
+  width: 100%;
+  width: 100vw;
+  color: rgba(250,237,202,0.4);
+  text-align: center;
+}
+
+
+/* Breakpoint styles */
+
+@media only screen and (min-width: 700px) {
+  #features .feature {
+    display: flex;
+    align-items: center;
+  }
+
+  #features .feature-text {
+    flex-basis: 60%;
+    flex-shrink: 0;
+    margin-right: -25%;
+    margin-bottom: 0;
+    z-index: 2;
+  }
+
+  #features .feature-text p {
+    margin: 0 0 0 0.6rem;
+  }
+
+  #features .feature:nth-child(odd) .feature-text {
+    order: 2;
+    text-align: right;
+    margin-right: 0;
+    margin-left: -20%;
+  }
+
+  #features .feature:nth-child(odd) .feature-text p {
+    margin: 0 0.6rem 0 0;
+  }
+
+  #features .feature:nth-child(2) .feature-images {
+    position: relative;
+    text-align: right;
+  }
+
+  #features .feature:nth-child(2) .feature-images img:first-child {
+    width: 40%;
+    position: absolute;
+    top: 0;
+    right: 0;
+  }
+
+  #features .feature:nth-child(2) .feature-images img:last-child {
+    width: 65%;
+    margin-top: 8%;
+    margin-right: 8%;
+  }
+
+  #features .feature:last-child {
+    flex-wrap: wrap;
+    margin-bottom: 0;
+  }
+
+  #features .feature:last-child .feature-text {
+    text-align: center;
+    margin: 0 0 -1em;
+    flex-basis: 100%;
+    order: -1;
+  }
+
+  #features .feature:last-child .feature-images {
+    flex-basis: 100%;
+  }
+
+  #features .feature-images {
+    flex-basis: 60%;
+    flex-shrink: 0;
+  }
+
+  #features .feature-images img {
+    margin-bottom: 0;
+  }
+
+  #tickets .form-area {
+    display: flex;
+  }
+
+  #tickets .form-area > *:first-child {
+    border-bottom: none;
+    border-right: 1px solid rgba(15,10,10,0.1);
+  }
+}
+
+@media only screen and (max-width: 700px) {
+  html {
+    font-size: 14px;
+  }
+
+  header {
+    display: block;
+  }
+
+  header h1 {
+    margin: 0 auto;
+  }
+
+  header nav {
+    display: none;
+  }
+
+  #intro {
+    padding-top: 12vh;
+    text-align: center;
+  }
+
+  #intro > div {
+    position: initial;
+    padding-left: 0;
+  }
+
+  #intro .button {
+    font-size: 0.8em;
+  }
+
+  #lineup li {
+    width: calc(100% - 2em);
+  }
+
+  #tickets h3 {
+    margin: 0 0 1em;
+  }
+}
+
+
+/* Animations */
+
+@keyframes float {
+  0% { bottom: 0.6rem; }
+  100% { bottom: 0.3rem; }
+}
+
+@keyframes dance {
+  from { transform: rotate(-5deg); }
+  to { transform: rotate(20deg); }
+}
+
+
+ /* ==========================================================================
+   Helper classes
+   ========================================================================== */
+
+/*
+ * Hide visually and from screen readers
+ */
+
+ .hidden {
+  display: none !important;
+}
+
+/*
+* Hide only visually, but have it available for screen readers:
+* https://snook.ca/archives/html_and_css/hiding-content-for-accessibility
+*
+* 1. For long content, line feeds are not interpreted as spaces and small width
+*    causes content to wrap 1 word per line:
+*    https://medium.com/@jessebeach/beware-smushed-off-screen-accessible-text-5952a4c2cbfe
+*/
+
+.visuallyhidden {
+  border: 0;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+  white-space: nowrap; /* 1 */
+}
+
+/*
+* Extends the .visuallyhidden class to allow the element
+* to be focusable when navigated to via the keyboard:
+* https://www.drupal.org/node/897638
+*/
+
+.visuallyhidden.focusable:active,
+.visuallyhidden.focusable:focus {
+  clip: auto;
+  height: auto;
+  margin: 0;
+  overflow: visible;
+  position: static;
+  width: auto;
+  white-space: inherit;
+}
+
+/*
+* Hide visually and from screen readers, but maintain layout
+*/
+
+.invisible {
+  visibility: hidden;
+}
+
+/*
+* Clearfix: contain floats
+*
+* For modern browsers
+* 1. The space content is one way to avoid an Opera bug when the
+*    `contenteditable` attribute is included anywhere else in the document.
+*    Otherwise it causes space to appear at the top and bottom of elements
+*    that receive the `clearfix` class.
+* 2. The use of `table` rather than `block` is only necessary if using
+*    `:before` to contain the top-margins of child elements.
+*/
+
+.clearfix:before,
+.clearfix:after {
+  content: " "; /* 1 */
+  display: table; /* 2 */
+}
+
+.clearfix:after {
+  clear: both;
+}
+
+@media print,
+       (-webkit-min-device-pixel-ratio: 1.25),
+       (min-resolution: 1.25dppx),
+       (min-resolution: 120dpi) {
+    /* Style adjustments for high resolution devices */
+}
+
+ 
+/* ==========================================================================
+   Print styles.
+   Inlined to avoid the additional HTTP request:
+   https://www.phpied.com/delay-loading-your-print-css/
+   ========================================================================== */
+
+   @media print {
+    *,
+    *:before,
+    *:after {
+        background: transparent !important;
+        color: #000 !important; /* Black prints faster */
+        -webkit-box-shadow: none !important;
+        box-shadow: none !important;
+        text-shadow: none !important;
+    }
+
+    a,
+    a:visited {
+        text-decoration: underline;
+    }
+
+    a[href]:after {
+        content: " (" attr(href) ")";
+    }
+
+    abbr[title]:after {
+        content: " (" attr(title) ")";
+    }
+
+    /*
+     * Don't show links that are fragment identifiers,
+     * or use the `javascript:` pseudo protocol
+     */
+
+    a[href^="#"]:after,
+    a[href^="javascript:"]:after {
+        content: "";
+    }
+
+    pre {
+        white-space: pre-wrap !important;
+    }
+    pre,
+    blockquote {
+        border: 1px solid #999;
+        page-break-inside: avoid;
+    }
+
+    /*
+     * Printing Tables:
+     * http://css-discuss.incutio.com/wiki/Printing_Tables
+     */
+
+    thead {
+        display: table-header-group;
+    }
+
+    tr,
+    img {
+        page-break-inside: avoid;
+    }
+
+    p,
+    h2,
+    h3 {
+        orphans: 3;
+        widows: 3;
+    }
+
+    h2,
+    h3 {
+        page-break-after: avoid;
+    }
+}
+
+
