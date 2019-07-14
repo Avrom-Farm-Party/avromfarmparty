@@ -23,6 +23,11 @@ app.get('/success', function(request, response) {
   response.sendFile(__dirname + '/views/success.html');
 });
 
+// Provide proof for Let's Encrypt challenge
+app.get('/.well-known/acme-challenge/:content', function(req, res) {
+  res.send('bydlMErT54Pg8TDWlLiJuujh0J5GU17TRNwprJVZ0UA.Fl6KeLowWVj2Blq8DctzY265irDRkUHcSXNQH8Y9_Qk')
+})
+
 
 // Define Stripe object for routes
 const stripe = require("stripe")(process.env.STRIPE_SECRET);
