@@ -71,7 +71,10 @@ var ticketQuantity = document.getElementById('ticketQuantity');
 var ticketPrice = document.getElementById('ticketPrice');
 
 function calculateTotal() {
-  orderTotal.value = "$" + parseInt(ticketQuantity.value) * parseInt(ticketPrice.value);
+  // Only update orderTotal if the ticket price is not NotaNumber
+  if (!isNaN(parseInt(ticketPrice.value))) {
+    orderTotal.value = "$" + parseInt(ticketQuantity.value) * parseInt(ticketPrice.value);
+  }
   
   // Reset error message
   $("#form-errors").css("display","none");
