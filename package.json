@@ -1,6 +1,9 @@
 {
+  "//1": "describes your app and its dependencies",
+  "//2": "https://docs.npmjs.com/files/package.json",
+  "//3": "updating this file will download and update your packages",
   "name": "avrom-farm-party-2019",
-  "version": "3.0",
+  "version": "0.0.1",
   "description": "The website for Avrom Farm Party 2019",
   "dependencies": {
     "dotenv": "^8.0.0",
@@ -8,5 +11,6 @@
   },
   "repository": {
     "url": "https://github.com/spencertweedy/avromfarmparty"
-  }
+  },
+  "license": "MIT"
 }
