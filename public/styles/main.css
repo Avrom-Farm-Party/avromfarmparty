@@ -456,6 +456,12 @@ main {
   box-sizing: border-box;
   text-align: center;
   margin: 1em;
+  transition: box-shadow 0.1s, transform 0.1s;
+}
+
+#lineup li:hover {
+  box-shadow: 0 0 3em rgba(0,0,0,0.13);
+  transform: scale(1.01);
 }
 
 #lineup img {
