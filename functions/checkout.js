@@ -1,6 +1,6 @@
 // Add Stripe
-require('dotenv').config()
-const stripe = require("stripe")(process.env.STRIPE_SECRET)
+require("dotenv").config();
+const stripe = require("stripe")(process.env.STRIPE_SECRET);
 
 exports.handler = async function(event) {
 	const req = JSON.parse(event.body); // parse the stringified JSON request body
