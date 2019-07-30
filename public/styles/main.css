@@ -7,7 +7,7 @@
  * Kroc Camen, and the H5BP dev community and team.
  */
 
- 
+
 /* ==========================================================================
    Base styles: opinionated defaults
    ========================================================================== */
@@ -566,6 +566,39 @@ main {
   display: none;
 }
 
+/* Sponsors section */
+
+#sponsors {
+  padding: 4em 5vw 0;
+}
+
+#sponsors h3 {
+  text-align: center;
+  margin: 0 0 4rem;
+}
+
+#sponsors ul {
+  display: flex;
+  list-style-type: none;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: -1em 0 -1em -1em;
+  padding: 0;
+  width: calc(100% + 2em);
+}
+
+#sponsors li {
+  background: var(--afp-blue);
+  color: #fff;
+  padding: 1em;
+  font-weight: 700;
+  display: block;
+  width: calc(33% - 2em);
+  box-sizing: border-box;
+  text-align: center;
+  margin: 1em;
+}
+
 
 /* About the Farm section */
 
@@ -762,6 +795,10 @@ footer .footer-text {
   #tickets h3 {
     margin: 0 0 1em;
   }
+
+  #sponsors li {
+    width: calc(100% - 2em);
+  }
 }
 
 
@@ -865,7 +902,7 @@ footer .footer-text {
     /* Style adjustments for high resolution devices */
 }
 
- 
+
 /* ==========================================================================
    Print styles.
    Inlined to avoid the additional HTTP request:
@@ -941,5 +978,3 @@ footer .footer-text {
         page-break-after: avoid;
     }
 }
-
-
