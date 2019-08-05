@@ -570,6 +570,7 @@ main {
 
 #sponsors {
   padding: 4em 5vw 0;
+  margin-bottom: -1em;  /* compensate for ul bottom margin */
 }
 
 #sponsors h3 {
@@ -582,7 +583,7 @@ main {
   list-style-type: none;
   flex-wrap: wrap;
   justify-content: center;
-  margin: -1em 0 -1em -1em;
+  margin: -1em 0 1em -1em;
   padding: 0;
   width: calc(100% + 2em);
 }
@@ -597,6 +598,11 @@ main {
   box-sizing: border-box;
   text-align: center;
   margin: 1em;
+}
+
+#sponsors li img {
+  max-width: calc(100% + 2em);
+  margin: -1em 0 1em -1em; /* offset container padding and add space below */
 }
 
 
