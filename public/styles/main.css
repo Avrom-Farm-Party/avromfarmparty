@@ -424,6 +424,13 @@ main {
   margin-bottom: 0;
 }
 
+#features .feature-images small {
+  color: #807967;
+  margin-top: 0.4rem;
+  display: block;
+  text-align: right;
+}
+
 
 /* Lineup section */
 
