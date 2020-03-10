@@ -92,10 +92,15 @@ textarea {
 
 body {
   font-family: 'franklin-gothic-urw';
+  overflow-x: hidden; /* sort of a hack for the header veggies positioning */
 }
 
 a {
   color: #000;
+}
+
+p, footer nav {
+  padding-bottom: 0.1em; /* To compensate for bigger natural top margin */
 }
 
 p:first-child {
@@ -106,21 +111,60 @@ p:last-child {
   margin-bottom: 0;
 }
 
+h3 {
+  font-size: 1.8rem;
+  font-family: 'maple-web';
+  text-align: center;
+}
+
+h4 {
+  font-size: 1rem;
+  font-weight: bold;
+  display: inline-block;
+  width: auto;
+  padding-bottom: 0.1em;
+  border-bottom: 2px solid #000;
+  margin: 0;
+}
+
+.afp-red-text {
+  color: #F24307;
+}
+
+.afp-blue-text {
+  color: #0069C6;
+}
+
+.afp-green-text {
+  color: #01AD70;
+}
+
 input[type="submit"], .button {
   background: hsl(208, 100%, 39%);
   color: #fff;
   font-weight: 700;
   padding: 0.66em 0.88em;
-  border-radius: 0.22em;
+  border-radius: 0.25em;
   text-decoration: none;
   border: none;
   cursor: pointer;
-  /* transition: background-color .1s,transform .1s; */
+  font-size: 0.9em;
+  transition: background-color 0.1s, transform 0.1s, width 1s; 
 }
 
 header {
-  height: 80vh;
+  height: calc(100vh - 2rem);
   position: relative;
+  width: 100vw;
+}
+
+header:after {
+  content: "↓";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  text-align: center;
 }
 
 header h1, header h2 {
@@ -130,34 +174,103 @@ header h1, header h2 {
 header h1 {
   font-size: 1rem;
   text-align: center;
+  z-index: 1;
+}
+
+header h1, .logo {
   font-family: 'maple-web';
   font-weight: 900;
 }
 
-header h1 span {
-  background: #000;
-  color: #fff;
-  padding: 0.4em 0.6em 0.3em;
-  margin-right: 0.2em;
+header .veggies {
+  width: 45vw;
+  height: 45vh;
+  position: absolute;
+  z-index: -1; /* so logo stays visible */
+  top: calc(-1rem - 4vw);
+  left: calc(-4vw - 4vw);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-image: url(../img/veggies/veggies-1.jpg);
+  background-position: top left;
+  filter: saturate(1.2);
 }
 
-header h1 span:last-child {
+header .veggies:nth-of-type(2) {
+  left: initial;
+  right: calc(-4vw - 4vw);
+  background-image: url(../img/veggies/veggies-2.jpg);
+  background-position: top right;
+}
+
+header .veggies:nth-of-type(3) {
+  left: initial;
+  right: calc(-4vw - 4vw);
+  top: initial;
+  bottom: calc(-1rem - 4vw);
+  background-image: url(../img/veggies/veggies-3.jpg);
+  background-position: bottom right;
+}
+
+header .veggies:nth-of-type(4) {
+  top: initial;
+  bottom: calc(-1rem - 4vw);
+  background-image: url(../img/veggies/veggies-4.jpg);
+  background-position: bottom left;
+}
+
+.logo {
+  font-size: 0.65em;
+  position: relative;
+  top: -0.15em;
+}
+
+.logo ::selection, .logo ::-moz-selection {
+  background: transparent;
+}
+
+header h1 span {
+  margin-right: 0.2em;
+  padding: 0.4em 0.6em 0.3em;
+}
+
+.logo span {
+  padding: 0.3em 0.5em 0.2em;
+  display: inline-block;
+  transition: transform 0.03s;
+  cursor: pointer;
+}
+
+header h1 span, .logo span {
+  background: #000;
+  color: #fff;
+}
+
+.logo span:hover {
+  transform: scale(1.1);
+}
+
+.logo span:active {
+  transform: scale(0.95);
+}
+
+header h1 span:last-child, .logo span:last-child {
   margin-right: 0;
 }
 
-header h1 span:nth-child(1) {
+header h1 span:nth-child(1), .logo span:nth-child(1) {
   background: #F24307;
 }
 
-header h1 span:nth-child(2) {
+header h1 span:nth-child(2), .logo span:nth-child(2) {
   background: #0069C6;
 }
 
-header h1 span:nth-child(3) {
+header h1 span:nth-child(3), .logo span:nth-child(3) {
   background: #01AD70;
 }
 
-header > div {
+header div.text {
   position: absolute;
   top: 50%;
   left: 50%;
@@ -185,9 +298,66 @@ section.media {
   padding: 0;
 }
 
-section.module {
-  background-color: hsl(0,0%,92%);
-  padding: 2rem 4vw;
+.form-area {
+  background-color: hsl(0,0%,96%);
+  padding: 0;
+  border-radius: 0.25rem;
+}
+
+.form-area > div {
+  padding: 4vw;
+}
+
+.form-area > div:first-child {
+  border-bottom: 1px solid rgba(15,10,10,0.1);
+}
+
+.form-area ul {
+  padding-left: 1em;
+}
+
+.form-area li {
+  margin: 0.25em 0;
+}
+
+.form-area label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 0.5em;
+}
+
+.form-area fieldset {
+  margin-bottom: 1em;
+}
+
+.form-area fieldset p {
+  font-size: 0.85em;
+  margin: 0.5em 0;
+}
+
+.form-area fieldset p:last-child {
+  margin-bottom: 0;
+}
+
+.form-area .checkout-info {
+  margin: 1em 0 0;
+  line-height: 1.1;
+}
+
+input[name="ticketPrice"] {
+  padding: 0.5em 0.5em 0.5em 1.2em;
+  border-radius: 0.25rem;
+  border: 2px solid #000;
+  width: 100%;
+  box-sizing: border-box;
+  max-width: 180px;
+}
+
+.ticketPriceContainer::before {
+  content: "$";
+  position: absolute;
+  padding-left: 0.5em;
+  padding-top: 0.5em;
 }
 
 section#explainer {
@@ -196,12 +366,164 @@ section#explainer {
   font-size: 1.3rem;
 }
 
+section#explainer p {
+  max-width: 640px;
+  margin: 2em auto;
+}
+
+section#explainer p:first-child {
+  margin-top: 0;
+}
+
+section#explainer p:last-child {
+  margin-bottom: 0;
+}
+
+section#explainer img {
+  border-radius: 0.25rem;
+  max-width: 100%;
+  max-height: 80vh;
+}
+
+section#explainer div.photo-group {
+  position: relative;
+  display: inline-block;
+  padding-right: 5vw;
+}
+
+section#explainer div.photo-group img:nth-child(2) {
+  position: absolute;
+  top: 50%;
+  right: 0%;
+  transform: translateY(-50%);
+  max-height: 80%;
+}
+
+section#explainer div.photo-placeholder {
+  height: 80vh;
+  width: 100%;
+  background: #eee;
+  border-radius: 0.25rem;
+}
+
+section#explainer div.photo-group.veggie {
+  padding-right: 16vw;
+}
+
+div.photo-group.veggie + div.photo-group.veggie {
+  margin-top: -4vh;
+}
+
+section#explainer div.photo-group.veggie img {
+  max-width: 50vw;
+}
+
+section#explainer div.photo-group.veggie:nth-of-type(2n-1) {
+  padding-right: initial;
+  padding-left: 16vw;
+}
+
+section#explainer div.photo-group.veggie:nth-of-type(2n-1) div.veggie-placeholder {
+  right: initial;
+  left: 0%;
+}
+
+section#explainer div.photo-group.veggie div.veggie-placeholder {
+  height: 100%;
+  width: 12vw;
+
+  position: absolute;
+  top: 50%;
+  right: 0%;
+  transform: translateY(-50%);
+  max-width: 15vw;
+  max-height: 80%;
+
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-image: url(../img/veggies/special-veggies/veggie-special-1.jpg);
+  background-position: center center;
+}
+
+/* fix this weird selector */
+section#explainer div.photo-group.veggie:nth-of-type(3) div.veggie-placeholder {
+  background-image: url(../img/veggies/special-veggies/veggie-special-2.jpg);
+}
+
+/* fix this weird selector */
+section#explainer div.photo-group.veggie:nth-of-type(4) div.veggie-placeholder {
+  background-image: url(../img/veggies/special-veggies/veggie-special-3.jpg);
+}
+
+section#lineup p {
+  text-align: center;
+  font-style: italic;
+}
+
+section#lineup ol {
+  list-style: none;
+  padding: 0;
+  text-align: center;
+  font-weight: bold;
+  font-size: 1.3rem;
+}
+
+section#lineup ol span {
+  display: none;
+}
+
+section#lineup ol br {
+  display: none;
+}
+
+section#lineup img {
+  max-width: 200px;
+  display: block;
+  margin: 1em auto;
+}
+
 footer {
   text-align: center;
 }
 
 footer nav a:not(:last-child) {
   margin-right: 0.4em;
+}
+
+footer small {
+  font-size: 0.7em;
+  color: hsl(0,0%,60%);
+}
+
+/* Breakpoint styles */
+
+@media only screen and (min-width: 700px) {
+  section#lineup ol li {
+    display: inline;
+  }
+
+  section#lineup ol span {
+    display: initial;
+  }
+
+  section#lineup ol br {
+    display: initial;
+  }
+
+  .form-area {
+    display: flex;
+    font-size: 0.85rem;
+  }
+
+  .form-area > div:first-child {
+    flex-basis: 55%;
+    border-right: 1px solid rgba(15,10,10,0.1);
+    border-bottom: none;
+  }
+
+  .form-area > div:nth-child(2) {
+    flex-basis: 45%;
+  }
 }
 
 /* ==========================================================================
