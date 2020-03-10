@@ -52,8 +52,7 @@ document.getElementById('ticket-form').addEventListener('input', calculateTotal)
 // =============
 
 // Define Stripe
-// THIS IS A TEST KEY! Replace with prod key
-var stripe = Stripe('pk_test_VhcNh7WHsTGlc6eajQSqcjOM00m9S3MAtS');
+var stripe = Stripe('pk_live_ecGmKZ3U8636cHWaaoEoIEPD007kMBdziI');
 
 // Define the form
 var form = document.getElementById('ticket-form');
