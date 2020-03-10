@@ -79,6 +79,7 @@ html {
   font-size: calc(1em + 0.6vw);
   line-height: 1.4;
   font-family: sans-serif;
+  overflow-x: hidden; /* Sort of a hack for the header veggies positioning */
 }
 
 body {
@@ -93,7 +94,7 @@ h3 {
 }
 
 h4 {
-  font-size: 1rem;
+  font-size: 1.4em;
   font-weight: bold;
   display: inline-block; /* So that border doesn't stretch full width of parent */
   padding-bottom: 0.1em;
@@ -199,7 +200,6 @@ header, footer, section {
   max-width: 92vw;
   box-sizing: border-box;
   margin: 1rem auto 3rem;
-  padding: 0 4vw;
 }
 
 header {
@@ -346,6 +346,8 @@ header:after {
   background-repeat: no-repeat;
   background-image: url(../assets/veggies/special-veggies/veggie-special-1.jpg);
   background-position: center center;
+
+  animation: veggie-dance 0.5s steps(2) infinite alternate;
 }
 
 /* fix this weird selector */
@@ -510,6 +512,15 @@ footer small {
 #success header:after {
   content: "";
   display: none;
+}
+
+/* ----------
+   Animations
+   ---------- */
+
+@keyframes veggie-dance {
+  from { transform: translateY(-50%) rotate(-5deg); }
+  to { transform: translateY(-50%) rotate(20deg); }
 }
 
 /* -----------------
