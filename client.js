@@ -1,4 +1,6 @@
+// ----------------------------
 // Calculate ticket order total
+// ----------------------------
 
 var orderTotal = document.getElementById('checkoutButton');
 var ticketQuantity = document.getElementById('ticketQuantity');
