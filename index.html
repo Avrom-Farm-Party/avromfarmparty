@@ -147,11 +147,17 @@
             <fieldset>
               <label for="ticketPrice">Name Your Price</label>
               <div class="ticketPriceContainer"><input type="text" id="ticketPrice" name="ticketPrice"></div>
-              <p><strong>Suggested range: $30-75</strong><br>
-              We want Avrom Farm Party to be as accessible as possible, so our tickets are on a sliding scale from $25 and up. Purchasing at a higher level helps us provide for those with less, cover our festival costs, and continue practicing and promoting regenerative agriculture.</p>
+              <p>
+                <strong>Suggested range: $30-75</strong><br>
+                We want Avrom Farm Party to be as accessible as possible, so our tickets are on a sliding scale from $25 and up. Purchasing at a higher level helps us provide for those with less, cover our festival costs, and continue practicing and promoting regenerative agriculture.
+              </p>
             </fieldset>
 
-            <input type="submit" value="Pay $25" id="checkoutButton">
+            <p id="formError"></p>
+
+            <input type="hidden" id="orderTotal" name="orderTotal" value="0">
+
+            <input type="submit" value="Pay" id="checkoutButton">
             <p class="checkout-info">
               <img src="assets/lock.svg">
               <small>Processed by Stripe</small><br>
@@ -170,5 +176,8 @@
       </nav>
       <p><small>Photos by Leslie Schwartz, Steve Delahoyde, and others</small></p>
     </footer>
+
+    <!-- Import Stripe.js -->
+    <script src="https://js.stripe.com/v3/"></script>
   </body>
 </html>
