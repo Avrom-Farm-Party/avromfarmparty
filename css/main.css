@@ -462,7 +462,6 @@ header:after {
 #tickets .form-area .checkout-info img {
   position: relative;
   top: -0.08em; /* Specific to the lock icon being used */
-  margin-right: 0.25em;
 }
 
 #tickets .form-area input[name="ticketPrice"] {
@@ -481,6 +480,15 @@ header:after {
   padding-top: 0.5em;
 }
 
+#tickets .form-area #formError {
+  color: red;
+  display: none;
+}
+
+#tickets .form-area #formError a {
+  color: inherit;
+}
+
 /* -------------
    Footer styles
    ------------- */
@@ -493,6 +501,15 @@ footer nav a:not(:last-child) {
 footer small {
   font-size: 0.7em; /* A one-off font-size */
   color: hsl(0,0%,60%);
+}
+
+/* -------------------
+   Success page styles
+   ------------------- */
+
+#success header:after {
+  content: "";
+  display: none;
 }
 
 /* -----------------
