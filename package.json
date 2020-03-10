@@ -1,0 +1,17 @@
+{
+  "name": "avrom-farm-party-2020",
+  "version": "1.0.0",
+  "description": "Avrom Farm Party 2020.",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Avrom Farm Party",
+  "license": "UNLICENSED",
+  "repository": {
+    "url": "https://github.com/spencertweedy/avromfarmparty"
+  },
+  "dependencies": {
+    "dotenv": "^8.2.0",
+    "stripe": "^8.29.0"
+  }
+}
