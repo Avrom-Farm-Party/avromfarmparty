@@ -1,20 +1,51 @@
+// ==================
+// Reusable variables
+// ==================
+
+// Define the order form variables
+var ticketQuantity = document.getElementById('ticketQuantity');
+var ticketPrice = document.getElementById('ticketPrice');
+var orderTotal = document.getElementById('orderTotal');
+var checkoutButton = document.getElementById('checkoutButton');
+
+// ===================
+// Display form errors
+// ===================
+
+// Define the form error element
+var formError = document.getElementById('formError');
+
+// Define the error handling function
+function handleError(err,displayMessage) {
+  console.error("handleError message: " + err);
+  formError.style.display = "block"; // Also referred to in calculateTotal()
+
+  if (displayMessage) {
+  	formError.innerHTML = err;
+  }
+  
+  else {
+  	formError.innerHTML = 'There was an error. Please <a href="mailto:avromfarmparty@penguinmail.com?subject=Website error">contact us</a>.';
+  }
+}
+
 // ============================
 // Calculate ticket order total
 // ============================
 
-var orderTotal = document.getElementById('checkoutButton');
-var ticketQuantity = document.getElementById('ticketQuantity');
-var ticketPrice = document.getElementById('ticketPrice');
-
 function calculateTotal() {
-  // Only update orderTotal if the ticket price is not NotaNumber
-  if (!isNaN(parseInt(ticketPrice.value))) {
-    orderTotal.value = "Pay $" + parseInt(ticketQuantity.value) * parseInt(ticketPrice.value);
-  }
+	// Reset formErrors (hide it)
+	formError.style.display = "none";
+
+	// Only update orderTotal if the ticket price is not NotaNumber
+	if (!isNaN(parseInt(ticketPrice.value))) {
+ 		orderTotal.value = parseInt(ticketQuantity.value) * parseInt(ticketPrice.value);
+ 		checkoutButton.value = "Pay $" + orderTotal.value;
+	}
 }
 
 // Bind calculateTotal to form's change event
-document.getElementById('ticket-form').addEventListener('change', calculateTotal);
+document.getElementById('ticket-form').addEventListener('input', calculateTotal);
 
 // =============
 // Stripe stuff!
@@ -24,101 +55,62 @@ document.getElementById('ticket-form').addEventListener('change', calculateTotal
 // THIS IS A TEST KEY! Replace with prod key
 var stripe = Stripe('pk_test_VhcNh7WHsTGlc6eajQSqcjOM00m9S3MAtS');
 
-stripe.redirectToCheckout({
-  // Make the id field from the Checkout Session creation API response
-  // available to this file, so you can provide it as parameter here
-  // instead of the {{CHECKOUT_SESSION_ID}} placeholder.
-  sessionId: '{{CHECKOUT_SESSION_ID}}'
-}).then(function (result) {
-  // If `redirectToCheckout` fails due to a browser or network
-  // error, display the localized error message to your customer
-  // using `result.error.message`.
-});
-
-
-
-
-
 // Define the form
 var form = document.getElementById('ticket-form');
 
 // Bind the form's submit event to an AJAX POST
 form.addEventListener('submit', async (event) => {
-  // Prevent the form's default submit behavior
-  event.preventDefault();
-
-  // Define order variables for sending in JSON string in the POST
-  var ticketQuantity = document.getElementById('ticketQuantity').val();
-  var ticketPrice = document.getElementById('ticketPrice').val();
-  var orderTotal = document.getElementById('orderTotal').val();
+	// Prevent the form's default submit behavior
+	event.preventDefault();
   
-  // Only submit AJAX POST if orderTotal is not $0
-  if (orderTotal == "$0") {
-    // Display error message if orderTotal is $0
-    document.getElementById('form-errors').html("Please choose your ticket price above.").css("display","block");
-  }
+	// Display error if orderTotal is null or 0
+	if (orderTotal.value == null || orderTotal.value == 0) {
+		handleError("Please choose a ticket price.", true);
+	}
 
-  // If orderTotal is not $0…
-  else {
-  	// Thanks to https://attacomsian.com/blog/xhr-json-post-request for helping wean off jQuery AJAX
+	// Display error if orderTotal is less than $25 minimum
+	// Not a security measure - actual price checking to be done on server side
+	else if (orderTotal.value < 25) {
+		handleError("Please choose a valid ticket price.", true);
+	}
 
-  	// Create the JSON payload object
-  	var json = {
-	    'ticketQuantity': ticketQuantity,
-        'ticketPrice': ticketPrice
-    };
+	// If the other tests are passed, do the AJAX POST
+	else {
+		// Thanks to https://attacomsian.com/blog/xhr-json-post-request for helping wean off jQuery AJAX
 
-    // Define the Fetch API request options
-	var fetchOptions = {
-	    method: 'POST',
-	    body: JSON.stringify(json),
-	    headers: {
-	        'Content-Type': 'application/json'
-	    }
-	};
+		// Create the JSON payload object
+	  	var json = {
+		    'ticketQuantity': ticketQuantity.value,
+	        'ticketPrice': ticketPrice.value
+	    };
 
-	// Send the POST requst using Fetch API
-	fetch('/.netlify/functions/checkout', fetchOptions)
-    	.then(res => res.json())
-    	.then(res => console.log(res))
-    	.catch(err => console.error(err));
+	    // Define the Fetch API request options
+		var fetchOptions = {
+		    method: 'POST',
+		    body: JSON.stringify(json),
+		    headers: {
+		        'Content-Type': 'application/json'
+		    }
+		};
 
+		// Send the POST requst using Fetch API
+		fetch('/.netlify/functions/checkout', fetchOptions)
+			.then(res => {
+		        if (res.ok) {
+		            return res.json();
+		        } else {
+		            return Promise.reject(res.status);
+		        }
+		    })
+		    .then(json => {
+		    	console.log("Stripe Checkout Session ID: " + json);
 
-
-
-
-  	// Create the AJAX object
-  	var ajax = new XMLHttpRequest();
-
-  	
-
-	// Open the AJAX request
-	ajax.open('POST', '/.netlify/functions/checkout');
-
-	// Set the Content-Type header
-	ajax.setRequestHeader('Content-Type', 'application/json');
-
-	// Send the rquest with JSON payload
-	ajax.send(JSON.stringify(json));
-
-
-
-
-        success: function(res){     
-            stripe.redirectToCheckout({
-              sessionId: JSON.parse(res)
-            }).then(function (result) {
-              // If `redirectToCheckout` fails due to a browser or network
-              // error, display the localized error message to your customer
-              // using `result.error.message`.
-              alert(result.error.message);
-            });
-        },
-        error: function(){
-          $("#form-errors").html("There was an error. Please contact avromfarmparty@penguinmail.com").css("display","block");
-        }
-    });
-  }
+		    	stripe.redirectToCheckout({
+				  sessionId: json
+				}).then(function (result) {
+				  handleError(result.error.message);
+				});
+		    })
+			.catch(err => handleError(err));
+	}
 });
-
-
