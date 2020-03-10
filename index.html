@@ -2,23 +2,47 @@
 <html lang="en-US">
   <head>
     <meta charset="utf-8">
+
+    <!-- Define page title and description -->
     <title>Avrom Farm Party 2020 | music and food festival in Green Lake, Wisconsin</title>
     <meta name="description" content="Avrom Farm Party is an annual, family-friendly music and food festival in Green Lake, Wisconsin.">
+
+    <!-- Define viewport -->
     <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Link favicon -->
+    <link id="favicon" rel="icon" href="favicon.ico" type="image/x-icon">
 
     <!-- Import Adobe Fonts -->
     <link rel="stylesheet" href="https://use.typekit.net/ffu2pok.css">
 
+    <!-- Import stylesheets -->
     <link rel="stylesheet" href="css/normalize.css">
     <link rel="stylesheet" href="css/main.css">
 
-    <!-- import the webpage's client-side javascript file -->
+    <!-- Import the webpage's client-side JavaScript -->
     <script src="client.js" defer></script>
+
+    <!-- Social media tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Avrom Farm Party 2020">
+    <meta name="twitter:description" content="A family-friendly music and food festival in the heart of Wisconsin.">
+    <meta name="twitter:image" content="/assets/social_preview.jpg">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://avromfarmparty.com/">
+    <meta property="og:title" content="Avrom Farm Party 2020">
+    <meta property="og:description" content="A family-friendly music and food festival in the heart of Wisconsin.">
+    <meta property="og:image" content="/assets/social_preview.jpg">
   </head>
 
   <body>
     <header>
-      <h1><span>Avrom</span> <span>Farm</span> <span>Party</span></h1>
+      <h1 class="logo">
+        <span>Avrom</span>
+        <span>Farm</span>
+        <span>Party</span>
+      </h1>
+
       <div class="text">
         <h2>A family-friendly music and food festival in the heart of Wisconsin.</h2>
         <p>August 8, 2020</p>
@@ -32,45 +56,52 @@
 
     <section id="explainer">
       <p>In the early fifties, renowned artist Lester Schwartz established Avrom Farm in Green Lake, Wisconsin.</p>
-      <img src="img/lester.jpg">
+
+      <img src="assets/lester.jpg">
+
       <p>The farm was his workshop for towering sculptures and cutting-edge paintings.</p>
-      <img src="img/tractor.jpg">
+
+      <img src="assets/tractor.jpg">
+
       <p>Today it’s a pasture-based farm run by Lester’s grandson Hayden Holbert, growing delicious food while benefitting ecosystems.</p>
+
       <div class="photo-group">
-        <img src="img/greenhouse.jpg">
-        <img src="img/tomatoes.jpg">
+        <img src="assets/greenhouse.jpg">
+        <img src="assets/tomatoes.jpg">
       </div>
+
       <p><span class="logo"><span>Avrom</span> <span>Farm</span> <span>Party</span></span> is our celebration of regenerative farming, great music, and community.</p>
+
       <div class="photo-group veggie">
-        <img src="img/glass-mountain.jpg">
-        <div class="veggie-placeholder"></div>
+        <img src="assets/glass-mountain.jpg">
       </div>
+
       <div class="photo-group veggie">
-        <img src="img/stage-front.jpg">
-        <div class="veggie-placeholder"></div>
+        <img src="assets/stage-front.jpg">
       </div>
+
       <div class="photo-group veggie">
-        <img src="img/landon.jpg">
-        <div class="veggie-placeholder"></div>
-      </div>      
+        <img src="assets/landon.jpg">
+      </div> 
     </section>
 
     <section id="lineup">
       <p>Featuring…</p>
+
       <ol>
         <li>OHMME</li><br>
-        <li>Liam Kazar</li> <span>&bull;</span>
-        <li>Lane Beckstrom</li> <span>&bull;</span>
+        <li>Liam Kazar</li><span> &bull;</span>
+        <li>Lane Beckstrom</li><span> &bull;</span>
         <li>Andrew Sa</li><br>
-        <li>Valebol</li> <span>&bull;</span>
-        <li>Case Oats</li> <span>&bull;</span>
-        <li>Jenny &amp; The Hog Drovers</li> <span>&bull;</span>
+        <li>Valebol</li><span> &bull;</span>
+        <li>Case Oats</li><span> &bull;</span>
+        <li>Jenny &amp; The Hog Drovers</li><span> &bull;</span>
         <li>Warner Brownfield</li><br>
         <li>. . . and special guests to be anounced!</li>
       </ol>
     </section>
 
-    <section id="tickets" class="module tickets">
+    <section id="tickets">
       <div class="form-area">
         <div>
           <h4>Tickets</h4>
@@ -85,14 +116,16 @@
             <li>New Glarus beer and wine sold separately</li>
           </ul>
 
-          <p><strong>August 8, 2020, noon—overnight<br>
-          Ripon, Wisconsin. <a href="https://goo.gl/maps/7FU5h85XyK4ZKCyX7" target="_blank">Get directions</a>.</strong>
+          <p>
+            <strong>August 8, 2020, noon—overnight<br>
+            Ripon, Wisconsin. <a href="https://goo.gl/maps/7FU5h85XyK4ZKCyX7" target="_blank">Get directions</a>.</strong>
           </p>
 
           <p>No dogs allowed.<br>
           No outside beverages allowed.<br>
           Thank you for understanding.</p>
         </div>
+
         <div>
           <form id="ticket-form">
             <fieldset>
@@ -120,7 +153,8 @@
 
             <input type="submit" value="Pay $25" id="checkoutButton">
             <p class="checkout-info">
-              <img src="img/lock.svg" style="margin-right: 0.25em; position: relative; top: -0.08em;"><small>Processed by Stripe</small><br>
+              <img src="assets/lock.svg">
+              <small>Processed by Stripe</small><br>
               <small>Zero fees</small>
             </p>
           </form>
@@ -130,9 +164,9 @@
 
     <footer>
       <nav>
-        <a href="#">Press</a>
-        <a href="#">Sponsorships</a>
-        <a href="#">Contact us</a>
+        <a href="mailto:avromfarmparty@penguinmail.com?subject=Avrom Farm Party 2020">Press Inquiries</a>
+        <a href="mailto:avromfarmparty@penguinmail.com?subject=Avrom Farm Party 2020 Sponsorship">Sponsorship Inquiries</a>
+        <a href="mailto:avromfarmparty@penguinmail.com?subject=Avrom Farm Party 2020">Contact us</a>
       </nav>
       <p><small>Photos by Leslie Schwartz, Steve Delahoyde, and others</small></p>
     </footer>
