@@ -1,0 +1,706 @@
+/*! HTML5 Boilerplate v7.3.0 | MIT License | https://html5boilerplate.com/ */
+
+/* main.css 2.0.0 | MIT License | https://github.com/h5bp/main.css#readme */
+/*
+ * What follows is the result of much research on cross-browser styling.
+ * Credit left inline and big thanks to Nicolas Gallagher, Jonathan Neal,
+ * Kroc Camen, and the H5BP dev community and team.
+ */
+
+/* ==========================================================================
+   Base styles: opinionated defaults
+   ========================================================================== */
+
+/*
+ * A better looking default horizontal rule
+ */
+
+hr {
+  display: block;
+  height: 1px;
+  border: 0;
+  border-top: 1px solid #ccc;
+  margin: 1em 0;
+  padding: 0;
+}
+
+/*
+ * Remove the gap between audio, canvas, iframes,
+ * images, videos and the bottom of their containers:
+ * https://github.com/h5bp/html5-boilerplate/issues/440
+ */
+
+audio,
+canvas,
+iframe,
+img,
+svg,
+video {
+  vertical-align: middle;
+}
+
+/*
+ * Remove default fieldset styles.
+ */
+
+fieldset {
+  border: 0;
+  margin: 0;
+  padding: 0;
+}
+
+/*
+ * Allow only vertical resizing of textareas.
+ */
+
+textarea {
+  resize: vertical;
+}
+
+/* ==========================================================================
+   Avrom Farm custom styles
+   ========================================================================== */
+
+/* ----------------
+   Generic elements
+   ---------------- */
+
+:root {
+  --afp-red: #F24307;
+  --afp-blue: #0069C6;
+  --afp-green: #01AD70;
+  --afp-black: #0F0A0A;
+  --border-radius: 0.25rem;
+  --larger-font-size: 1.3rem;
+}
+
+html {
+  color: var(--afp-black);
+  font-size: calc(1em + 0.6vw);
+  line-height: 1.4;
+  font-family: sans-serif;
+  overflow-x: hidden; /* Sort of a hack for the header veggies positioning */
+}
+
+body {
+  font-family: 'franklin-gothic-urw';
+  overflow-x: hidden; /* Sort of a hack for the header veggies positioning */
+}
+
+h3 {
+  font-size: 1.8rem;
+  font-family: 'maple-web';
+  text-align: center;
+}
+
+h4 {
+  font-size: 1.4em;
+  font-weight: bold;
+  display: inline-block; /* So that border doesn't stretch full width of parent */
+  padding-bottom: 0.1em;
+  border-bottom: 0.125rem solid var(--afp-black);
+  margin: 0;
+}
+
+p, nav {
+  padding-bottom: 0.1em; /* To compensate for bigger natural top margin */
+}
+
+p:first-child {
+  margin-top: 0;
+}
+
+p:last-child {
+  margin-bottom: 0;
+}
+
+a {
+  color: var(--afp-black);
+}
+
+::selection {
+  background: var(--afp-black);
+  color: #fff;
+  text-shadow: none;
+}
+
+::-moz-selection {
+  background: var(--afp-black);
+  color: #fff;
+  text-shadow: none;
+}
+
+input[type="submit"] {
+  background-color: hsl(208, 100%, 39%);
+  color: #fff;
+  font-weight: bold;
+  padding: 0.66em 0.88em;
+  border-radius: var(--border-radius);
+  text-decoration: none;
+  border: none;
+  cursor: pointer;
+  font-size: 0.9em;
+  transition: background-color 0.1s, transform 0.1s;
+}
+
+input[type="submit"]:hover {
+  background-color: hsl(208, 100%, 34%);
+}
+
+input[type="submit"]:active {
+  transform: translateY(0.1em);
+}
+
+/* ----------------
+   Reusable classes
+   ---------------- */
+
+.logo {
+  font-family: 'maple-web';
+  font-weight: 900;
+}
+
+.logo ::selection, .logo ::-moz-selection {
+  background: transparent;
+}
+
+.logo span {
+  display: inline-block; /* So that transform works */
+  padding: 0.3em 0.5em 0.2em;
+  color: #fff;
+  transition: transform 0.03s;
+  cursor: pointer;
+}
+
+.logo span:hover {
+  transform: scale(1.1);
+}
+
+.logo span:active {
+  transform: scale(0.95);
+}
+
+.logo span:nth-child(1) {
+  background: var(--afp-red);
+}
+
+.logo span:nth-child(2) {
+  background: var(--afp-blue);
+}
+
+.logo span:nth-child(3) {
+  background: var(--afp-green);
+}
+
+/* ------------------
+   Frame of the house
+   ------------------ */
+
+header, footer, section {
+  max-width: 92vw;
+  box-sizing: border-box;
+  margin: 1rem auto 3rem;
+}
+
+header {
+  height: calc(100vh - 2rem); /* Compensates for padding */
+  position: relative;
+  width: 100vw;
+}
+
+footer {
+  text-align: center;
+}
+
+/* -------------
+   Header styles
+   ------------- */
+
+header h1, header h2 {
+  margin: 0;
+}
+
+header h1 {
+  font-size: 1rem;
+  text-align: center;
+  z-index: 1;
+}
+
+header h2 {
+  font-weight: 900;
+  font-size: 2.4rem;
+  line-height: 1.2em;
+  letter-spacing: -0.03em;
+}
+
+header .text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100%;
+  max-width: 870px;
+  text-align: center;
+  transform: translateX(-50%) translateY(-50%); /* For horizontal and vertical centering */
+}
+
+header .veggies {
+  width: 45vw; /* Arbitrary */
+  height: 45vh; /* Arbitrary */
+  position: absolute;
+  z-index: -1; /* So that logo stays visible */
+  top: calc(-1rem - 4vw); /* First unit compensates for container properties, second unit is arbitrary */
+  left: calc(-4vw - 4vw); /* First unit compensates for container properties, second unit is arbitrary */
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-image: url(../assets/veggies/veggies-1.jpg);
+  background-position: top left;
+  filter: saturate(1.2); /* A little oomph */
+}
+
+header .veggies:nth-of-type(2) {
+  left: initial;
+  right: calc(-4vw - 4vw);
+  background-image: url(../assets/veggies/veggies-2.jpg);
+  background-position: top right;
+}
+
+header .veggies:nth-of-type(3) {
+  left: initial;
+  right: calc(-4vw - 4vw);
+  top: initial;
+  bottom: calc(-1rem - 4vw);
+  background-image: url(../assets/veggies/veggies-3.jpg);
+  background-position: bottom right;
+}
+
+header .veggies:nth-of-type(4) {
+  top: initial;
+  bottom: calc(-1rem - 4vw);
+  background-image: url(../assets/veggies/veggies-4.jpg);
+  background-position: bottom left;
+}
+
+header:after {
+  content: "↓";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  text-align: center;
+}
+
+/* ------------------------
+   Explainer section styles
+   ------------------------ */
+
+#explainer {
+  text-align: center;
+  font-weight: bold;
+  font-size: var(--larger-font-size);
+}
+
+#explainer p {
+  max-width: 640px;
+  margin: 2em auto;
+}
+
+#explainer img {
+  border-radius: var(--border-radius);
+  max-width: 100%;
+  max-height: 80vh;
+}
+
+#explainer .photo-group {
+  position: relative;
+  display: inline-block;
+  padding-right: 5vw;
+}
+
+#explainer .photo-group img:nth-child(2) {
+  position: absolute;
+  top: 50%;
+  right: 0%;
+  transform: translateY(-50%);
+  max-height: 80%;
+}
+
+#explainer .photo-group.veggie {
+  padding-right: 16vw;
+}
+
+#explainer .photo-group.veggie:after {
+  content: "";
+  display: block;
+
+  width: 12vw;
+  height: 100%;
+
+  position: absolute;
+  top: 50%;
+  right: 0%;
+  transform: translateY(-50%);
+  max-width: 15vw;
+  max-height: 80%;
+
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-image: url(../assets/veggies/special-veggies/veggie-special-1.jpg);
+  background-position: center center;
+
+  animation: veggie-dance 0.5s steps(2) infinite alternate;
+}
+
+/* fix this weird selector */
+#explainer .photo-group.veggie:nth-of-type(3):after {
+  background-image: url(../assets/veggies/special-veggies/veggie-special-2.jpg);
+}
+
+/* fix this weird selector */
+#explainer .photo-group.veggie:nth-of-type(4):after {
+  background-image: url(../assets/veggies/special-veggies/veggie-special-3.jpg);
+}
+
+/* To put the veggie on the left instead */
+#explainer .photo-group.veggie:nth-of-type(2n-1) {
+  padding-right: initial;
+  padding-left: 16vw;
+}
+
+/* To put the veggie on the left instead */
+#explainer .photo-group.veggie:nth-of-type(2n-1):after {
+  right: initial;
+  left: 0%;
+}
+
+#explainer .photo-group.veggie + .photo-group.veggie {
+  margin-top: -4vh; /* To make them overlap */
+}
+
+#explainer .photo-group.veggie img {
+  max-width: 50vw;
+}
+
+#explainer .logo {
+  font-size: 0.65em;
+  position: relative;
+  top: -0.15em;
+}
+
+/* ----------------------
+   Linenup section styles
+   ---------------------- */
+
+#lineup p {
+  text-align: center;
+  font-style: italic;
+}
+
+#lineup ol {
+  list-style: none;
+  padding: 0;
+  text-align: center;
+  font-weight: bold;
+  font-size: var(--larger-font-size);
+}
+
+#lineup ol span {
+  display: none; /* Hide the list item dividers; see breakpoint style */
+}
+
+#lineup ol br {
+  display: none; /* Hide the list item line breaks; see breakpoint style */
+}
+
+/* ----------------------
+   Tickets section styles
+   ---------------------- */
+
+#tickets .form-area {
+  background-color: hsl(0,0%,96%);
+  padding: 0;
+  border-radius: var(--border-radius);
+}
+
+#tickets .form-area > div {
+  padding: 4vw;
+}
+
+#tickets .form-area > div:first-child {
+  border-bottom: 0.0625rem solid rgba(15,10,10,0.1); /* Setup for breakpoint style */
+}
+
+#tickets .form-area ul {
+  padding-left: 1em;
+}
+
+#tickets .form-area li {
+  margin: 0.25em 0;
+}
+
+#tickets .form-area label {
+  display: block; /* To cause line break */
+  font-weight: bold;
+  margin-bottom: 0.5em;
+}
+
+#tickets .form-area fieldset {
+  margin-bottom: 1em;
+}
+
+#tickets .form-area fieldset p {
+  font-size: 0.85em; /* Kind of a one-off font-size change */
+  margin: 0.5em 0;
+}
+
+#tickets .form-area fieldset p:last-child {
+  margin-bottom: 0;
+}
+
+#tickets .form-area .checkout-info {
+  margin: 1em 0 0;
+  line-height: 1.1; /* A one-off adjustment */
+}
+
+#tickets .form-area .checkout-info img {
+  position: relative;
+  top: -0.08em; /* Specific to the lock icon being used */
+}
+
+#tickets .form-area input[name="ticketPrice"] {
+  padding: 0.5em 0.5em 0.5em 1.2em;
+  border-radius: var(--border-radius);
+  border: 0.1rem solid var(--afp-black);
+  width: 100%;
+  box-sizing: border-box;
+  max-width: 180px;
+}
+
+#tickets .form-area .ticketPriceContainer::before {
+  content: "$";
+  position: absolute;
+  padding-left: 0.5em;
+  padding-top: 0.5em;
+}
+
+#tickets .form-area #formError {
+  color: red;
+  display: none;
+}
+
+#tickets .form-area #formError a {
+  color: inherit;
+}
+
+/* -------------
+   Footer styles
+   ------------- */
+
+/* Select all but the last nav <a> */
+footer nav a:not(:last-child) {
+  margin-right: 0.4em;
+}
+
+footer small {
+  font-size: 0.7em; /* A one-off font-size */
+  color: hsl(0,0%,60%);
+}
+
+/* -------------------
+   Success page styles
+   ------------------- */
+
+#success header:after {
+  content: "";
+  display: none;
+}
+
+/* ----------
+   Animations
+   ---------- */
+
+@keyframes veggie-dance {
+  from { transform: translateY(-50%) rotate(-5deg); }
+  to { transform: translateY(-50%) rotate(20deg); }
+}
+
+/* -----------------
+   Breakpoint styles
+   ----------------- */
+
+/* On screens wider than 700px… */
+@media only screen and (min-width: 700px) {
+  #lineup ol li {
+    display: inline;
+  }
+
+  #lineup ol span {
+    display: initial;
+  }
+
+  #lineup ol br {
+    display: initial;
+  }
+
+  #tickets .form-area {
+    display: flex;
+    font-size: 0.85rem; /* Sorta one-off */
+  }
+
+  #tickets .form-area > div:first-child {
+    flex-basis: 55%;
+    border-right: 0.0625rem solid rgba(15,10,10,0.1);
+    border-bottom: none;
+  }
+
+  #tickets .form-area > div:nth-child(2) {
+    flex-basis: 45%;
+  }
+}
+
+/* ==========================================================================
+   Helper classes
+   ========================================================================== */
+
+/*
+ * Hide visually and from screen readers
+ */
+
+.hidden {
+  display: none !important;
+}
+
+/*
+* Hide only visually, but have it available for screen readers:
+* https://snook.ca/archives/html_and_css/hiding-content-for-accessibility
+*
+* 1. For long content, line feeds are not interpreted as spaces and small width
+*    causes content to wrap 1 word per line:
+*    https://medium.com/@jessebeach/beware-smushed-off-screen-accessible-text-5952a4c2cbfe
+*/
+
+.sr-only {
+  border: 0;
+  clip: rect(0, 0, 0, 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+  /* 1 */
+}
+
+/*
+* Extends the .sr-only class to allow the element
+* to be focusable when navigated to via the keyboard:
+* https://www.drupal.org/node/897638
+*/
+
+.sr-only.focusable:active,
+.sr-only.focusable:focus {
+  clip: auto;
+  height: auto;
+  margin: 0;
+  overflow: visible;
+  position: static;
+  white-space: inherit;
+  width: auto;
+}
+
+/*
+* Hide visually and from screen readers, but maintain layout
+*/
+
+.invisible {
+  visibility: hidden;
+}
+
+/*
+* Clearfix: contain floats
+*
+* For modern browsers
+* 1. The space content is one way to avoid an Opera bug when the
+*    `contenteditable` attribute is included anywhere else in the document.
+*    Otherwise it causes space to appear at the top and bottom of elements
+*    that receive the `clearfix` class.
+* 2. The use of `table` rather than `block` is only necessary if using
+*    `:before` to contain the top-margins of child elements.
+*/
+
+.clearfix:before,
+.clearfix:after {
+  content: " ";
+  /* 1 */
+  display: table;
+  /* 2 */
+}
+
+.clearfix:after {
+  clear: both;
+}
+
+/* ==========================================================================
+   Print styles.
+   Inlined to avoid the additional HTTP request:
+   https://www.phpied.com/delay-loading-your-print-css/
+   ========================================================================== */
+
+@media print {
+  *,
+  *:before,
+  *:after {
+    background: transparent !important;
+    color: #000 !important;
+    /* Black prints faster */
+    box-shadow: none !important;
+    text-shadow: none !important;
+  }
+  a,
+  a:visited {
+    text-decoration: underline;
+  }
+  a[href]:after {
+    content: " (" attr(href) ")";
+  }
+  abbr[title]:after {
+    content: " (" attr(title) ")";
+  }
+  /*
+     * Don't show links that are fragment identifiers,
+     * or use the `javascript:` pseudo protocol
+     */
+  a[href^="#"]:after,
+  a[href^="javascript:"]:after {
+    content: "";
+  }
+  pre {
+    white-space: pre-wrap !important;
+  }
+  pre,
+  blockquote {
+    border: 1px solid #999;
+    page-break-inside: avoid;
+  }
+  /*
+     * Printing Tables:
+     * https://web.archive.org/web/20180815150934/http://css-discuss.incutio.com/wiki/Printing_Tables
+     */
+  thead {
+    display: table-header-group;
+  }
+  tr,
+  img {
+    page-break-inside: avoid;
+  }
+  p,
+  h2,
+  h3 {
+    orphans: 3;
+    widows: 3;
+  }
+  h2,
+  h3 {
+    page-break-after: avoid;
+  }
+}

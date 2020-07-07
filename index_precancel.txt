@@ -1,0 +1,187 @@
+<!doctype html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+
+    <!-- Define page title and description -->
+    <title>Avrom Farm Party 2020 | music and food festival in Green Lake, Wisconsin</title>
+    <meta name="description" content="Avrom Farm Party is an annual, family-friendly music and food festival in Green Lake, Wisconsin.">
+
+    <!-- Define viewport -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Link favicon -->
+    <link id="favicon" rel="icon" href="favicon.ico" type="image/x-icon">
+
+    <!-- Import Adobe Fonts -->
+    <link rel="stylesheet" href="https://use.typekit.net/ffu2pok.css">
+
+    <!-- Import stylesheets -->
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/main.css">
+
+    <!-- Import the webpage's client-side JavaScript -->
+    <script src="client.js" defer></script>
+
+    <!-- Social media tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Avrom Farm Party 2020">
+    <meta name="twitter:description" content="A family-friendly music and food festival in the heart of Wisconsin.">
+    <meta name="twitter:image" content="/assets/social_preview.jpg">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://avromfarmparty.com/">
+    <meta property="og:title" content="Avrom Farm Party 2020">
+    <meta property="og:description" content="A family-friendly music and food festival in the heart of Wisconsin.">
+    <meta property="og:image" content="/assets/social_preview.jpg">
+  </head>
+
+  <body>
+    <header>
+      <h1 class="logo">
+        <span>Avrom</span>
+        <span>Farm</span>
+        <span>Party</span>
+      </h1>
+
+      <div class="text">
+        <h2>A family-friendly music and food festival in the heart of Wisconsin.</h2>
+        <p>August 8, 2020</p>
+      </div>
+
+      <div class="veggies"></div>
+      <div class="veggies"></div>
+      <div class="veggies"></div>
+      <div class="veggies"></div>
+    </header>
+
+    <section id="explainer">
+      <p>In the early fifties, renowned artist Lester Schwartz established Avrom Farm in Green Lake, Wisconsin.</p>
+
+      <img src="assets/lester.jpg">
+
+      <p>The farm was his workshop for towering sculptures and cutting-edge paintings.</p>
+
+      <img src="assets/tractor.jpg">
+
+      <p>Today it’s a pasture-based farm run by Lester’s grandson Hayden Holbert, growing delicious food while <a href="https://avromfarm.com/">benefitting our ecosystem</a>.</p>
+
+      <div class="photo-group">
+        <img src="assets/greenhouse.jpg">
+        <img src="assets/tomatoes.jpg">
+      </div>
+
+      <p><span class="logo"><span>Avrom</span> <span>Farm</span> <span>Party</span></span> is our celebration of regenerative farming, great music, and community.</p>
+
+      <div class="photo-group veggie">
+        <img src="assets/glass-mountain.jpg">
+      </div>
+
+      <div class="photo-group veggie">
+        <img src="assets/stage-front.jpg">
+      </div>
+
+      <div class="photo-group veggie">
+        <img src="assets/landon.jpg">
+      </div> 
+    </section>
+
+    <section id="lineup">
+      <p>Featuring…</p>
+
+      <ol>
+        <li>OHMME</li><br>
+        <li>Liam Kazar</li><span> &bull;</span>
+        <li>Lane Beckstrom</li><span> &bull;</span>
+        <li>Andrew Sa</li><br>
+        <li>Valebol</li><span> &bull;</span>
+        <li>Case Oats</li><span> &bull;</span>
+        <li>Jenny &amp; The Hog Drovers</li><span> &bull;</span>
+        <li>Warner Brownfield</li><br>
+        <li>. . . and special guests to be announced!</li>
+      </ol>
+    </section>
+
+    <section id="tickets">
+      <div class="form-area">
+        <div>
+          <h4>Tickets</h4>
+
+          <ul>
+            <li>An afternoon and evening of great music</li>
+            <li>Farm-fresh dinner prepared with our produce and meats (we’ll be smoking a whole hog). Vegetarian option available</li>
+            <li>Family-friendly games and activities</li>
+            <li>Camp site access (including family camping), portable restrooms with handwashing station, and parking</li>
+            <li>Tour of Avrom Farm’s regenerative agricultural practice</li>
+            <li>On-site farmers’ market on Sunday morning</li>
+            <li>Local craft beer and wine sold separately</li>
+          </ul>
+
+          <p>
+            <strong>August 8, 2020, noon—overnight<br>
+            Green Lake, Wisconsin. <a href="https://goo.gl/maps/7FU5h85XyK4ZKCyX7" target="_blank">Get directions</a>.</strong>
+          </p>
+
+          <p>No dogs allowed.<br>
+          No outside beverages allowed.<br>
+          Thank you for understanding.</p>
+        </div>
+
+        <div>
+          <form id="ticket-form">
+            <fieldset>
+              <label for="ticketQuantity">Quantity of Tickets</label>
+              <select id="ticketQuantity" name="ticketQuantity">
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+                <option value="7">7</option>
+                <option value="8">8</option>
+                <option value="9">9</option>
+                <option value="10">10</option>
+              </select>
+            </fieldset>
+
+            <fieldset>
+              <label for="ticketPrice">Name Your Price</label>
+              <div class="ticketPriceContainer"><input type="text" id="ticketPrice" name="ticketPrice"></div>
+              <p>
+                <strong>Suggested range: $30-75</strong><br>
+                We want Avrom Farm Party to be as accessible as possible, so our tickets are on a sliding scale from $25 and up. Purchasing at a higher level helps us provide for those with less, cover our festival costs, and continue practicing and promoting regenerative agriculture.
+              </p>
+            </fieldset>
+
+            <p id="formError"></p>
+
+            <input type="hidden" id="orderTotal" name="orderTotal" value="0">
+
+            <input type="submit" value="Pay" id="checkoutButton">
+            <p class="checkout-info">
+              <img src="assets/lock.svg">
+              <small>Processed by Stripe</small><br>
+              <small>Zero fees</small>
+            </p>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <nav>
+        <a href="mailto:avromfarmparty@penguinmail.com?subject=Avrom Farm Party 2020">Press Inquiries</a>
+        <a href="mailto:avromfarmparty@penguinmail.com?subject=Avrom Farm Party 2020 Sponsorship">Sponsorship Inquiries</a>
+        <a href="mailto:avromfarmparty@penguinmail.com?subject=Avrom Farm Party 2020">Contact Us</a>
+      </nav>
+      <p><small>Photos by Leslie Schwartz, Steve Delahoyde, and others</small></p>
+    </footer>
+
+    <!-- Import Stripe.js -->
+    <script src="https://js.stripe.com/v3/"></script>
+
+    <!-- Import Simple Analytics -->
+    <script async defer src="https://cdn.simpleanalytics.io/hello.js"></script>
+    <noscript><img src="https://api.simpleanalytics.io/hello.gif" alt=""></noscript>
+  </body>
+</html>
