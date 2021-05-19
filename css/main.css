@@ -200,7 +200,6 @@ header, footer, section {
   max-width: 640px;
   box-sizing: border-box;
   margin: 2rem auto;
-  padding: 0 0.8em;
 }
 
 header {
