@@ -433,6 +433,10 @@ header .button {
    Tickets section styles
    ---------------------- */
 
+#tickets {
+  margin-top: 4em;
+}
+
 #tickets .form-area {
   background-color: hsl(0,0%,96%);
   padding: 0;
