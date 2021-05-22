@@ -33,4 +33,7 @@ Temporary Items
 # dotenv
 .env
 
+# Nova
+.nova
+
 # End of https://www.gitignore.io/api/macos
