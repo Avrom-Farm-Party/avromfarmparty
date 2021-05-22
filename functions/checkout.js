@@ -14,7 +14,7 @@ exports.handler = async function(event) {
       cancel_url: "https://avromfarmparty.com",
       payment_method_types: ["card"],
       line_items: [{
-        name: "Avrom Farm Party 2020 Admission",
+        name: "Avrom Farm Party 2021 Admission",
         amount: ticketPrice,
         images: ["https://avromfarmparty.com/assets/logo.png"],
         currency: "usd",
