@@ -513,6 +513,12 @@ header .button {
   color: inherit;
 }
 
+#vaccine-info {
+  background: gold;
+  padding: 1em;
+  margin-top: 1.5em;
+}
+
 /* -------------
    Footer styles
    ------------- */
