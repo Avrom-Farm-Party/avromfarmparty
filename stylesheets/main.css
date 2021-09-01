@@ -299,6 +299,23 @@ header .button {
   margin: 0.5em;
 }
 
+#sponsor-logos {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+#sponsor-logos a {
+  display: block;
+  width: 28%;
+  margin: 2.5%;
+}
+
+#sponsor-logos a img {
+  width: 100%;
+}
+
 /* ------------------------
    about section styles
    ------------------------ */
