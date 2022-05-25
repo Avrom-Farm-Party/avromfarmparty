@@ -381,6 +381,7 @@ header h1 {
   border-radius: var(--border-radius);
   max-width: 100%;
   max-height: 80vh;
+  display: block;
 }
 
 /* ----------------------
