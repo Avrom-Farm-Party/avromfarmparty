@@ -61,6 +61,7 @@
 		font-size: 2em;
 		font-weight: bold;
 		line-height: 1.2em;
+		margin: 2em 0;
 	}
 	
 	a {
@@ -90,7 +91,7 @@
 		font-size: 0.6em;
 	}
 	
-	a.button {
+	a.button, button.button {
 		background: var(--afp-green);
 		padding: 3% 7%;
 		color: white;
@@ -99,6 +100,8 @@
 		display: inline-block;
 		margin: 1em 0;
 		font-size: 1.2em;
+		border: none;
+		cursor: pointer;
 	}
 	
 	img.logo {
@@ -264,7 +267,7 @@
 	}
 	
 	.checkbox-container input:checked ~ .checkmark {
-		background: var(--afp-green);
+		background: var(--afp-blue);
 	}
 	
 	.checkbox-container input:checked ~ .checkmark:after {
@@ -332,8 +335,11 @@
 	</header>
 	<p class="big">The funnest music festival on a pasture-based farm in Green Lake, Wisconsin.</p>
 	<img src="img/afp_2019_night.jpg" class="header">
-	<p class="big">Twenty artists, five farm-fresh meals, and camping in the hills, three hours from Chicago.</p>
+	<p class="big">Twenty artists, five farm-fresh meals, and camping in the hills, all included.</p>
+	<p class="big">Three hours from Chicago, or 10 minutes from downtown Green Lake.</p>
 	<img src="img/photos/tractor.jpg" class="header-alt">
+	<p>This year’s lineup:</p>
+	<p class-"big"></p>
 	<div id="tickets">
 		<h2>Reserve your spots</h2>
 		
@@ -347,7 +353,7 @@
 				<hr>
 			</div>
 			
-			<form class="ticket-form">
+			<form class="ticket-form" id="ticket-form">
 				<h3>Select an option:</h3>
 				<div class="selector">					
 					<label class="option">
@@ -392,9 +398,11 @@
 				
 				<h3>Friend of the Fest</h3>
 				<label class="checkbox-container">Add $200 to your total to help fund the fest for all, get an exclusive t-shirt, and have your name listed on our sponsor board.
-					<input type="checkbox">
+					<input type="checkbox" id="sponsorshipCheckbox">
 					<span class="checkmark"></span>
 				</label>
+				
+				<p class="total"><strong>Total:</strong> $</p>
 				
 				<button class="button" id="the-checkout-button" role="link" type="button">Checkout</button>
 				
@@ -419,17 +427,33 @@
 	</div>
 	
 	<script>
-	(function() {
+	(function() {		
 	  var stripe = Stripe('pk_test_VhcNh7WHsTGlc6eajQSqcjOM00m9S3MAtS');
+	  
+	  var passQuantity = document.getElementById('ticketQuantity').value;
+	  var sponsorshipQuantity = 0;
+	  
+	  function calculateTotal() {
+		  if (document.getElementById('sponsorshipCheckbox').checked == true) {
+			sponsorshipQuantity = 1;
+		} else {
+			sponsorshipQuantity = 0;
+		}
+		
+		  console.log(document.getElementById('ticketQuantity').value);
+		  console.log(sponsorshipQuantity);
+	  }
+	  
+	  // Bind calculateTotal to form's change event
+	  document.getElementById('ticket-form').addEventListener('input', calculateTotal);
 	
 	  var checkoutButton = document.getElementById('the-checkout-button');
-	  checkoutButton.addEventListener('click', function () {
-		/*
-		 * When the customer clicks on the button, redirect
-		 * them to Checkout.
-		 */
+	  checkoutButton.addEventListener('click', function () {		
 		stripe.redirectToCheckout({
-		  lineItems: [{price: 'price_1L2h45HzxwXeISKI1pLtXdcH', quantity: 1}],
+		  lineItems: [
+			  {price: 'price_1L2h3WHzxwXeISKIvX6IEE4f', quantity: passQuantity},
+			  {price: 'price_1L37ruHzxwXeISKIom3LpGG2', quantity: sponsorshipQuantity}
+		  ],
 		  mode: 'payment',
 		  /*
 		   * Do not rely on the redirect to the successUrl for fulfilling
