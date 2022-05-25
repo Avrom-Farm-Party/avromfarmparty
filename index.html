@@ -46,19 +46,18 @@
       <p>Just three hours from Chicago or 10 minutes from downtown Green Lake.</p>
       <p class="lineup">
         Featuring
-        <a href="#" target="_blank">Andrew Sa</a>,
-        <a href="#" target="_blank">Aux Thom</a>,
-        <a href="#" target="_blank">Case Oats (DJ set)</a>,
-        <a href="#" target="_blank">Dusk</a>,
-        <a href="#" target="_blank">Elizabeth Moen</a>,
-        <a href="#" target="_blank">Henry True</a>,
-        <a href="#" target="_blank">Lake James</a>,
-        <a href="#" target="_blank">Chromabeats</a>,
-        <a href="#" target="_blank">Max Subar</a>,
-        <a href="#" target="_blank">Raven Wright</a>,
-        <a href="#" target="_blank">Sammy Tweedy</a>,
-        <a href="#" target="_blank">Sima Cunningham</a>,
-        <a href="#" target="_blank">Wyatt Waddell</a>, and more to be announced.</li>
+        <a href="https://www.instagram.com/lonesomeandrew/" target="_blank">Andrew Sa</a>,
+        <a href="https://www.instagram.com/caseoats/" target="_blank">Case Oats (DJ set)</a>,
+        <a href="https://countrydusk.bandcamp.com" target="_blank">Dusk</a>,
+        <a href="https://elizabethmoen.bandcamp.com" target="_blank">Elizabeth Moen</a>,
+        <a href="https://henrytrue.bandcamp.com" target="_blank">Henry True</a>,
+        <a href="https://www.instagram.com/cadienlakejames/" target="_blank">Lake James</a>,
+        <a href="https://chromabeats.bandcamp.com" target="_blank">Chromabeats</a>,
+        <a href="https://maxsubar.bandcamp.com" target="_blank">Max Subar</a>,
+        <a href="https://instagram.com/oliviaoliveliv/" target="_blank">Raven Wright</a>,
+        <a href="https://sammytweedy.bandcamp.com" target="_blank">Sammy Tweedy</a>,
+        <a href="https://www.simacunningham.com" target="_blank">Sima Cunningham</a>,
+        <a href="https://wyattwaddell.bandcamp.com" target="_blank">Wyatt Waddell</a>, and more to be announced.</li>
       </p>
     </section>
 
@@ -76,14 +75,14 @@
           <ul>
             <li>Farm-fresh meals made with our produce and meats (vegetarian option available)</li>
             <li>Afternoons and evenings of great music</li>
-            <li>Camp site access (including family camping), portable restrooms, drinking water, handwashing station, first aid, and parking</li>
+            <li>Camp site access</li>
             <li>Craft, art, and gardening workshops</li>
             <li>A tour of Avrom Farm’s regenerative pastures</li>
             <li>Family-friendly games and activities</li>
           </ul>
           
           <details>
-            <summary><strong>Open the food menu…</strong></summary>
+            <summary><strong>Food Details</strong></summary>
             <ul>
               <li><strong>Friday dinner:</strong> Tacos by local Crusty’s Tacos</li>
               <li><strong>Saturday breakfast:</strong> Coffee, pancakes, eggs, sausage, grits, and fruit salad</li>
@@ -91,6 +90,11 @@
               <li><strong>Saturday dinner:</strong> Hog roast and sides, with vegetarian entree option</li>
               <li><strong>Sunday breakfast:</strong> Coffee, pancakes, eggs, sausage, grits, and fruit salad</li>
             </ul>
+          </details>
+          
+          <details>
+            <summary><strong>Camping Details</strong></summary>
+            <p>Camp sites have easy access to drinking water, portable restrooms, handwashing stations, and first aid. There are two camping areas; one area is reserved for families and folks who would like quieter time at night. Please bring your own tent and whatever other supplies you prefer for comfort. Festival parking is walking distance from camp sites, so please plan to walk your supplies from your vehicle to your camp site. Reach out to us with any questions you may have!</p>
           </details>
           
           <p>
@@ -107,12 +111,12 @@
         </div>
 
         <div>
-          <form id="ticket-form">
+          <div id="ticket-form">
             <fieldset>
               <label>Select an Option</label>
               <div class="selector">	
                 <label class="option">
-                  <input type="radio" checked="checked" name="radio">
+                  <input type="radio" checked="checked" name="ticketType" value="price_1L2h3WHzxwXeISKIvX6IEE4f">
                   <span class="option-inner">
                     Full Weekend Pass
                     <span class="price">$125</span>
@@ -120,14 +124,14 @@
                   </span>
                 </label>
                 <label class="option">
-                  <input type="radio" name="radio">
+                  <input type="radio" name="ticketType" value="price_1L2h3mHzxwXeISKIoytuHZbH">
                   <span class="option-inner">
                     Friday Pass
                     <span class="price">$90</span>
                 </span>
                 </label>
                 <label class="option">
-                  <input type="radio" name="radio">
+                  <input type="radio" name="ticketType" value="price_1L2h45HzxwXeISKI1pLtXdcH">
                   <span class="option-inner">
                     Saturday Pass
                     <span class="price">$90</span>
@@ -157,20 +161,18 @@
             
             <fieldset>
               <div class="label">Friend of the Festival</div>
-              <label class="checkbox-container">Add $200 to your total to help fund the fest for all, get an exclusive t-shirt, and have your name listed on our sponsor board.
+              <label class="checkbox-container">Add $200 to your total to help fund the fest for all, get an exclusive t-shirt, and have your name or company listed on our sponsor board.
                 <input type="checkbox" id="sponsorshipCheckbox">
                 <span class="checkmark"></span>
               </label>
             </fieldset>
             
-            <p class="total"><strong>Total:</strong> $</p>
+            <p class="total"><strong>Total:</strong> $<span id="orderTotal"></span></p>
 
             <p id="formError"></p>
 
-            <input type="hidden" id="orderTotal" name="orderTotal" value="0">
-
             <input type="submit" value="Check Out" id="checkoutButton">
-          </form>
+          </div>
         </div>
       </div>
     </section>
@@ -186,7 +188,7 @@
     
       <img src="assets/tractor.jpg" alt="A white sculpture made out of tractor parts towers next to a tent in which festivalgoers are eating dinner.">
     
-      <p>Today it’s a pasture-based farm run by Lester’s grandson Hayden Holbert, growing delicious food responsibly and regeneratively.</p>
+      <p>Today it’s a pasture-based farm run by Lester’s grandson Hayden Holbert, responsibly growing delicious food.</p>
     
       <div class="photo-group">
         <img src="assets/greenhouse.jpg" alt="The tomato greenhouse at Avrom Farm.">

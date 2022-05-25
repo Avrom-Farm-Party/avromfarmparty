@@ -79,13 +79,11 @@ html {
   font-size: calc(0.9em + 0.7vw);
   line-height: 1.4;
   font-family: sans-serif;
-  overflow-x: hidden; /* Sort of a hack for the header veggies positioning */
   scroll-behavior: smooth;
 }
 
 body {
   font-family: 'franklin-gothic-urw';
-  overflow-x: hidden; /* Sort of a hack for the header veggies positioning */
 }
 
 h3 {
@@ -299,7 +297,7 @@ header h1 {
 
   background-size: contain;
   background-repeat: no-repeat;
-  background-image: url(../assets/veggies/special-veggies/veggie-special-1.jpg);
+  background-image: url(../assets/veggies/veggie-special-1.jpg);
   background-position: center center;
 
   animation: veggie-dance 0.5s steps(2) infinite alternate;
@@ -307,12 +305,12 @@ header h1 {
 
 /* fix this weird selector */
 #about .photo-group.veggie:nth-of-type(3):after {
-  background-image: url(../assets/veggies/special-veggies/veggie-special-2.jpg);
+  background-image: url(../assets/veggies/veggie-special-2.jpg);
 }
 
 /* fix this weird selector */
 #about .photo-group.veggie:nth-of-type(4):after {
-  background-image: url(../assets/veggies/special-veggies/veggie-special-3.jpg);
+  background-image: url(../assets/veggies/veggie-special-3.jpg);
 }
 
 /* To put the veggie on the left instead */
@@ -361,6 +359,7 @@ header h1 {
 
 #intro p.lineup a {
   text-decoration: none;
+  white-space: nowrap;
 }
 
 #intro p.lineup a:nth-of-type(n) {
@@ -449,12 +448,12 @@ header h1 {
    ---------------------- */
 
 #tickets {
-  margin-top: 4em;
+  margin-top: 3em;
 }
 
 #tickets .form-area {
   background-color: moccasin;
-  padding: 0;
+  padding: 0.5em 0 1em;
   border-radius: var(--border-radius);
 }
 
@@ -464,6 +463,10 @@ header h1 {
 
 #tickets .form-area > div:first-child {
   border-bottom: 0.0625rem solid rgba(15,10,10,0.1); /* Setup for breakpoint style */
+}
+
+#tickets .form-area > div:last-child {
+  /* padding-top: 6vw; */
 }
 
 #tickets .form-area ul {
@@ -645,9 +648,10 @@ footer small {
    Success page styles
    ------------------- */
 
-#success header:after {
-  content: "";
-  display: none;
+#success section {
+  max-width: 840px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 /* ----------
@@ -669,6 +673,11 @@ footer small {
     transform: rotateY(0deg);
   }
  }
+ 
+ @keyframes veggie-dance {
+  from { transform: translateY(-50%) rotate(-5deg); }
+  to { transform: translateY(-50%) rotate(20deg); }
+ }
 
 /* -----------------
    Breakpoint styles
@@ -687,6 +696,7 @@ footer small {
   #tickets .form-area {
     display: flex;
     font-size: 0.85rem; /* Sorta one-off */
+    padding: 0;
   }
 
   #tickets .form-area > div:first-child {
