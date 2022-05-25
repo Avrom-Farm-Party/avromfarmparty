@@ -1,18 +1,17 @@
 {
-  "//1": "describes your app and its dependencies",
-  "//2": "https://docs.npmjs.com/files/package.json",
-  "//3": "updating this file will download and update your packages",
-  "name": "avrom-farm-party-2019",
-  "version": "0.0.1",
-  "description": "The website for Avrom Farm Party 2019",
-  "dependencies": {
-    "dotenv": "^8.0.0",
-    "netlify-cli": "^2.12.0",
-    "netlify-lambda": "^1.5.0",
-    "stripe": "^7.4.0"
+  "name": "avrom-farm-party-2022",
+  "version": "1.0.0",
+  "description": "Avrom Farm Party 2022.",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "author": "Avrom Farm Party",
+  "license": "UNLICENSED",
   "repository": {
     "url": "https://github.com/spencertweedy/avromfarmparty"
   },
-  "license": "MIT"
+  "dependencies": {
+    "dotenv": "^8.2.0",
+    "stripe": "^8.29.0"
+  }
 }
