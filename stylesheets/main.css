@@ -301,6 +301,7 @@ header h1 {
   background-position: center center;
 
   animation: veggie-dance 0.5s steps(2) infinite alternate;
+  mix-blend-mode: multiply;
 }
 
 /* fix this weird selector */
