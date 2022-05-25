@@ -362,11 +362,11 @@ header h1 {
   white-space: nowrap;
 }
 
-#intro p.lineup a:nth-of-type(n) {
+#intro p.lineup a:nth-of-type(3n-2) {
   color: var(--afp-red);
 }
 
-#intro p.lineup a:nth-of-type(2n) {
+#intro p.lineup a:nth-of-type(3n-1) {
   color: var(--afp-blue);
 }
 
