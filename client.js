@@ -17,10 +17,10 @@ var lineItems = [];
 var ticketPriceFull = 'price_1L2STzHzxwXeISKIRVUYROoE';
 var ticketPriceFriday = 'price_1L2SUpHzxwXeISKIVx2jQRRw';
 var ticketPriceSaturday = 'price_1L2SVMHzxwXeISKIxmWXXRkF';
+var sponsorshipPrice = 'price_1L3Pb9HzxwXeISKIRSSHdIhx';
 var ticketPriceFullInt = 125;
 var ticketPriceFridayInt = 90;
 var ticketPriceSaturdayInt = 90;
-var sponsorshipPrice = 'price_1L3Pb9HzxwXeISKIRSSHdIhx';
 var sponsorshipPriceInt = 200;
 
 // Other variables
