@@ -211,7 +211,7 @@ a {
    ------------------ */
 
 header, footer, section {
-  max-width: 92vw;
+  max-width: 92vw; // also defined in media query for tickets section
   box-sizing: border-box;
   margin: 1rem auto;
 }
@@ -450,12 +450,12 @@ header h1 {
 
 #tickets {
   margin-top: 3em;
+  max-width: 100%;
 }
 
 #tickets .form-area {
   background-color: moccasin;
   padding: 0.5em 0 1em;
-  border-radius: var(--border-radius);
 }
 
 #tickets .form-area > div {
@@ -693,11 +693,16 @@ footer small {
   #lineup ol br {
     display: initial;
   }
+  
+  #tickets {
+    max-width: 92vw;
+  }
 
   #tickets .form-area {
     display: flex;
     font-size: 0.85rem; /* Sorta one-off */
     padding: 0;
+    border-radius: var(--border-radius);
   }
 
   #tickets .form-area > div:first-child {
