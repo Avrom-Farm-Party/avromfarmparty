@@ -603,7 +603,6 @@ footer small {
 @keyframes twinkle {
   0% {
     filter: saturate(90%);
-    transform: rotateY(7deg);
   }
   
   50% {
@@ -612,7 +611,6 @@ footer small {
   
   100% {
     filter: saturate(120%);
-    transform: rotateY(0deg);
   }
  }
  
