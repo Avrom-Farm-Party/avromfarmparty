@@ -17,10 +17,12 @@ var lineItems = [];
 var ticketPriceFull = 'price_1L2STzHzxwXeISKIRVUYROoE';
 var ticketPriceFriday = 'price_1L2SUpHzxwXeISKIVx2jQRRw';
 var ticketPriceSaturday = 'price_1L2SVMHzxwXeISKIxmWXXRkF';
+var ticketPriceLocal = 'price_1LGrQxHzxwXeISKIHauc3Ccu';
 var sponsorshipPrice = 'price_1L3Pb9HzxwXeISKIRSSHdIhx';
 var ticketPriceFullInt = 125;
 var ticketPriceFridayInt = 90;
 var ticketPriceSaturdayInt = 90;
+var ticketPriceLocalInt = 60;
 var sponsorshipPriceInt = 200;
 
 // Other variables
@@ -53,6 +55,9 @@ function calculateTotal() {
 			break;
 		case ticketPriceSaturday:
 			ticketPrice = ticketPriceSaturdayInt;
+			break;
+		case ticketPriceLocal:
+			ticketPrice = ticketPriceLocalInt;
 	}
 	
 	// Add tickets to Stripe line items

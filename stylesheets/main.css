@@ -459,6 +459,7 @@ header h1 {
 
 #tickets .selector {
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-between;
   gap: 0.5em;
   width: 100%;
@@ -466,11 +467,12 @@ header h1 {
 }
 
 #tickets .selector .option {
-  width: 33%;
+  flex-basis: 30%;
   cursor: pointer;
   text-align: center;
   position: relative;
   display: flex;
+  flex-grow: 1;
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
