@@ -72,6 +72,7 @@ textarea {
   --afp-black: #0F0A0A;
   --border-radius: 0.25rem;
   --larger-font-size: 1.3rem;
+  --letter-spacing: -0.025em;
 }
 
 html {
@@ -261,6 +262,7 @@ header h1 {
   margin: 2em auto;
   font-size: 1.4em;
   line-height: 1.2em;
+  letter-spacing: var(--letter-spacing);
 }
 
 #about img {
@@ -354,7 +356,7 @@ header h1 {
 #intro p {
   font-size: 2em;
   font-weight: bold;
-  letter-spacing: -0.025em;
+  letter-spacing: var(--letter-spacing);
   line-height: 1.2em;
   max-width: 840px;
   margin-left: auto;
