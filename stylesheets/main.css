@@ -354,6 +354,7 @@ header h1 {
 #intro p {
   font-size: 2em;
   font-weight: bold;
+  letter-spacing: -0.025em;
   line-height: 1.2em;
   max-width: 840px;
   margin-left: auto;
