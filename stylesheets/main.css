@@ -444,6 +444,10 @@ header h1 {
   margin: 0.5em 0;
 }
 
+#tickets .form-area fieldset > label {
+  font-size: 1.2em;
+}
+
 #tickets .form-area fieldset p:last-child {
   margin-bottom: 0;
 }
@@ -508,17 +512,19 @@ header h1 {
   border: 0.1em solid rgba(0,0,0,0.1);
 }
 
-#tickets .selector .option-inner .price {
+#tickets .selector .option-inner span {
   font-size: 0.8em;
   font-weight: normal;
   margin-top: 0.35em;
 }
 
 #tickets .selector .option-inner .save {
-  font-size: 0.8em;
-  font-weight: normal;
-  margin-top: 0.35em;
   transition: all 0.1s;
+}
+
+#tickets .selector .option-inner .meals {
+  border: 0.01em solid currentcolor;
+  border-radius: 1em;
 }
 
 #tickets .quantity-selector {
