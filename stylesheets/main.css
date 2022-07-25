@@ -444,8 +444,8 @@ header h1 {
   margin: 0.5em 0;
 }
 
-#tickets .form-area fieldset > label {
-  font-size: 1.2em;
+#tickets .form-area fieldset > label:not(.checkbox-container), #tickets .form-area fieldset .label {
+  font-size: 1.1em;
 }
 
 #tickets .form-area fieldset p:last-child {
