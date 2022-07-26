@@ -395,6 +395,19 @@ header h1 {
   display: block;
 }
 
+/* -----------------------
+ Learn more section styles
+ ------------------------- */
+
+#learn-more {
+  text-align: center;
+  margin-top: 3em;
+}
+
+#learn-more .button {
+  font-size: 1.6em;
+}
+
 /* ----------------------
    Tickets section styles
    ---------------------- */
