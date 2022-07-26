@@ -512,7 +512,7 @@ header h1 {
   border: 0.1em solid rgba(0,0,0,0.1);
 }
 
-#tickets .selector .option-inner span {
+#tickets .selector .option-inner > span {
   font-size: 0.8em;
   font-weight: normal;
   margin-top: 0.35em;
@@ -522,9 +522,16 @@ header h1 {
   transition: all 0.1s;
 }
 
-#tickets .selector .option-inner .meals {
+#tickets .selector .option-inner .price {
+  font-weight: bold;
+}
+
+#tickets .selector .option-inner .meals span {
   border: 0.01em solid currentcolor;
   border-radius: 1em;
+  padding: 0 0.7em;
+  margin: 0.1em 0;
+  display: inline-block;
 }
 
 #tickets .quantity-selector {

@@ -17,11 +17,17 @@ var lineItems = [];
 var ticketPriceFull = 'price_1L2STzHzxwXeISKIRVUYROoE';
 var ticketPriceFriday = 'price_1L2SUpHzxwXeISKIVx2jQRRw';
 var ticketPriceSaturday = 'price_1L2SVMHzxwXeISKIxmWXXRkF';
+var ticketPriceFullNoMeals = 'price_1LPbHGHzxwXeISKIU72jHiSo';
+var ticketPriceFridayNoMeals = 'price_1LPbIAHzxwXeISKIl8xAPmsO';
+var ticketPriceSaturdayNoMeals = 'price_1LPbIWHzxwXeISKIiMQgKqC4';
 var ticketPriceLocal = 'price_1LGrQxHzxwXeISKIHauc3Ccu';
 var sponsorshipPrice = 'price_1L3Pb9HzxwXeISKIRSSHdIhx';
 var ticketPriceFullInt = 125;
 var ticketPriceFridayInt = 90;
 var ticketPriceSaturdayInt = 90;
+var ticketPriceFullNoMealsInt = 75;
+var ticketPriceFridayNoMealsInt = 40;
+var ticketPriceSaturdayNoMealsInt = 40;
 var ticketPriceLocalInt = 60;
 var sponsorshipPriceInt = 200;
 
@@ -55,6 +61,15 @@ function calculateTotal() {
 			break;
 		case ticketPriceSaturday:
 			ticketPrice = ticketPriceSaturdayInt;
+			break;
+		case ticketPriceFullNoMeals:
+			ticketPrice = ticketPriceFullNoMealsInt;
+			break;
+		case ticketPriceFridayNoMeals:
+			ticketPrice = ticketPriceFridayNoMealsInt;
+			break;
+		case ticketPriceSaturdayNoMeals:
+			ticketPrice = ticketPriceSaturdayNoMealsInt;
 			break;
 		case ticketPriceLocal:
 			ticketPrice = ticketPriceLocalInt;
