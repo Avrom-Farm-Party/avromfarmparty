@@ -132,6 +132,22 @@ a {
   color: var(--afp-black);
 }
 
+nav a {
+  white-space: nowrap;
+}
+
+summary > span {
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+details > div {
+  padding: 1em;
+  background: rgba(0,0,0,0.1);
+  border-radius: var(--border-radius);
+  margin: 0.5em 0 1em;
+}
+
 ::selection {
   background: var(--afp-black);
   color: #fff;
@@ -406,6 +422,8 @@ header h1 {
 
 #learn-more .button {
   font-size: 1.6em;
+  margin-bottom: 0.5em;
+  display: inline-block;
 }
 
 /* ----------------------
