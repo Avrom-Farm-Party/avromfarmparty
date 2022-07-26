@@ -598,7 +598,7 @@ header h1 {
 }
 
 #tickets #checkoutButton {
-  min-width: 50%;
+  min-width: 100%;
   padding-top: 1em;
   padding-bottom: 1em;
 }
@@ -683,6 +683,10 @@ footer small {
 
   #tickets .form-area > div:nth-child(2) {
     flex-basis: 45%;
+  }
+  
+  #tickets #checkoutButton {
+    min-width: 50%;
   }
 }
 
