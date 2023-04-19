@@ -101,7 +101,6 @@ checkoutButton.addEventListener('click', function () {
 	stripe.redirectToCheckout({
 	  lineItems: lineItems,
 	  mode: 'payment',
-	  payment_method_types: ['card','affirm','afterpay_clearpay','cashapp','klarna','link'],
 	  /*
 	   * Do not rely on the redirect to the successUrl for fulfilling
 	   * purchases, customers may not always reach the success_url after
