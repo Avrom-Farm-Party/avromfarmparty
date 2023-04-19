@@ -3,7 +3,7 @@
 // ============
 
 // Form elements
-var form = document.getElementById('ticket-form');
+var form = document.getElementById('ticketForm');
 var formError = document.getElementById('formError');
 var ticketType = ''; // must be queried in the function itself due to nature of radio buttons
 var ticketQuantity = document.getElementById('ticketQuantity');
@@ -14,21 +14,19 @@ var checkoutButton = document.getElementById('checkoutButton');
 // Stripe variables
 var stripe = Stripe('pk_live_ecGmKZ3U8636cHWaaoEoIEPD007kMBdziI');
 var lineItems = [];
-var ticketPriceFull = 'price_1L2STzHzxwXeISKIRVUYROoE';
-var ticketPriceFriday = 'price_1L2SUpHzxwXeISKIVx2jQRRw';
-var ticketPriceSaturday = 'price_1L2SVMHzxwXeISKIxmWXXRkF';
-var ticketPriceFullNoMeals = 'price_1LPbHGHzxwXeISKIU72jHiSo';
-var ticketPriceFridayNoMeals = 'price_1LPbIAHzxwXeISKIl8xAPmsO';
-var ticketPriceSaturdayNoMeals = 'price_1LPbIWHzxwXeISKIiMQgKqC4';
-var ticketPriceLocal = 'price_1LGrQxHzxwXeISKIHauc3Ccu';
-var sponsorshipPrice = 'price_1L3Pb9HzxwXeISKIRSSHdIhx';
-var ticketPriceFullInt = 125;
-var ticketPriceFridayInt = 90;
-var ticketPriceSaturdayInt = 90;
-var ticketPriceFullNoMealsInt = 75;
-var ticketPriceFridayNoMealsInt = 40;
-var ticketPriceSaturdayNoMealsInt = 40;
-var ticketPriceLocalInt = 60;
+var earlybirdWeekendPrice = 'price_1MyU6uHzxwXeISKIEhATFkeY';
+var earlybirdFridayPrice = 'price_1MyU6uHzxwXeISKIZKilwxvR';
+var earlybirdSaturdayPrice = 'price_1MyU7bHzxwXeISKIOrMjSchD';
+var weekendPrice = 'price_1MyU82HzxwXeISKIdj4jpzVu';
+var fridayPrice = 'price_1MyU8FHzxwXeISKIqiTK0p18';
+var saturdayPrice = 'price_1MyU8bHzxwXeISKIRqgSHOri';
+var sponsorshipPrice = 'price_1MyUDVHzxwXeISKIivV5y2xZ';
+var earlybirdWeekendPriceInt = 80.75;
+var earlybirdFridayPriceInt = 38.25;
+var earlybirdSaturdayPriceInt = 55.25;
+var weekendPriceInt = 95;
+var fridayPriceInt = 45;
+var saturdayPriceInt = 65;
 var sponsorshipPriceInt = 200;
 
 // Other variables
@@ -53,30 +51,27 @@ function calculateTotal() {
 	
 	// Update ticketPrice based on current ticket type
 	switch (ticketType) {
-		case ticketPriceFull:
-			ticketPrice = ticketPriceFullInt;
+		case earlybirdWeekendPrice:
+			ticketPrice = earlybirdWeekendPriceInt;
 			break;
-		case ticketPriceFriday:
-			ticketPrice = ticketPriceFridayInt;
+		case earlybirdFridayPrice:
+			ticketPrice = earlybirdFridayPriceInt;
 			break;
-		case ticketPriceSaturday:
-			ticketPrice = ticketPriceSaturdayInt;
+		case earlybirdSaturdayPrice:
+			ticketPrice = earlybirdSaturdayPriceInt;
 			break;
-		case ticketPriceFullNoMeals:
-			ticketPrice = ticketPriceFullNoMealsInt;
+		case weekendPrice:
+			ticketPrice = weekendPriceInt;
 			break;
-		case ticketPriceFridayNoMeals:
-			ticketPrice = ticketPriceFridayNoMealsInt;
+		case fridayPrice:
+			ticketPrice = fridayPriceInt;
 			break;
-		case ticketPriceSaturdayNoMeals:
-			ticketPrice = ticketPriceSaturdayNoMealsInt;
-			break;
-		case ticketPriceLocal:
-			ticketPrice = ticketPriceLocalInt;
+		case saturdayPrice:
+			ticketPrice = saturdayPriceInt;
 	}
 	
 	// Add tickets to Stripe line items
-	var ticketsItem = {price: ticketType, quantity: parseInt(ticketQuantity.value)};
+	var ticketsItem = {price: ticketType, quantity: parseFloat(ticketQuantity.value)};
 	lineItems.push(ticketsItem);
 	
 	// Determine whether sponsorship checkbox is checked
@@ -89,11 +84,11 @@ function calculateTotal() {
 	}
 
 	// Update DOM with order total
-	orderTotal.innerHTML = parseInt(ticketQuantity.value) * parseInt(ticketPrice) + (isSponsoring ? sponsorshipPriceInt : 0);
+	orderTotal.innerHTML = parseFloat(ticketQuantity.value) * parseFloat(ticketPrice) + (isSponsoring ? sponsorshipPriceInt : 0);
 }
 
 // Bind calculateTotal to form's change event
-document.getElementById('ticket-form').addEventListener('input', calculateTotal);
+document.getElementById('ticketForm').addEventListener('input', calculateTotal);
 
 // =============
 // Stripe stuff!
