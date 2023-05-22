@@ -15,6 +15,7 @@ var checkoutButton = document.getElementById('checkoutButton');
 var stripe = Stripe('pk_live_ecGmKZ3U8636cHWaaoEoIEPD007kMBdziI');
 var lineItems = [];
 var earlybirdWeekendPrice = 'price_1MyU6uHzxwXeISKIEhATFkeY';
+var earlybirdWeekendPriceLastCall = 'price_1NAQbsHzxwXeISKIZCdHBwTo';
 var earlybirdFridayPrice = 'price_1MyU6uHzxwXeISKIZKilwxvR';
 var earlybirdSaturdayPrice = 'price_1MyU7bHzxwXeISKIOrMjSchD';
 var weekendPrice = 'price_1MyU82HzxwXeISKIdj4jpzVu';
@@ -22,6 +23,7 @@ var fridayPrice = 'price_1MyU8FHzxwXeISKIqiTK0p18';
 var saturdayPrice = 'price_1MyU8bHzxwXeISKIRqgSHOri';
 var sponsorshipPrice = 'price_1MyUDVHzxwXeISKIivV5y2xZ';
 var earlybirdWeekendPriceInt = 80.75;
+var earlybirdWeekendPriceLastCallInt = 90;
 var earlybirdFridayPriceInt = 38.25;
 var earlybirdSaturdayPriceInt = 55.25;
 var weekendPriceInt = 95;
@@ -53,6 +55,9 @@ function calculateTotal() {
 	switch (ticketType) {
 		case earlybirdWeekendPrice:
 			ticketPrice = earlybirdWeekendPriceInt;
+			break;
+		case earlybirdWeekendPriceLastCall:
+			ticketPrice = earlybirdWeekendPriceLastCallInt;
 			break;
 		case earlybirdFridayPrice:
 			ticketPrice = earlybirdFridayPriceInt;
