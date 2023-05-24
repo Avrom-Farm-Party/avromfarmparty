@@ -7,7 +7,8 @@ module.exports = {
     },
     extend: {
       fontFamily: {
-        'headline': ['"Trebuchet MS"', 'sans-serif']
+        'headline': ['"Trebuchet MS"', 'sans-serif'],
+        'cursive': ['"Brush Script MT"', 'cursive']
       },
       colors: {
         'afp-red': '#F24307',
@@ -21,6 +22,8 @@ module.exports = {
         'maggie-orange-lo': '#ff9800',
         'maggie-red': '#e45a17',
         'maggie-green': '#65672a',
+        'maggie-yellow': '#ffbf00',
+        'maggie-blue': '#2e8ccc',
       },
       keyframes: {
         scroll: {
