@@ -3,7 +3,31 @@
 @tailwind utilities;
 
 @layer base {
-	a {
+	@font-face {
+		font-family: 'Champion';
+		src: url('../assets/fonts/Champion-HTF-Heavyweight.otf');
+		font-weight: normal;
+	}
+	
+	p a, nav a, label a {
 		@apply text-maggie-red underline underline-offset-2 decoration-2;
+	}
+}
+
+@layer utilities {
+	.section {
+		@apply py-16 px-4 md:px-8;
+	}
+	
+	.h2 {
+		@apply text-center text-5xl font-headline font-bold tracking-supertight max-w-[30ch] mx-auto;
+	}
+	
+	.text-outline-maggie-dark-green {		
+		text-shadow:
+		   -1px -1px 0 #241f20,  
+			1px -1px 0 #241f20,
+			-1px 1px 0 #241f20,
+			 1px 1px 0 #241f20;
 	}
 }
