@@ -1,15 +1,23 @@
 <!doctype html>
-<html lang="en-US" class="bg-maggie-offwhite text-[calc(1.1em_+_0.25vw)] selection:bg-maggie-red selection:text-white scroll-smooth">
+<html lang="en-US" class="bg-hannah-offwhite text-[calc(1.1em_+_0.25vw)] selection:bg-hannah-red selection:text-white scroll-smooth">
 <head>
 	<meta charset="utf-8">
 
-	<title>Avrom Farm Party 2024 | music, farm-fresh food, and camping in Green Lake, Wisconsin</title>
+	<title>Avrom Farm Party 2024 | Green Lake, Wisconsin music and food festival, camping</title>
 	
-	<meta name="description" content="Avrom Farm Party is an annual, family-friendly music and food festival in Green Lake, Wisconsin.">
+	<!-- Define page stuff -->
+	<meta name="description" content="A weekend to relax, a parade of great music, and a feast of farm-fresh food in Green Lake, Wisconsin.">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link id="favicon" rel="icon" href="favicon.ico" type="image/x-icon">
 	<link rel="stylesheet" href="stylesheets/output.css">
-	<meta name="theme-color" content="#f4f8d8">
+	
+	<!-- Import Google Fonts -->
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Averia+Serif+Libre:ital,wght@0,400;0,700;1,400;1,700&family=Yarndings+20&display=swap" rel="stylesheet">
+	
+	<!-- Import Stripe -->
+	<script src="https://js.stripe.com/v3/"></script>
 	
 	<!-- Import the webpage's client-side JavaScript -->
 	<script src="client.js" defer></script>
@@ -29,26 +37,212 @@
 	<script async src="https://spoonalytics.net/script.js" data-website-id="2a8d12b9-5702-4afa-9234-c169b9f5c9e5"></script>
 </head>
 
-<body class="">
-	<main class="divide-y divide-black">		
-		<section class="section bg-maggie-pink">
-			<h1 class="sr-only">Avrom Farm Party</h1>
+<body class="font-serif">
+	<header class="bg-white mt-4 mx-4 md:mx-10 md:mt-8 mb-2 px-6 py-8 flex flex-col md:flex-row gap-6 items-center justify-between relative">
+		<div class="h-2 bg-hannah-red absolute -top-2 left-0 right-0 border-y border-black"></div>
+		<div class="w-2 bg-hannah-pink absolute -left-2 top-0 bottom-0 border-x border-black"></div>
+		<div class="w-2 bg-hannah-pink absolute -right-2 top-0 bottom-0 border-x border-black"></div>
+		<div class="w-2 h-2 bg-black absolute -left-2 -top-2"></div>
+		<div class="w-2 h-2 bg-black absolute -right-2 -top-2"></div>
+		
+		<div class="text-center md:text-start">
+			<h1 class="text-2xl font-bold uppercase">Avrom Farm Party</h1>
+			<h2 class="text-sm">Green Lake, WI &bull; Aug 9-11, 2024</h2>
+		</div>
+		<div><a href="#tickets" class="bg-afp-blue border-2 border-black text-white p-4 leading-10 rounded-xl cursor-pointer"><span class="font-yarndings text-2xl relative top-1 pr-2" aria-hidden="true">j</span>Buy Tickets<span class="font-yarndings text-2xl relative top-1 pl-2" aria-hidden="true">j</span></a></div>
+	</header>
+	
+	<main class="space-y-2">
+		<section class="mx-4 md:mx-10 relative">
+			<div class="h-2 bg-hannah-green absolute -top-2 left-0 right-0 border-y border-black"></div>
+			<div class="w-2 bg-hannah-red absolute -left-2 top-0 bottom-0 border-x border-black"></div>
+			<div class="w-2 bg-hannah-red absolute -right-2 top-0 bottom-0 border-x border-black"></div>
+			<div class="w-2 h-2 bg-black absolute -left-2 -top-2"></div>
+			<div class="w-2 h-2 bg-black absolute -right-2 -top-2"></div>
+			<img src="assets/afp23-1.jpg" alt="Attendees sitting on haybales in a grassy field watch an artist perform at Avrom Farm Party." class="w-full">
+		</section>
+		<section class="bg-white relative mx-4 md:mx-10 py-8 px-8 md:py-16">
+			<div class="h-2 bg-hannah-green absolute -top-2 left-0 right-0 border-y border-black"></div>
+			<div class="w-2 bg-hannah-pink absolute -left-2 top-0 bottom-0 border-x border-black"></div>
+			<div class="w-2 bg-hannah-pink absolute -right-2 top-0 bottom-0 border-x border-black"></div>
+			<div class="w-2 h-2 bg-black absolute -left-2 -top-2"></div>
+			<div class="w-2 h-2 bg-black absolute -right-2 -top-2"></div>
 			
-			<div class="mx-auto mb-8 max-w-4">
-				<img class="rounded-2xl border border-black w-full max-w-[600px] mx-auto" src="assets/2023-recap.jpg" alt="Attendees face the wagon stage on the grassy field at Avrom Farm Party 2023.">
+			<div class="space-y-6 text-xl md:text-3xl max-w-screen-lg mx-auto">
+				<p class=""><span class="text-hannah-red">Avrom</span> <span class="text-hannah-blue">Farm</span> <span class="text-hannah-green">Party</span> is a music and food festival in the hills that overlook Green Lake, Wisconsin.</p>
+				<p class="">It’s a weekend to relax, a parade of great music, and a feast of farm-fresh food.</p>
+				<p class="">And it’s a celebration of regenerative agriculture. Our purpose is to make nutritious, responsibly grown food available and accessible in daily life.</p>
 			</div>
+		</section>
+		<section id="tickets" class="bg-white relative mx-4 md:mx-10 py-8 px-8 md:py-16">
+			<div class="h-2 bg-hannah-green absolute -top-2 left-0 right-0 border-y border-black"></div>
+			<div class="w-2 bg-hannah-red absolute -left-2 top-0 bottom-0 border-x border-black"></div>
+			<div class="w-2 bg-hannah-red absolute -right-2 top-0 bottom-0 border-x border-black"></div>
+			<div class="w-2 h-2 bg-black absolute -left-2 -top-2"></div>
+			<div class="w-2 h-2 bg-black absolute -right-2 -top-2"></div>
 			
-			<h2 class="h2 mb-8">Thanks for a great festival in 2023</h2>
+			<div class="max-w-screen-md mx-auto">
+				<h2 class="font-bold text-4xl mb-6">Buy Tickets</h2>
+				<p class="text-lg mb-8"><span class="italic bg-yellow-500 inline-block px-2">EARLYBIRD PRICING! Save 15% by reserving your ticket now. When the lineup is announced later this month, tickets will return to their normal price.</span></p>
 			
-			<p class="text-center mb-8">Avrom Farm Party 2024 is on <strong>August 9-11</strong>. Look out for more info soon.</p>
+				<div id="ticketForm" class="space-y-4">				
+					<fieldset class="">
+						<label class="text-lg tracking-[-0.035em] font-bold w-full block mb-2">Which day(s) would you like to attend?</label>
+						<div class="flex flex-wrap justify-between w-full bg-black/5 rounded-2xl">
+							<div class="basis-full md:basis-[30%] cursor-pointer text-center flex grow select-none relative rounded-2xl">
+								<input type="radio" checked="checked" name="ticketType" id="weekend" class="appearance-none peer absolute z-0 opacity-0" value="price_1P117CHzxwXeISKIvJaguPAK">
+								<label for="weekend" class="flex w-full flex-col justify-center transition-all ring-black peer-checked:ring-2 peer-checked:text-white peer-checked:bg-afp-blue peer-checked:shadow-xl py-4 px-2 font-bold rounded-2xl cursor-pointer z-10">
+									<span class="underline underline-offset-2 decoration-2 mb-1">Weekend</span>
+									<span class="font-normal"><span class="line-through">$99</span> $84.15</span>
+								</label>
+							</div>
+							<div class="basis-full md:basis-[30%] cursor-pointer text-center flex grow select-none relative rounded-2xl">
+								<input type="radio" name="ticketType" id="friday" class="appearance-none peer absolute z-0 opacity-0" value="price_1P118MHzxwXeISKIZK472Uti">
+								<label for="friday" class="flex w-full flex-col justify-center transition-all ring-black peer-checked:ring-2 peer-checked:text-white peer-checked:bg-afp-blue peer-checked:shadow-xl py-4 px-2 font-bold rounded-2xl cursor-pointer z-10">
+									<span class="underline underline-offset-2 decoration-2 mb-1">Friday</span>
+									<span class="font-normal"><span class="line-through">$49</span> $41.65</span>
+								</label>
+							</div>
+							<div class="basis-full md:basis-[30%] cursor-pointer text-center flex grow select-none relative rounded-2xl">
+								<input type="radio" name="ticketType" id="saturday" class="appearance-none peer absolute z-0 opacity-0" value="price_1P117dHzxwXeISKIIAVRtfHe">
+								<label for="saturday" class="flex w-full flex-col justify-center transition-all ring-black peer-checked:ring-2 peer-checked:text-white peer-checked:bg-afp-blue peer-checked:shadow-xl py-4 px-2 font-bold rounded-2xl cursor-pointer z-10">
+									<span class="underline underline-offset-2 decoration-2 mb-1">Saturday</span>
+									<span class="font-normal"><span class="line-through">$69</span> $58.65</span>
+								</label>
+							</div>
+						</div>
+					</fieldset>
+					
+					<fieldset class="">
+						<label for="ticketQuantity" class="text-lg tracking-[-0.035em] font-bold w-full block mb-2">How many tickets?</label>
+						<div class="bg-black/5 rounded-2xl p-4">
+							<select id="ticketQuantity" name="ticketQuantity" class="relative -top-0.5 w-full">
+								<option value="1">1</option>
+								<option value="2">2</option>
+								<option value="3">3</option>
+								<option value="4">4</option>
+								<option value="5">5</option>
+								<option value="6">6</option>
+								<option value="7">7</option>
+								<option value="8">8</option>
+								<option value="9">9</option>
+								<option value="10">10</option>
+							</select>
+						</div>
+					</fieldset>
+					
+					<fieldset class="space-y-2">
+						<div class="text-lg tracking-[-0.035em] font-bold w-full block">Meal Bundle</div>
+						<p>You can pre-purchase meals for a discount. We serve fresh, hot, locally produced food at Friday dinner, Saturday breakfast, lunch, and dinner, and Sunday breakfast. By pre-purchasing, you make it easier for us to plan and you save yourself a bit of money, too.</p>
+						<div class="bg-black/5 rounded-2xl p-4 flex gap-2">
+							<input type="checkbox" id="mealBundleCheckbox" class="appearance-none w-6 h-6 shrink-0 rounded-lg bg-white cursor-pointer transition-all border-2 border-black checked:bg-black after:content-['✓'] text-white text-center">
+							<label class="cursor-pointer select-none" for="mealBundleCheckbox">Yes, bundle my meals for $80 per person ($89 value)</label>
+						</div>
+					</fieldset>
+					
+					<fieldset class="space-y-2">
+						<div class="text-lg tracking-[-0.035em] font-bold w-full block">Friend of the Festival</div>
+						<p>Every year, some attendees choose to make an additional donation to help fund the fest for all, to get an exclusive merch item, and to list their name on our thank-you board.</p>
+						<div class="bg-black/5 rounded-2xl p-4 flex gap-2">
+							<input type="checkbox" id="sponsorshipCheckbox" class="appearance-none w-6 h-6 shrink-0 rounded-lg bg-white cursor-pointer transition-all border-2 border-black checked:bg-black after:content-['✓'] text-white text-center">
+							<label class="cursor-pointer select-none" for="sponsorshipCheckbox">Yes, add a $200 donation, I’m a FotF!</label>
+						</div>
+					</fieldset>
+					
+					<p class="text-center text-xl tracking-supertight"><strong>Total:</strong> $<span id="orderTotal"></span></p>
+					
+					<span id="formError"></span>
+					
+					<input type="submit" value="Check Out" id="checkoutButton" class="bg-afp-blue border-2 border-black w-full md:w-auto text-white px-16 py-4 rounded-2xl font-bold tracking-tighter text-lg cursor-pointer mx-auto block hover:shadow-lg hover:scale-110 transition-all" data-umami-event="Checkout button">
+					
+					<div class="space-y-2">
+						<p class="font-bold">August 9-11, 2024 at <a href="https://goo.gl/maps/KxbFHK1qxVkJueLe6" target="_blank">W908 Scott Hill Road, Ripon, WI</a></p>
+						<p><strong>Food and drinks are not included with admission.</strong> (Clean drinking water is always free.) For safety and health reasons, dogs, outside food and drinks (except those that are medically required), and weapons are not allowed. If you have any questions, please <a href="mailto:admin@avromfarmparty.com?subject=Avrom Farm Party 2024">email us</a>.</p>
+						<p>We want the festival to be accessible to as many people as possible. If your budget is tight, please <a href="mailto:admin@avromfarmparty.com?subject=Ticket assistance">reach out</a>. We have volunteer opportunities and we’re always happy to work something out.</p>
+						<p>Discounts are available for residents of Green Lake County and nearby towns. <a href="mailto:admin@avromfarmparty.com?subject=Local discount">Email us</a>.</p>
+						<p>Children 12 and under don’t require a separate ticket.</p>
+						<p>All tickets include camp site access and parking.</p>					
+						<details>
+							<summary><span class="underline cursor-pointer">Schedule</span></summary>
+							<div class="p-4 bg-black/10 rounded-2xl mt-2 mb-4">
+								<p>Doors open on Friday afternoon. Programming ends on Sunday morning. Artist set times and the meal and activity schedule will be announced soon.</p>
+							</div>
+						</details>
 						
+						<details>
+							<summary><span class="underline cursor-pointer">Camping details</span></summary>
+							<div class="p-4 bg-black/10 rounded-2xl mt-2 mb-4">
+								<p>Camp sites have easy access to drinking water, portable restrooms, handwashing stations, and first aid. There are two camping areas; one area is reserved for families and folks who would like quieter time at night. Please bring your own tent and whatever other supplies you prefer for comfort. Festival parking is a moderate distance from camp sites, so please plan to walk or cart your supplies from your vehicle to your camp site. Reach out to us with any questions you may have.</p>
+							</div>
+						</details>
+					</div>
+				</div>
+			</div>
+		</section>
+		<section class="bg-white relative mx-4 md:mx-10 p-4 md:p-8">
+			<div class="h-2 bg-hannah-green absolute -top-2 left-0 right-0 border-y border-black"></div>
+			<div class="w-2 bg-hannah-pink absolute -left-2 top-0 bottom-0 border-x border-black"></div>
+			<div class="w-2 bg-hannah-pink absolute -right-2 top-0 bottom-0 border-x border-black"></div>
+			<div class="w-2 h-2 bg-black absolute -left-2 -top-2"></div>
+			<div class="w-2 h-2 bg-black absolute -right-2 -top-2"></div>
+			
+			<div class="space-y-4 md:space-y-0 md:grid md:grid-cols-3 md:gap-4">
+				<img src="assets/afp23-2.webp" class="col-span-2 rounded-2xl border-2 border-black" alt="A festival employee smiles wearing a denim apron and bandana tied around his forehead while leaning on a sink.">
+				<div class="space-y-4">
+					<img src="assets/afp23-3.webp" class=" rounded-2xl border-2 border-black" alt="Farm festival attendees sit on haybales and talk.">
+					<img src="assets/afp23-4.webp" class=" rounded-2xl border-2 border-black" alt="Two festival attendees pose and smile while wearing a tandem crocheted hat.">
+				</div>
+				<div class="space-y-4">
+					<img src="assets/afp23-6.webp" class=" rounded-2xl border-2 border-black" alt="A festival artist plays acoustic guitar among trees.">
+					<img src="assets/afp23-7.webp" class=" rounded-2xl border-2 border-black" alt="Festival employees stoke wood to create charcoal for a pig roast.">
+				</div>
+				<img src="assets/afp23-5.webp" class="col-span-2 rounded-2xl border-2 border-black" alt="Festival attendees meditate in a morning movement workshop.">
+			</div>
+		</section>
+		<section class="bg-white relative mx-4 md:mx-10 p-8 md:py-16">
+			<div class="h-2 bg-hannah-green absolute -top-2 left-0 right-0 border-y border-black"></div>
+			<div class="w-2 bg-hannah-red absolute -left-2 top-0 bottom-0 border-x border-black"></div>
+			<div class="w-2 bg-hannah-red absolute -right-2 top-0 bottom-0 border-x border-black"></div>
+			<div class="w-2 h-2 bg-black absolute -left-2 -top-2"></div>
+			<div class="w-2 h-2 bg-black absolute -right-2 -top-2"></div>
+			
+			<div class="max-w-prose mx-auto">
+				<h2 class="font-bold text-4xl mb-4">About the farm</h2>
+				
+				<div class="space-y-4">
+					<img src="assets/lester.jpg" class="rounded-2xl border-2 border-black" alt="Lester Schwartz applies a brush to a large, geometric painting.">
+					
+					<p>Avrom Farm began its life in the 1950s as the home and workplace of sculptor-painter Lester Schwartz. The land had been a dairy farm. When Lester moved in, he renamed it after his father, Abraham, and built on its highest point an inviting, mid-century modern home imbued with the naturalistic shapes of his sculptures and paintings.</p>
+					
+					<p>Over the next several decades, Lester turned Avrom Farm into a veritable museum and sculpture park. He populated its rolling hills with large works made of farm implements (a tractor!) and surplus bottles from the Miller High Life brewery. He taught students at the nearby Ripon College and created paintings that are collected by the Smithsonian.</p>
+					
+					<p>Meanwhile, Lester’s grandson Hayden Holbert grew up in Chicago making frequent visits to the farm, running around among Lester’s art and eventually planting vegetable seeds in the once-fertile soil, hoping they would grow. Hayden immersed himself in books about animal husbandry and nutrient cycles and in 2013, he enrolled in Warren Wilson College to study sustainable agriculture and to work at the college’s 275-acre pasture-based livestock farm.</p>
+					
+					<p>After receiving his degree, Hayden returned to Avrom Farm and grew it into a full-time, livestock and vegetable pasture. Using centuries-old techniques, Hayden and fellow farmers restored the land’s soil, increased its biodiversity, and created a symbiotic relationship between pigs, chickens, and vegetables to provide delicious, nutrient-rich food to farmers markets, restaurants, and homes in Wisconsin and Illinois.</p>
+					
+					<p>In 2018, Hayden and his longtime friend and bandmate Spencer Tweedy organized <span class="text-hannah-red">Avrom</span> <span class="text-hannah-blue">Farm</span> <span class="text-hannah-green">Party</span> to promote regenerative agriculture and to share great music and food with friends and strangers. Since then, the festival has grown into hundreds of people’s favorite part of the summer, a time to get away from normal life, an opportunity to discover new artists, and, as of 2024, a fundraiser for food programs to be carried out by a new nonprofit.</p>
+				</div>
+			</div>
+		</section>
+		<section class="bg-orange-500/10 relative mx-4 md:mx-10 p-8 md:py-16">
+			<div class="h-2 bg-hannah-green absolute -top-2 left-0 right-0 border-y border-black"></div>
+			<div class="h-2 bg-hannah-red absolute -bottom-2 left-0 right-0 border-y border-black"></div>
+			<div class="w-2 bg-hannah-pink absolute -left-2 top-0 bottom-0 border-x border-black"></div>
+			<div class="w-2 bg-hannah-pink absolute -right-2 top-0 bottom-0 border-x border-black"></div>
+			<div class="w-2 h-2 bg-black absolute -left-2 -top-2"></div>
+			<div class="w-2 h-2 bg-black absolute -right-2 -top-2"></div>
+			<div class="w-2 h-2 bg-black absolute -left-2 -bottom-2"></div>
+			<div class="w-2 h-2 bg-black absolute -right-2 -bottom-2"></div>
+			
 			<!-- Begin Mailchimp sign-up form -->
-			<div id="mc_embed_signup">
+			<div id="mc_embed_signup" class="max-w-prose mx-auto">
+				<h2 class="font-bold text-4xl mb-4 text-center">Sign up for news</h2>
+				
 				<form action="https://avromfarm.us15.list-manage.com/subscribe/post?u=67251a6b043fd181b7113f194&amp;id=d95c788703&amp;f_id=003190e0f0" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate max-w-lg mx-auto" target="_blank" novalidate>
 					<div id="mc_embed_signup_scroll">
 						<div class="mc-field-group">
 							<label for="mce-EMAIL" class="sr-only">Email Address</label>
-							<input type="email" value="" name="EMAIL" placeholder="Enter your email address..." class="required email p-4 rounded-2xl w-full border border-black max-w-lg text-center" id="mce-EMAIL" required>
+							<input type="email" value="" name="EMAIL" placeholder="Enter your email address..." class="required email p-4 rounded-2xl w-full border-2 border-black text-center" id="mce-EMAIL" required>
 							<span id="mce-EMAIL-HELPERTEXT" class="helper_text"></span>
 						</div>
 						<div hidden="true"><input type="hidden" name="tags" value="2319962"></div>
@@ -58,32 +252,15 @@
 						</div>
 						<!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
 						<div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_67251a6b043fd181b7113f194_d95c788703" tabindex="-1" value=""></div>
-						<input type="submit" value="Get Notified" name="subscribe" id="mc-embedded-subscribe" class="bg-maggie-red font-headline w-full md:w-auto text-maggie-offwhite px-16 py-4 rounded-full font-bold tracking-tighter text-lg cursor-pointer mx-auto block hover:shadow-lg hover:scale-110 transition-all mt-8">
+						<input type="submit" value="Submit" name="subscribe" id="mc-embedded-subscribe" class="bg-afp-blue w-full md:w-auto text-white px-16 py-4 rounded-2xl border-2 border-black font-bold tracking-tighter text-lg cursor-pointer mx-auto block hover:shadow-lg hover:scale-110 transition-all mt-4">
 					</div>
 				</form>
 			</div>
 			<script type='text/javascript' src='//s3.amazonaws.com/downloads.mailchimp.com/js/mc-validate.js'></script><script type='text/javascript'>(function($) {window.fnames = new Array(); window.ftypes = new Array();fnames[0]='EMAIL';ftypes[0]='email';fnames[1]='FNAME';ftypes[1]='text';fnames[2]='LNAME';ftypes[2]='text';fnames[3]='ADDRESS';ftypes[3]='address';fnames[4]='PHONE';ftypes[4]='phone';}(jQuery));var $mcj = jQuery.noConflict(true);</script>
 			<!-- End Mailchimp sign-up form -->
 		</section>
-		
-		<section class="bg-maggie-offwhite section border-t border-black">
-			<h2 class="h2 mb-16">Avrom Farm Party is a music &amp; food festival in Green Lake, Wisconsin</h2>
-			
-			<div class="md:flex gap-x-16 items-center md:px-8">
-				<div class="space-y-8 basis-3/5">
-					<p class="max-w-prose">In 2018, Hayden Holbert marked his first full year of pasture-based farming on his family’s farm. He co-founded Avrom Farm Party as a celebration of regenerative agriculture and community alongside his childhood friend and bandmate Spencer Tweedy. At that first party, Hayden and his friends served dinner and beers while three bands played into a clear Wisconsin night.</p>
-					<p class="max-w-prose">By its fourth year, Avrom Farm Party grew to support five meals prepared on the farm, performances by over a dozen artists over two days, two nights of camping and activities, and a community that plans traditions around being in Green Lake for a weekend each summer.</p>
-					<p class="max-w-prose">Learn more about <a href="https://avromfarm.com/" target="_blank">Avrom Farm</a> and <a href="https://galleryofwisconsinart.com/artist-works.php?artistId=286515&artist=Lester%20Schwartz" target="_blank">Lester Schwartz</a>.</p>
-				</div>
-				
-				<div class="basis-2/5 mt-16 md:mt-0">
-					<img class="rounded-2xl rotate-6 border border-black" src="assets/lester.jpg" alt="A black-and-white photo of Lester Schwartz painting a circle on a canvas">
-					<img class="rounded-2xl -rotate-6 border border-black" src="assets/greenhouse.jpg" alt="A photo of tomatoes growing in a greenhouse at Avrom Farm">
-				</div>
-			</div>
-		</section>
 	</main>
-	<footer class="bg-[#002034] bg-[url('/assets/night.jpg')] bg-contain bg-bottom bg-no-repeat text-maggie-offwhite/50 pt-16 px-4 pb-[50vw] text-center space-y-4">
+	<footer class="bg-[#002034] bg-[url('/assets/night.jpg')] bg-contain bg-bottom bg-no-repeat text-white/30 p-8 px-4 pb-[50vw] text-center space-y-4 relative mx-2 mt-4 mb-2 md:m-8 border-8 border-black">
 		<nav class="flex flex-row gap-4 justify-center">
 			<a href="mailto:admin@avromfarmparty.com?subject=Avrom Farm Party 2024" class="">Contact Us</a>
 			<a href="mailto:admin@avromfarmparty.com?subject=Sponsoring Avrom Farm Party 2024" class="">Sponsor Us</a>
