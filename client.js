@@ -14,8 +14,7 @@ var checkoutButton = document.getElementById('checkoutButton');
 // Stripe variables
 var stripe = Stripe('pk_test_VhcNh7WHsTGlc6eajQSqcjOM00m9S3MAtS');
 var lineItems = [];
-var earlybirdWeekendPrice = 'price_1L2h3WHzxwXeISKIvX6IEE4f'; // TEST - REVERT TO REAL BELOW AFTER TESTING IS FINISHED
-// var earlybirdWeekendPrice = 'price_1P117CHzxwXeISKIvJaguPAK'; // REAL
+var earlybirdWeekendPrice = 'price_1P117CHzxwXeISKIvJaguPAK';
 var earlybirdFridayPrice = 'price_1P118MHzxwXeISKIZK472Uti';
 var earlybirdSaturdayPrice = 'price_1P117dHzxwXeISKIIAVRtfHe';
 var weekendPrice = 'price_1P10ywHzxwXeISKIm8nMY7yz';
