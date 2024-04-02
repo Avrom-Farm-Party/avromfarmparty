@@ -627,6 +627,10 @@ p a, nav a, label a {
   margin-bottom: 1rem;
 }
 
+.mb-6 {
+  margin-bottom: 1.5rem;
+}
+
 .mb-8 {
   margin-bottom: 2rem;
 }
@@ -637,10 +641,6 @@ p a, nav a, label a {
 
 .mt-4 {
   margin-top: 1rem;
-}
-
-.mb-6 {
-  margin-bottom: 1.5rem;
 }
 
 .block {
@@ -875,11 +875,6 @@ p a, nav a, label a {
   background-color: rgb(216 97 0 / var(--tw-bg-opacity));
 }
 
-.bg-maggie-green {
-  --tw-bg-opacity: 1;
-  background-color: rgb(101 103 42 / var(--tw-bg-opacity));
-}
-
 .bg-orange-500\/10 {
   background-color: rgb(249 115 22 / 0.1);
 }
@@ -1039,6 +1034,11 @@ p a, nav a, label a {
   letter-spacing: -0.07em;
 }
 
+.text-black {
+  --tw-text-opacity: 1;
+  color: rgb(0 0 0 / var(--tw-text-opacity));
+}
+
 .text-hannah-blue {
   --tw-text-opacity: 1;
   color: rgb(95 152 208 / var(--tw-text-opacity));
@@ -1054,18 +1054,9 @@ p a, nav a, label a {
   color: rgb(216 97 0 / var(--tw-text-opacity));
 }
 
-.text-maggie-offwhite {
-  --tw-text-opacity: 1;
-  color: rgb(244 248 216 / var(--tw-text-opacity));
-}
-
 .text-white {
   --tw-text-opacity: 1;
   color: rgb(255 255 255 / var(--tw-text-opacity));
-}
-
-.text-white\/50 {
-  color: rgb(255 255 255 / 0.5);
 }
 
 .text-white\/30 {
@@ -1229,16 +1220,6 @@ p a, nav a, label a {
     --tw-space-y-reverse: 0;
     margin-top: calc(0px * calc(1 - var(--tw-space-y-reverse)));
     margin-bottom: calc(0px * var(--tw-space-y-reverse));
-  }
-
-  .md\:space-y-4 > :not([hidden]) ~ :not([hidden]) {
-    --tw-space-y-reverse: 0;
-    margin-top: calc(1rem * calc(1 - var(--tw-space-y-reverse)));
-    margin-bottom: calc(1rem * var(--tw-space-y-reverse));
-  }
-
-  .md\:p-16 {
-    padding: 4rem;
   }
 
   .md\:p-8 {
