@@ -14,11 +14,11 @@ var checkoutButton = document.getElementById('checkoutButton');
 // Stripe variables
 var stripe = Stripe('pk_test_VhcNh7WHsTGlc6eajQSqcjOM00m9S3MAtS');
 var lineItems = [];
-var earlybirdWeekendPrice = 'price_1P117CHzxwXeISKIvJaguPAK';
+var earlybirdWeekendPrice = 'price_1L2h3WHzxwXeISKIvX6IEE4f'; // TEST - REVERT TO REAL BELOW AFTER TESTING IS FINISHED
+// var earlybirdWeekendPrice = 'price_1P117CHzxwXeISKIvJaguPAK'; // REAL
 var earlybirdFridayPrice = 'price_1P118MHzxwXeISKIZK472Uti';
 var earlybirdSaturdayPrice = 'price_1P117dHzxwXeISKIIAVRtfHe';
-var weekendPrice = 'price_1L2h3WHzxwXeISKIvX6IEE4f'; // REVERT TO LIVE PRICE BELOW AFTER TESTING
-// var weekendPrice = 'price_1P10ywHzxwXeISKIm8nMY7yz';
+var weekendPrice = 'price_1P10ywHzxwXeISKIm8nMY7yz';
 var fridayPrice = 'price_1P110wHzxwXeISKIzuo3qdQu';
 var saturdayPrice = 'price_1P110aHzxwXeISKI1yst0iC2';
 var sponsorshipPrice = 'price_1P1125HzxwXeISKI0QXhqPfd';
