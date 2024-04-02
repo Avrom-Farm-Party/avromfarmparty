@@ -12,7 +12,7 @@ var orderTotal = document.getElementById('orderTotal');
 var checkoutButton = document.getElementById('checkoutButton');
 
 // Stripe variables
-var stripe = Stripe('pk_test_VhcNh7WHsTGlc6eajQSqcjOM00m9S3MAtS');
+var stripe = Stripe('pk_live_ecGmKZ3U8636cHWaaoEoIEPD007kMBdziI');
 var lineItems = [];
 var earlybirdWeekendPrice = 'price_1P117CHzxwXeISKIvJaguPAK';
 var earlybirdFridayPrice = 'price_1P118MHzxwXeISKIZK472Uti';
