@@ -8,6 +8,24 @@
 	}
 }
 
+@layer components {
+	.artist {
+		@apply block h-full col-span-2;
+	}
+	
+	.artist-photo {
+		@apply h-32 rounded-2xl border-2 border-black bg-cover bg-center;
+	}
+	
+	.artist-bubble {
+		@apply text-center w-full -mt-6;
+	}
+	
+	.artist-name {
+		@apply rounded-full inline-block bg-hannah-green border-2 border-black py-2 px-4 text-white font-bold;
+	}
+}
+
 @layer utilities {
 	
 }
