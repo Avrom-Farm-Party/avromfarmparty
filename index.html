@@ -215,76 +215,83 @@
 			<div class="max-w-screen-md mx-auto">
 				<h2 class="font-bold text-4xl mb-6"><span class="font-yarndings relative top-0.5 pr-2 text-hannah-red font-normal" aria-hidden="true">j</span>Buy Tickets</h2>
 			
-				<div id="ticketForm" class="space-y-4">				
-					<fieldset class="">
-						<label class="text-lg tracking-[-0.035em] font-bold w-full block mb-2">Which day(s) would you like to attend?</label>
-						<div class="flex flex-wrap justify-between w-full bg-black/5 rounded-2xl">
-							<div class="basis-full md:basis-[30%] cursor-pointer text-center flex grow select-none relative rounded-2xl">
-								<input type="radio" checked="checked" name="ticketType" id="weekend" class="appearance-none peer absolute z-0 opacity-0" value="price_1P10ywHzxwXeISKIm8nMY7yz">
-								<label for="weekend" class="flex w-full flex-col justify-center transition-all ring-black peer-checked:ring-2 peer-checked:text-white peer-checked:bg-afp-blue peer-checked:shadow-xl py-4 px-2 font-bold rounded-2xl cursor-pointer z-10">
-									<span class="underline underline-offset-2 decoration-2 mb-1">Weekend</span>
-									<span class="font-normal">$99</span>
-								</label>
+				<div id="ticketForm" class="space-y-4">
+					<div class="text-center space-y-2 my-16">
+						<p class="text-3xl"><mark>Avrom Farm Party 2024 is sold out!!!</mark></p>
+						<p>If you don’t already have a ticket, you may not be able to enter.</p>
+					</div>
+				
+					<div class="space-y-4 hidden">
+						<fieldset class="">
+							<label class="text-lg tracking-[-0.035em] font-bold w-full block mb-2">Which day(s) would you like to attend?</label>
+							<div class="flex flex-wrap justify-between w-full bg-black/5 rounded-2xl">
+								<div class="basis-full md:basis-[30%] cursor-pointer text-center flex grow select-none relative rounded-2xl">
+									<input type="radio" checked="checked" name="ticketType" id="weekend" class="appearance-none peer absolute z-0 opacity-0" value="price_1P10ywHzxwXeISKIm8nMY7yz">
+									<label for="weekend" class="flex w-full flex-col justify-center transition-all ring-black peer-checked:ring-2 peer-checked:text-white peer-checked:bg-afp-blue peer-checked:shadow-xl py-4 px-2 font-bold rounded-2xl cursor-pointer z-10">
+										<span class="underline underline-offset-2 decoration-2 mb-1">Weekend</span>
+										<span class="font-normal">$99</span>
+									</label>
+								</div>
+								<div class="basis-full md:basis-[30%] cursor-pointer text-center flex grow select-none relative rounded-2xl">
+									<input type="radio" name="ticketType" id="friday" class="appearance-none peer absolute z-0 opacity-0" value="price_1P110wHzxwXeISKIzuo3qdQu">
+									<label for="friday" class="flex w-full flex-col justify-center transition-all ring-black peer-checked:ring-2 peer-checked:text-white peer-checked:bg-afp-blue peer-checked:shadow-xl py-4 px-2 font-bold rounded-2xl cursor-pointer z-10">
+										<span class="underline underline-offset-2 decoration-2 mb-1">Friday</span>
+										<span class="font-normal">$49</span>
+									</label>
+								</div>
+								<div class="basis-full md:basis-[30%] cursor-pointer text-center flex grow select-none relative rounded-2xl">
+									<input type="radio" name="ticketType" id="saturday" class="appearance-none peer absolute z-0 opacity-0" value="price_1P110aHzxwXeISKI1yst0iC2">
+									<label for="saturday" class="flex w-full flex-col justify-center transition-all ring-black peer-checked:ring-2 peer-checked:text-white peer-checked:bg-afp-blue peer-checked:shadow-xl py-4 px-2 font-bold rounded-2xl cursor-pointer z-10">
+										<span class="underline underline-offset-2 decoration-2 mb-1">Saturday</span>
+										<span class="font-normal">$69</span>
+									</label>
+								</div>
 							</div>
-							<div class="basis-full md:basis-[30%] cursor-pointer text-center flex grow select-none relative rounded-2xl">
-								<input type="radio" name="ticketType" id="friday" class="appearance-none peer absolute z-0 opacity-0" value="price_1P110wHzxwXeISKIzuo3qdQu">
-								<label for="friday" class="flex w-full flex-col justify-center transition-all ring-black peer-checked:ring-2 peer-checked:text-white peer-checked:bg-afp-blue peer-checked:shadow-xl py-4 px-2 font-bold rounded-2xl cursor-pointer z-10">
-									<span class="underline underline-offset-2 decoration-2 mb-1">Friday</span>
-									<span class="font-normal">$49</span>
-								</label>
+						</fieldset>
+						
+						<fieldset class="space-y-2">
+							<label for="ticketQuantity" class="text-lg tracking-[-0.035em] font-bold w-full block mb-2">How many tickets?</label>
+							<p>(Kids under 12 don’t require a separate ticket.)</p>
+							<div class="bg-black/5 rounded-2xl p-4">
+								<select id="ticketQuantity" name="ticketQuantity" class="relative -top-0.5 w-full">
+									<option value="1">1</option>
+									<option value="2">2</option>
+									<option value="3">3</option>
+									<option value="4">4</option>
+									<option value="5">5</option>
+									<option value="6">6</option>
+									<option value="7">7</option>
+									<option value="8">8</option>
+									<option value="9">9</option>
+									<option value="10">10</option>
+								</select>
 							</div>
-							<div class="basis-full md:basis-[30%] cursor-pointer text-center flex grow select-none relative rounded-2xl">
-								<input type="radio" name="ticketType" id="saturday" class="appearance-none peer absolute z-0 opacity-0" value="price_1P110aHzxwXeISKI1yst0iC2">
-								<label for="saturday" class="flex w-full flex-col justify-center transition-all ring-black peer-checked:ring-2 peer-checked:text-white peer-checked:bg-afp-blue peer-checked:shadow-xl py-4 px-2 font-bold rounded-2xl cursor-pointer z-10">
-									<span class="underline underline-offset-2 decoration-2 mb-1">Saturday</span>
-									<span class="font-normal">$69</span>
-								</label>
+						</fieldset>
+						
+						<fieldset class="space-y-2">
+							<div class="text-lg tracking-[-0.035em] font-bold w-full block">Meal Bundle</div>
+							<p>You can pre-purchase meals for a discount. We serve fresh, hot, locally produced food at Friday dinner, Saturday breakfast, lunch, and dinner, and Sunday breakfast. By pre-purchasing, you make it easier for us to plan and you save yourself a bit of money, too. (Kids eat for 50% off, no bundle necessary.)</p>
+							<div class="bg-black/5 rounded-2xl p-4 flex gap-2">
+								<input type="checkbox" id="mealBundleCheckbox" class="appearance-none w-6 h-6 shrink-0 rounded-lg bg-white cursor-pointer transition-all border-2 border-black checked:bg-black after:content-['✓'] text-white text-center">
+								<label class="cursor-pointer select-none" for="mealBundleCheckbox">Yes, bundle my meals for $80 per person ($89 value)</label>
 							</div>
-						</div>
-					</fieldset>
-					
-					<fieldset class="space-y-2">
-						<label for="ticketQuantity" class="text-lg tracking-[-0.035em] font-bold w-full block mb-2">How many tickets?</label>
-						<p>(Kids under 12 don’t require a separate ticket.)</p>
-						<div class="bg-black/5 rounded-2xl p-4">
-							<select id="ticketQuantity" name="ticketQuantity" class="relative -top-0.5 w-full">
-								<option value="1">1</option>
-								<option value="2">2</option>
-								<option value="3">3</option>
-								<option value="4">4</option>
-								<option value="5">5</option>
-								<option value="6">6</option>
-								<option value="7">7</option>
-								<option value="8">8</option>
-								<option value="9">9</option>
-								<option value="10">10</option>
-							</select>
-						</div>
-					</fieldset>
-					
-					<fieldset class="space-y-2">
-						<div class="text-lg tracking-[-0.035em] font-bold w-full block">Meal Bundle</div>
-						<p>You can pre-purchase meals for a discount. We serve fresh, hot, locally produced food at Friday dinner, Saturday breakfast, lunch, and dinner, and Sunday breakfast. By pre-purchasing, you make it easier for us to plan and you save yourself a bit of money, too. (Kids eat for 50% off, no bundle necessary.)</p>
-						<div class="bg-black/5 rounded-2xl p-4 flex gap-2">
-							<input type="checkbox" id="mealBundleCheckbox" class="appearance-none w-6 h-6 shrink-0 rounded-lg bg-white cursor-pointer transition-all border-2 border-black checked:bg-black after:content-['✓'] text-white text-center">
-							<label class="cursor-pointer select-none" for="mealBundleCheckbox">Yes, bundle my meals for $80 per person ($89 value)</label>
-						</div>
-					</fieldset>
-					
-					<fieldset class="space-y-2">
-						<div class="text-lg tracking-[-0.035em] font-bold w-full block">Friend of the Festival</div>
-						<p>Every year, some attendees choose to make an additional donation to help fund the fest for all, to get an exclusive merch item, and to list their name on our thank-you board.</p>
-						<div class="bg-black/5 rounded-2xl p-4 flex gap-2">
-							<input type="checkbox" id="sponsorshipCheckbox" class="appearance-none w-6 h-6 shrink-0 rounded-lg bg-white cursor-pointer transition-all border-2 border-black checked:bg-black after:content-['✓'] text-white text-center">
-							<label class="cursor-pointer select-none" for="sponsorshipCheckbox">Yes, add a $200 donation, I’m a FotF!</label>
-						</div>
-					</fieldset>
-					
-					<p class="text-center text-xl tracking-supertight"><strong>Total:</strong> $<span id="orderTotal"></span></p>
-					
-					<span id="formError"></span>
-					
-					<input type="submit" value="Check Out" id="checkoutButton" class="bg-afp-blue border-2 border-black w-full md:w-auto text-white px-16 py-4 rounded-2xl font-bold tracking-tighter text-lg cursor-pointer mx-auto block hover:shadow-lg hover:scale-110 transition-all" data-umami-event="Checkout button">
+						</fieldset>
+						
+						<fieldset class="space-y-2">
+							<div class="text-lg tracking-[-0.035em] font-bold w-full block">Friend of the Festival</div>
+							<p>Every year, some attendees choose to make an additional donation to help fund the fest for all, to get an exclusive merch item, and to list their name on our thank-you board.</p>
+							<div class="bg-black/5 rounded-2xl p-4 flex gap-2">
+								<input type="checkbox" id="sponsorshipCheckbox" class="appearance-none w-6 h-6 shrink-0 rounded-lg bg-white cursor-pointer transition-all border-2 border-black checked:bg-black after:content-['✓'] text-white text-center">
+								<label class="cursor-pointer select-none" for="sponsorshipCheckbox">Yes, add a $200 donation, I’m a FotF!</label>
+							</div>
+						</fieldset>
+						
+						<p class="text-center text-xl tracking-supertight"><strong>Total:</strong> $<span id="orderTotal"></span></p>
+						
+						<span id="formError"></span>
+						
+						<input type="submit" value="Check Out" id="checkoutButton" class="bg-afp-blue border-2 border-black w-full md:w-auto text-white px-16 py-4 rounded-2xl font-bold tracking-tighter text-lg cursor-pointer mx-auto block hover:shadow-lg hover:scale-110 transition-all" data-umami-event="Checkout button">
+					</div>
 					
 					<div class="space-y-2">
 						<p class="font-bold">August 9-11, 2024 at <a href="https://goo.gl/maps/KxbFHK1qxVkJueLe6" target="_blank">W908 Scott Hill Road, Ripon, WI</a></p>
