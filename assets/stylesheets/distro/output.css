@@ -881,62 +881,6 @@ p a, nav a, label a {
   background-color: rgb(255 255 255 / var(--tw-bg-opacity));
 }
 
-.bg-\[url\(\'\.\.\.\/assets\/artist-photos\/babehoven\.jpg\'\)\] {
-  background-image: url('.../assets/artist-photos/babehoven.jpg');
-}
-
-.bg-\[url\(\'\.\.\.\/assets\/artist-photos\/cabeza-de-chivo\.jpg\'\)\] {
-  background-image: url('.../assets/artist-photos/cabeza-de-chivo.jpg');
-}
-
-.bg-\[url\(\'\.\.\.\/assets\/artist-photos\/chloe-kimes\.jpg\'\)\] {
-  background-image: url('.../assets/artist-photos/chloe-kimes.jpg');
-}
-
-.bg-\[url\(\'\.\.\.\/assets\/artist-photos\/joe-powers\.jpg\'\)\] {
-  background-image: url('.../assets/artist-photos/joe-powers.jpg');
-}
-
-.bg-\[url\(\'\.\.\.\/assets\/artist-photos\/lucky-cloud\.jpg\'\)\] {
-  background-image: url('.../assets/artist-photos/lucky-cloud.jpg');
-}
-
-.bg-\[url\(\'\.\.\.\/assets\/artist-photos\/maggie-halfman\.jpg\'\)\] {
-  background-image: url('.../assets/artist-photos/maggie-halfman.jpg');
-}
-
-.bg-\[url\(\'\.\.\.\/assets\/artist-photos\/nico-play\.jpg\'\)\] {
-  background-image: url('.../assets/artist-photos/nico-play.jpg');
-}
-
-.bg-\[url\(\'\.\.\.\/assets\/artist-photos\/oyeme\.jpg\'\)\] {
-  background-image: url('.../assets/artist-photos/oyeme.jpg');
-}
-
-.bg-\[url\(\'\.\.\.\/assets\/artist-photos\/pictoria-vark\.jpg\'\)\] {
-  background-image: url('.../assets/artist-photos/pictoria-vark.jpg');
-}
-
-.bg-\[url\(\'\.\.\.\/assets\/artist-photos\/sharp-pins\.jpg\'\)\] {
-  background-image: url('.../assets/artist-photos/sharp-pins.jpg');
-}
-
-.bg-\[url\(\'\.\.\.\/assets\/artist-photos\/youbet\.jpg\'\)\] {
-  background-image: url('.../assets/artist-photos/youbet.jpg');
-}
-
-.bg-\[url\(\'\.\.\.\/assets\/night\.jpg\'\)\] {
-  background-image: url('.../assets/night.jpg');
-}
-
-.bg-\[url\(\'\.\.\/artist-photos\/mckinley-dixon\.jpg\'\)\] {
-  background-image: url('../artist-photos/mckinley-dixon.jpg');
-}
-
-.bg-\[url\(\'\.\.\.\/assets\/artist-photos\/mckinley-dixon\.jpg\'\)\] {
-  background-image: url('.../assets/artist-photos/mckinley-dixon.jpg');
-}
-
 .bg-\[url\(\'\/assets\/artist-photos\/babehoven\.jpg\'\)\] {
   background-image: url('/assets/artist-photos/babehoven.jpg');
 }
