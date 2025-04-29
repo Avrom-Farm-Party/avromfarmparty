@@ -2,6 +2,9 @@
 # Created by https://www.toptal.com/developers/gitignore/api/macos,nova,node
 # Edit at https://www.toptal.com/developers/gitignore?templates=macos,nova,node
 
+### Custom ###
+assets/stylesheets/distro/
+
 ### macOS ###
 # General
 .DS_Store

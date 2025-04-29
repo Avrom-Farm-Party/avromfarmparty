@@ -530,6 +530,39 @@ p a, nav a, label a {
   height: 100%;
 }
 
+.artist-photo {
+  height: 8rem;
+  border-radius: 1rem;
+  border-width: 2px;
+  --tw-border-opacity: 1;
+  border-color: rgb(0 0 0 / var(--tw-border-opacity));
+  background-size: cover;
+  background-position: center;
+}
+
+.artist-bubble {
+  margin-top: -1.5rem;
+  width: 100%;
+  text-align: center;
+}
+
+.artist-name {
+  display: inline-block;
+  border-radius: 9999px;
+  border-width: 2px;
+  --tw-border-opacity: 1;
+  border-color: rgb(0 0 0 / var(--tw-border-opacity));
+  --tw-bg-opacity: 1;
+  background-color: rgb(71 156 96 / var(--tw-bg-opacity));
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  font-weight: 700;
+  --tw-text-opacity: 1;
+  color: rgb(255 255 255 / var(--tw-text-opacity));
+}
+
 .sr-only {
   position: absolute;
   width: 1px;
@@ -594,6 +627,10 @@ p a, nav a, label a {
   grid-column: span 2 / span 2;
 }
 
+.col-span-3 {
+  grid-column: span 3 / span 3;
+}
+
 .mx-2 {
   margin-left: 0.5rem;
   margin-right: 0.5rem;
@@ -621,12 +658,17 @@ p a, nav a, label a {
   margin-bottom: 1.5rem;
 }
 
-.mt-12 {
-  margin-top: 3rem;
+.ms-4 {
+  -webkit-margin-start: 1rem;
+          margin-inline-start: 1rem;
 }
 
 .mt-4 {
   margin-top: 1rem;
+}
+
+.mt-8 {
+  margin-top: 2rem;
 }
 
 .block {
@@ -635,6 +677,10 @@ p a, nav a, label a {
 
 .inline-block {
   display: inline-block;
+}
+
+.inline {
+  display: inline;
 }
 
 .flex {
@@ -661,6 +707,10 @@ p a, nav a, label a {
   width: 100%;
 }
 
+.max-w-\[700px\] {
+  max-width: 700px;
+}
+
 .max-w-lg {
   max-width: 32rem;
 }
@@ -673,12 +723,20 @@ p a, nav a, label a {
   max-width: 1024px;
 }
 
+.max-w-screen-md {
+  max-width: 768px;
+}
+
 .grow {
   flex-grow: 1;
 }
 
 .cursor-pointer {
   cursor: pointer;
+}
+
+.list-disc {
+  list-style-type: disc;
 }
 
 .flex-row {
@@ -733,6 +791,12 @@ p a, nav a, label a {
   margin-bottom: calc(1.5rem * var(--tw-space-y-reverse));
 }
 
+.space-y-8 > :not([hidden]) ~ :not([hidden]) {
+  --tw-space-y-reverse: 0;
+  margin-top: calc(2rem * calc(1 - var(--tw-space-y-reverse)));
+  margin-bottom: calc(2rem * var(--tw-space-y-reverse));
+}
+
 .scroll-smooth {
   scroll-behavior: smooth;
 }
@@ -783,6 +847,16 @@ p a, nav a, label a {
   background-color: rgb(0 0 0 / var(--tw-bg-opacity));
 }
 
+.bg-hannah-blue {
+  --tw-bg-opacity: 1;
+  background-color: rgb(95 152 208 / var(--tw-bg-opacity));
+}
+
+.bg-hannah-green {
+  --tw-bg-opacity: 1;
+  background-color: rgb(71 156 96 / var(--tw-bg-opacity));
+}
+
 .bg-hannah-offwhite {
   --tw-bg-opacity: 1;
   background-color: rgb(229 224 216 / var(--tw-bg-opacity));
@@ -807,8 +881,56 @@ p a, nav a, label a {
   background-color: rgb(255 255 255 / var(--tw-bg-opacity));
 }
 
-.bg-\[url\(\'\/assets\/night\.jpg\'\)\] {
-  background-image: url('/assets/night.jpg');
+.bg-\[url\(\'\.\.\/assets\/artist-photos\/babehoven\.jpg\'\)\] {
+  background-image: url('../assets/artist-photos/babehoven.jpg');
+}
+
+.bg-\[url\(\'\.\.\/assets\/artist-photos\/cabeza-de-chivo\.jpg\'\)\] {
+  background-image: url('../assets/artist-photos/cabeza-de-chivo.jpg');
+}
+
+.bg-\[url\(\'\.\.\/assets\/artist-photos\/chloe-kimes\.jpg\'\)\] {
+  background-image: url('../assets/artist-photos/chloe-kimes.jpg');
+}
+
+.bg-\[url\(\'\.\.\/assets\/artist-photos\/joe-powers\.jpg\'\)\] {
+  background-image: url('../assets/artist-photos/joe-powers.jpg');
+}
+
+.bg-\[url\(\'\.\.\/assets\/artist-photos\/lucky-cloud\.jpg\'\)\] {
+  background-image: url('../assets/artist-photos/lucky-cloud.jpg');
+}
+
+.bg-\[url\(\'\.\.\/assets\/artist-photos\/maggie-halfman\.jpg\'\)\] {
+  background-image: url('../assets/artist-photos/maggie-halfman.jpg');
+}
+
+.bg-\[url\(\'\.\.\/assets\/artist-photos\/mckinley-dixon\.jpg\'\)\] {
+  background-image: url('../assets/artist-photos/mckinley-dixon.jpg');
+}
+
+.bg-\[url\(\'\.\.\/assets\/artist-photos\/nico-play\.jpg\'\)\] {
+  background-image: url('../assets/artist-photos/nico-play.jpg');
+}
+
+.bg-\[url\(\'\.\.\/assets\/artist-photos\/oyeme\.jpg\'\)\] {
+  background-image: url('../assets/artist-photos/oyeme.jpg');
+}
+
+.bg-\[url\(\'\.\.\/assets\/artist-photos\/pictoria-vark\.jpg\'\)\] {
+  background-image: url('../assets/artist-photos/pictoria-vark.jpg');
+}
+
+.bg-\[url\(\'\.\.\/assets\/artist-photos\/sharp-pins\.jpg\'\)\] {
+  background-image: url('../assets/artist-photos/sharp-pins.jpg');
+}
+
+.bg-\[url\(\'\.\.\/assets\/artist-photos\/youbet\.jpg\'\)\] {
+  background-image: url('../assets/artist-photos/youbet.jpg');
+}
+
+.bg-\[url\(\'\.\.\/assets\/night\.jpg\'\)\] {
+  background-image: url('../assets/night.jpg');
 }
 
 .bg-contain {
@@ -874,6 +996,10 @@ p a, nav a, label a {
   padding-right: 0.5rem;
 }
 
+.text-left {
+  text-align: left;
+}
+
 .text-center {
   text-align: center;
 }
@@ -925,6 +1051,10 @@ p a, nav a, label a {
 
 .uppercase {
   text-transform: uppercase;
+}
+
+.italic {
+  font-style: italic;
 }
 
 .leading-10 {
@@ -1047,12 +1177,20 @@ p a, nav a, label a {
     display: grid;
   }
 
+  .md\:h-64 {
+    height: 16rem;
+  }
+
   .md\:w-auto {
     width: auto;
   }
 
   .md\:grid-cols-3 {
     grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .md\:grid-cols-6 {
+    grid-template-columns: repeat(6, minmax(0, 1fr));
   }
 
   .md\:flex-row {
@@ -1079,19 +1217,9 @@ p a, nav a, label a {
     padding: 2rem;
   }
 
-  .md\:px-8 {
-    padding-left: 2rem;
-    padding-right: 2rem;
-  }
-
   .md\:py-16 {
     padding-top: 4rem;
     padding-bottom: 4rem;
-  }
-
-  .md\:py-4 {
-    padding-top: 1rem;
-    padding-bottom: 1rem;
   }
 
   .md\:text-start {
@@ -1101,10 +1229,5 @@ p a, nav a, label a {
   .md\:text-3xl {
     font-size: 1.875rem;
     line-height: 2.25rem;
-  }
-
-  .md\:text-4xl {
-    font-size: 2.25rem;
-    line-height: 2.5rem;
   }
 }
