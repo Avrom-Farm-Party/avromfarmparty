@@ -14,7 +14,7 @@
 	}
 	
 	.artist-photo {
-		@apply h-32 rounded-2xl border-2 border-black bg-cover bg-center;
+		@apply h-48 rounded-2xl border-2 border-black bg-cover bg-center;
 	}
 	
 	.artist-bubble {
