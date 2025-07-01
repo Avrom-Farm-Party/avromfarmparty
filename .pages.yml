@@ -1,0 +1,20 @@
+media:
+  - name: media
+    label: Media
+    input: _media
+    output: _media
+content:
+  - name: posts
+    label: Posts
+    type: collection
+    path: _posts
+    view:
+      fields: [ cover, title ]
+    fields:
+      - { name: layout, type: string, hidden: true, default: post }
+      - { name: cover, label: Cover image, type: image }
+      - { name: title, label: Title, type: string, required: true }
+      - { name: categories, label: Categories, type: select, options: { values: [ "general", "artist" ] } }
+      - { name: meta, label: Meta, type: string }
+      - { name: body, label: Body, type: rich-text }
+  
