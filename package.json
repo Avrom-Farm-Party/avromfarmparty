@@ -3,7 +3,11 @@
     "tailwindcss": "^3.3.1"
   },
   "scripts": {
-    "dev": "npx tailwindcss -i ./assets/stylesheets/source/main.css -o ./assets/stylesheets/distro/output.css --watch",
-    "build": "npx tailwindcss -i ./assets/stylesheets/source/main.css -o ./assets/stylesheets/distro/output.css --minify"
+    "tailwind:dev": "npx tailwindcss -i ./assets/stylesheets/source/main.css -o ./assets/stylesheets/distro/output.css --watch",
+    "tailwind:build": "npx tailwindcss -i ./assets/stylesheets/source/main.css -o ./assets/stylesheets/distro/output.css --minify",
+    "jekyll:dev": "bundle exec jekyll serve",
+    "jekyll:build": "jekyll build",
+    "dev": "concurrently 'npm run tailwind:dev' 'npm run jekyll:dev'",
+    "build": "npm run tailwind:build && npm run jekyll:build"
   }
 }

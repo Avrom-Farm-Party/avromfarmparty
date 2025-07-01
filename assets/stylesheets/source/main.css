@@ -4,7 +4,7 @@
 
 @layer base {	
 	p a, nav a, label a {
-		@apply text-afp-blue underline underline-offset-2 decoration-2;
+		@apply link;
 	}
 }
 
@@ -27,5 +27,19 @@
 }
 
 @layer utilities {
-	
+	.link {
+		@apply text-afp-blue underline underline-offset-2 decoration-2;
+	}
+
+	.site-section-base {
+		@apply bg-white relative mx-4 md:mx-10;
+	}
+
+	.site-section {
+		@apply site-section-base py-8 px-8 md:py-16;
+	}
+
+	.site-section-full {
+		@apply site-section-base;
+	}
 }

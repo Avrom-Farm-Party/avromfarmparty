@@ -671,6 +671,10 @@ p a, nav a, label a {
   margin-top: 2rem;
 }
 
+.mb-8 {
+  margin-bottom: 2rem;
+}
+
 .block {
   display: block;
 }
@@ -893,6 +897,10 @@ p a, nav a, label a {
   background-image: url('/assets/artist-photos/chloe-kimes.jpg');
 }
 
+.bg-\[url\(\'\/assets\/artist-photos\/gully-boys\.jpg\'\)\] {
+  background-image: url('/assets/artist-photos/gully-boys.jpg');
+}
+
 .bg-\[url\(\'\/assets\/artist-photos\/joe-powers\.jpg\'\)\] {
   background-image: url('/assets/artist-photos/joe-powers.jpg');
 }
@@ -966,11 +974,6 @@ p a, nav a, label a {
 .px-6 {
   padding-left: 1.5rem;
   padding-right: 1.5rem;
-}
-
-.px-8 {
-  padding-left: 2rem;
-  padding-right: 2rem;
 }
 
 .py-2 {
@@ -1057,8 +1060,21 @@ p a, nav a, label a {
   font-style: italic;
 }
 
+.ordinal {
+  --tw-ordinal: ordinal;
+  font-variant-numeric: var(--tw-ordinal) var(--tw-slashed-zero) var(--tw-numeric-figure) var(--tw-numeric-spacing) var(--tw-numeric-fraction);
+}
+
 .leading-10 {
   line-height: 2.5rem;
+}
+
+.leading-8 {
+  line-height: 2rem;
+}
+
+.leading-\[2em\] {
+  line-height: 2em;
 }
 
 .text-hannah-blue {
@@ -1105,6 +1121,50 @@ p a, nav a, label a {
   transition-property: all;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   transition-duration: 150ms;
+}
+
+.link {
+  --tw-text-opacity: 1;
+  color: rgb(0 105 198 / var(--tw-text-opacity));
+  text-decoration-line: underline;
+  text-decoration-thickness: 2px;
+  text-underline-offset: 2px;
+}
+
+.site-section {
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+  padding-left: 2rem;
+  padding-right: 2rem;
+  position: relative;
+  margin-left: 1rem;
+  margin-right: 1rem;
+  --tw-bg-opacity: 1;
+  background-color: rgb(255 255 255 / var(--tw-bg-opacity));
+}
+
+@media (min-width: 768px) {
+  .site-section {
+    margin-left: 2.5rem;
+    margin-right: 2.5rem;
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+  }
+}
+
+.site-section-full {
+  position: relative;
+  margin-left: 1rem;
+  margin-right: 1rem;
+  --tw-bg-opacity: 1;
+  background-color: rgb(255 255 255 / var(--tw-bg-opacity));
+}
+
+@media (min-width: 768px) {
+  .site-section-full {
+    margin-left: 2.5rem;
+    margin-right: 2.5rem;
+  }
 }
 
 .selection\:bg-hannah-red *::-moz-selection {
@@ -1175,6 +1235,10 @@ p a, nav a, label a {
 
   .md\:grid {
     display: grid;
+  }
+
+  .md\:hidden {
+    display: none;
   }
 
   .md\:h-64 {
