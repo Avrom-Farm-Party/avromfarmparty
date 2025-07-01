@@ -204,6 +204,26 @@ permalink: "/"
 		<img src="assets/afp23-5.webp" class="col-span-2 rounded-2xl border-2 border-black" alt="Festival attendees meditate in a morning movement workshop.">
 	</div>
 </section>
+<section id="blog" class="bg-white relative mx-4 md:mx-10 p-8 md:py-16">
+	<div class="h-2 bg-hannah-pink absolute -top-2 left-0 right-0 border-y border-black"></div>
+	<div class="w-2 bg-hannah-red absolute -left-2 top-0 bottom-0 border-x border-black"></div>
+	<div class="w-2 bg-hannah-red absolute -right-2 top-0 bottom-0 border-x border-black"></div>
+	<div class="w-2 h-2 bg-black absolute -left-2 -top-2"></div>
+	<div class="w-2 h-2 bg-black absolute -right-2 -top-2"></div>
+	
+	<div class="max-w-prose mx-auto">
+		<h2 class="font-bold text-4xl mb-8"><span class="font-yarndings relative top-0.5 pr-2 text-hannah-green font-normal" aria-hidden="true">o</span>Festival news</h2>
+		
+		<div class="space-y-4">
+			{% for post in site.posts %}
+			<article class="space-y-2">
+				<a href="{{ post.url }}" class="text-2xl link">{{ post.title }}</a>
+				{{ post.excerpt }}
+			</article>
+			{% endfor %}
+		</div>
+	</div>
+</section>
 <section id="about" class="bg-white relative mx-4 md:mx-10 p-8 md:py-16">
 	<div class="h-2 bg-hannah-pink absolute -top-2 left-0 right-0 border-y border-black"></div>
 	<div class="w-2 bg-hannah-red absolute -left-2 top-0 bottom-0 border-x border-black"></div>
@@ -226,26 +246,6 @@ permalink: "/"
 			<p>After receiving his degree, Hayden returned to Avrom Farm and grew it into a full-time, livestock and vegetable pasture. Using centuries-old techniques, Hayden and fellow farmers restored the land’s soil, increased its biodiversity, and created a symbiotic relationship between pigs, chickens, and vegetables to provide delicious, nutrient-rich food to farmers markets, restaurants, and homes in Wisconsin and Illinois.</p>
 			
 			<p>In 2018, Hayden and his longtime friend and bandmate Spencer Tweedy organized <span class="text-hannah-red">Avrom</span> <span class="text-hannah-blue">Farm</span> <span class="text-hannah-green">Party</span> to promote regenerative agriculture and to share great music and food with friends and strangers. Since then, the festival has grown into hundreds of people’s favorite part of the summer, a time to get away from normal life, an opportunity to discover new artists, and, as of 2024, a fundraiser for food programs to be carried out by a new nonprofit.</p>
-		</div>
-	</div>
-</section>
-<section id="blog" class="bg-white relative mx-4 md:mx-10 p-8 md:py-16">
-	<div class="h-2 bg-hannah-pink absolute -top-2 left-0 right-0 border-y border-black"></div>
-	<div class="w-2 bg-hannah-red absolute -left-2 top-0 bottom-0 border-x border-black"></div>
-	<div class="w-2 bg-hannah-red absolute -right-2 top-0 bottom-0 border-x border-black"></div>
-	<div class="w-2 h-2 bg-black absolute -left-2 -top-2"></div>
-	<div class="w-2 h-2 bg-black absolute -right-2 -top-2"></div>
-	
-	<div class="max-w-prose mx-auto">
-		<h2 class="font-bold text-4xl mb-8"><span class="font-yarndings relative top-0.5 pr-2 text-hannah-green font-normal" aria-hidden="true">o</span>Festival news</h2>
-		
-		<div class="space-y-4">
-			{% for post in site.posts %}
-			<article class="space-y-2">
-				<a href="{{ post.url }}" class="text-2xl link">{{ post.title }}</a>
-				{{ post.excerpt }}
-			</article>
-			{% endfor %}
 		</div>
 	</div>
 </section>
