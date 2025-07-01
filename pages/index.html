@@ -214,14 +214,16 @@ permalink: "/"
 	<div class="max-w-prose mx-auto">
 		<h2 class="font-bold text-4xl mb-8"><span class="font-yarndings relative top-0.5 pr-2 text-hannah-green font-normal" aria-hidden="true">o</span>Festival news</h2>
 		
-		<div class="space-y-4">
-			{% for post in site.posts %}
+		<div class="space-y-4 mb-8">
+			{% for post in site.posts limit:10 %}
 			<article class="space-y-2">
 				<a href="{{ post.url }}" class="text-2xl link">{{ post.title }}</a>
 				{{ post.excerpt }}
 			</article>
 			{% endfor %}
 		</div>
+
+		<p><a href="{% link pages/blog.html %}">All festival news &rarr;</a></p>
 	</div>
 </section>
 <section id="about" class="bg-white relative mx-4 md:mx-10 p-8 md:py-16">
