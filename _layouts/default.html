@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en-US" class="bg-hannah-offwhite text-[calc(1.1em_+_0.25vw)] selection:bg-hannah-red selection:text-white scroll-smooth">
+<head>
+	<meta charset="utf-8">
+
+	<title>{{ site.meta_title }}</title>
+	
+	<!-- Define page stuff -->
+	<meta name="description" content="{{ site.description }}">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link id="favicon" rel="icon" href="favicon.ico" type="image/x-icon">
+	<link rel="stylesheet" href="/assets/stylesheets/distro/output.css">
+	
+	<!-- Import Google Fonts -->
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Averia+Serif+Libre:ital,wght@0,400;0,700;1,400;1,700&family=Yarndings+20&display=swap" rel="stylesheet">
+	
+	<!-- Social media tags -->
+	<meta name="twitter:card" content="summary_large_image">
+	<meta name="twitter:title" content="{{ site.title }}">
+	<meta name="twitter:description" content="{{ site.social_description }}">
+	<meta name="twitter:image" content="{{ site.url }}/assets/afp23-1.jpg">
+	<meta property="og:type" content="website">
+	<meta property="og:url" content="">
+	<meta property="og:title" content="Avrom Farm Party 2025">
+	<meta property="og:description" content="{{ site.social_description }}">
+	<meta property="og:image" content="{{ site.url }}/assets/afp23-1.jpg">
+	
+	<!-- Plausible Analytics -->
+	{% if plausible_domain %}<script defer data-domain="{{ site.plausible_domain }}" src="https://plausible.io/js/script.js"></script>{% endif %}
+</head>
+
+<body class="font-serif">
+	<header class="bg-white mt-4 mx-4 md:mx-10 md:mt-8 mb-2 px-6 py-8 flex flex-col md:flex-row gap-6 items-center justify-between relative">
+		<div class="h-2 bg-hannah-pink absolute -top-2 left-0 right-0 border-y border-black"></div>
+		<div class="w-2 bg-hannah-red absolute -left-2 top-0 bottom-0 border-x border-black"></div>
+		<div class="w-2 bg-hannah-red absolute -right-2 top-0 bottom-0 border-x border-black"></div>
+		<div class="w-2 h-2 bg-black absolute -left-2 -top-2"></div>
+		<div class="w-2 h-2 bg-black absolute -right-2 -top-2"></div>
+		
+		<div class="text-center md:text-start">
+			<h1 class="text-2xl font-bold uppercase"><a href="{{ site.url }}">{{ site.title }}</a></h1>
+			<h2 class="text-sm">{{ site.subtitle }}</h2>
+		</div>
+
+		<div class="text-center space-x-2 space-y-4 md:space-y-0 md:space-x-4 leading-[2em]">
+			<a href="#lineup" class=""><span class="font-yarndings text-xl relative top-1 pr-2" aria-hidden="true">q</span><span class="underline underline-offset-2 decoration-2 decoration-hannah-blue">Lineup</span></a>
+			<a href="#photos" class=""><span class="font-yarndings text-xl relative top-1 pr-2" aria-hidden="true">f</span><span class="underline underline-offset-2 decoration-2 decoration-hannah-blue">Photos</span></a>
+			<br class="md:hidden">
+            <a href="#blog" class=""><span class="font-yarndings text-xl relative top-1 pr-2" aria-hidden="true">o</span><span class="underline underline-offset-2 decoration-2 decoration-hannah-blue">Blog</span></a>
+            <a href="#about" class=""><span class="font-yarndings text-xl relative top-1 pr-2" aria-hidden="true">h</span><span class="underline underline-offset-2 decoration-2 decoration-hannah-blue">About</span></a>
+			<br class="md:hidden">
+            <a href="#tickets" class="bg-afp-blue border-2 border-black text-white py-2 px-4 leading-10 rounded-xl cursor-pointer inline-block"><span class="font-yarndings text-2xl relative top-1 pr-2" aria-hidden="true">j</span>Buy Tickets</a>
+		</div>
+	</header>
+	
+	<main class="space-y-2">
+		{{ content }}
+	</main>
+	<footer class="bg-[#002034] bg-[url('/assets/night.jpg')] bg-contain bg-bottom bg-no-repeat text-white/30 p-8 px-4 pb-[50vw] text-center space-y-4 relative mx-2 mt-4 mb-2 md:m-8 border-8 border-black">
+		<nav class="flex flex-row gap-4 justify-center">
+			<a href="mailto:{{ site.email }}?subject=Website inquiry" class="">Contact Us</a>
+			<a href="mailto:{{ site.email }}?subject=Sponsoring Avrom Farm Party" class="">Sponsor Us</a>
+			<a href="https://www.instagram.com/{{ site.instagram }}/" class="">Instagram</a>
+		</nav>
+		
+		<p class="text-sm max-w-prose mx-auto">Green Lake is located on the ancestral land of the Ho-Chunk Nation. Wisconsin is home to and stewarded by many Native peoples including Menominee, Anishinaabe, Potawatomi, and Oneida.</p>
+	</footer>
+</body>
+</html>

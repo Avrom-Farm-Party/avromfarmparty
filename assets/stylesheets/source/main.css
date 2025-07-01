@@ -1,0 +1,45 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {	
+	p a, nav a, label a {
+		@apply link;
+	}
+}
+
+@layer components {
+	.artist {
+		@apply block h-full col-span-2;
+	}
+	
+	.artist-photo {
+		@apply h-48 rounded-2xl border-2 border-black bg-cover bg-center;
+	}
+	
+	.artist-bubble {
+		@apply text-center w-full -mt-6;
+	}
+	
+	.artist-name {
+		@apply rounded-full inline-block bg-hannah-green border-2 border-black py-2 px-4 text-white font-bold;
+	}
+}
+
+@layer utilities {
+	.link {
+		@apply text-afp-blue underline underline-offset-2 decoration-2;
+	}
+
+	.site-section-base {
+		@apply bg-white relative mx-4 md:mx-10;
+	}
+
+	.site-section {
+		@apply site-section-base py-8 px-8 md:py-16;
+	}
+
+	.site-section-full {
+		@apply site-section-base;
+	}
+}

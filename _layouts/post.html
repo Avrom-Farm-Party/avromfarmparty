@@ -1,0 +1,23 @@
+---
+layout: default
+---
+
+<section class="site-section">
+    <div class="h-2 bg-hannah-pink absolute -top-2 left-0 right-0 border-y border-black"></div>
+	<div class="h-2 bg-hannah-pink absolute -bottom-2 left-0 right-0 border-y border-black"></div>
+	<div class="w-2 bg-hannah-red absolute -left-2 top-0 bottom-0 border-x border-black"></div>
+	<div class="w-2 bg-hannah-red absolute -right-2 top-0 bottom-0 border-x border-black"></div>
+	<div class="w-2 h-2 bg-black absolute -left-2 -top-2"></div>
+	<div class="w-2 h-2 bg-black absolute -right-2 -top-2"></div>
+	<div class="w-2 h-2 bg-black absolute -left-2 -bottom-2"></div>
+	<div class="w-2 h-2 bg-black absolute -right-2 -bottom-2"></div>
+
+    <div class="space-y-4">
+        <h1 class="font-bold text-4xl mb-4">{{ page.title }}</h1>
+        <p><span class="italic text-hannah-green">Published {{ page.date | date_to_string: "ordinal", "US" }}</span></p>
+        
+        {{ content }}
+
+        <p><a href="{{ site.url }}">&larr; Return home</a></p>
+    </div>
+</section>

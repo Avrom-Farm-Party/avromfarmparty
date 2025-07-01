@@ -1,18 +1,13 @@
 {
-  "//1": "describes your app and its dependencies",
-  "//2": "https://docs.npmjs.com/files/package.json",
-  "//3": "updating this file will download and update your packages",
-  "name": "avrom-farm-party-2019",
-  "version": "0.0.1",
-  "description": "The website for Avrom Farm Party 2019",
-  "dependencies": {
-    "dotenv": "^8.0.0",
-    "netlify-cli": "^2.12.0",
-    "netlify-lambda": "^1.5.0",
-    "stripe": "^7.4.0"
+  "devDependencies": {
+    "tailwindcss": "^3.3.1"
   },
-  "repository": {
-    "url": "https://github.com/spencertweedy/avromfarmparty"
-  },
-  "license": "MIT"
+  "scripts": {
+    "tailwind:dev": "npx tailwindcss -i ./assets/stylesheets/source/main.css -o ./assets/stylesheets/distro/output.css --watch",
+    "tailwind:build": "npx tailwindcss -i ./assets/stylesheets/source/main.css -o ./assets/stylesheets/distro/output.css --minify",
+    "jekyll:dev": "bundle exec jekyll serve",
+    "jekyll:build": "jekyll build",
+    "dev": "concurrently 'npm run tailwind:dev' 'npm run jekyll:dev'",
+    "build": "npm run tailwind:build && npm run jekyll:build"
+  }
 }
