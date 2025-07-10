@@ -1,9 +1,10 @@
 ---
 layout: post
+cover: _media/AFP25-Pictoria-Vark1_1.png
 title: "ARTIST SPOTLIGHT: Pictoria Vark!"
 categories: artist
 ---
-Pictoria Vark (also known as Victoria Park) is an indie rock artist from Chicago who writes bold, honest songs and puts on amazing live shows. After spending over 150 days on tour with her first album, she’s back with her second one, _Nothing Sticks_. This new record mixes loud, gritty guitars with beautiful strings and brass, creating a sound that’s powerful and full of feeling.  
+Pictoria Vark (also known as Victoria Park) is an indie rock artist from Chicago who writes bold, honest songs and puts on amazing live shows. After spending over 150 days on tour with her first album, she’s back with her second one, _Nothing Sticks_. This new record mixes loud, gritty guitars with beautiful strings and brass, creating a sound that’s powerful and full of feeling.
 
 Her music dives into all the highs and lows of life - love, loss, and everything in between. With songs like “Make Me a Sword” and “Lucky Superstar,” she turns her personal stories into songs that feel both close and huge, like they were written just for you.
 
