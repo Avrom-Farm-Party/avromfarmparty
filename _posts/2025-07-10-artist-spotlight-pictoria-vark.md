@@ -12,6 +12,4 @@ Pictoria’s mix of raw energy and thoughtful lyrics has made her a rising star 
 
 We’re so excited to welcome Pictoria Vark to Avrom Farm Party - see her live and see what we mean.
 
-```
 <iframe width="560" height="315" src="https://www.youtube.com/embed/mKPbRrp9MdQ?si=K5kth2CyzWHSToOd" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-```
