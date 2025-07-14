@@ -28,7 +28,7 @@
 	<meta property="og:image" content="{{ site.url }}/assets/afp23-1.jpg">
 	
 	<!-- Plausible Analytics -->
-	{% if plausible_domain %}<script defer data-domain="{{ site.plausible_domain }}" src="https://plausible.io/js/script.js"></script>{% endif %}
+	{% if plausible_domain != blank %}<script defer data-domain="{{ site.plausible_domain }}" src="https://plausible.io/js/script.js"></script>{% endif %}
 </head>
 
 <body class="font-serif">
