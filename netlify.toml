@@ -1,2 +1,2 @@
 [build]
-	command = "npm run build"
+	command = "gem install bundler && bundle install && npm run build"
