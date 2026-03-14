@@ -22,7 +22,7 @@
 	}
 	
 	.artist-name {
-		@apply rounded-full inline-block bg-hannah-green border-2 border-black py-2 px-4 text-white font-bold;
+		@apply rounded-full inline-block bg-afp-green border-2 border-black py-2 px-4 text-white font-bold;
 	}
 }
 

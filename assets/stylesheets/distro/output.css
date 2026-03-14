@@ -424,7 +424,7 @@ video {
 
 p a, nav a, label a {
   --tw-text-opacity: 1;
-  color: rgb(0 105 198 / var(--tw-text-opacity));
+  color: rgb(42 110 212 / var(--tw-text-opacity));
   text-decoration-line: underline;
   text-decoration-thickness: 2px;
   text-underline-offset: 2px;
@@ -553,7 +553,7 @@ p a, nav a, label a {
   --tw-border-opacity: 1;
   border-color: rgb(0 0 0 / var(--tw-border-opacity));
   --tw-bg-opacity: 1;
-  background-color: rgb(71 156 96 / var(--tw-bg-opacity));
+  background-color: rgb(71 181 118 / var(--tw-bg-opacity));
   padding-top: 0.5rem;
   padding-bottom: 0.5rem;
   padding-left: 1rem;
@@ -666,10 +666,6 @@ p a, nav a, label a {
   margin-top: 2rem;
 }
 
-.box-border {
-  box-sizing: border-box;
-}
-
 .block {
   display: block;
 }
@@ -754,12 +750,12 @@ p a, nav a, label a {
   justify-content: space-between;
 }
 
-.gap-4 {
-  gap: 1rem;
-}
-
 .gap-2 {
   gap: 0.5rem;
+}
+
+.gap-4 {
+  gap: 1rem;
 }
 
 .space-y-16 > :not([hidden]) ~ :not([hidden]) {
@@ -818,14 +814,6 @@ p a, nav a, label a {
   border-bottom-width: 1px;
 }
 
-.border-t-8 {
-  border-top-width: 8px;
-}
-
-.border-t-4 {
-  border-top-width: 4px;
-}
-
 .border-t-2 {
   border-top-width: 2px;
 }
@@ -843,13 +831,9 @@ p a, nav a, label a {
   border-color: rgb(0 0 0 / 0.1);
 }
 
-.border-black\/50 {
-  border-color: rgb(0 0 0 / 0.5);
-}
-
 .bg-afp-blue {
   --tw-bg-opacity: 1;
-  background-color: rgb(0 105 198 / var(--tw-bg-opacity));
+  background-color: rgb(42 110 212 / var(--tw-bg-opacity));
 }
 
 .bg-black {
@@ -860,26 +844,6 @@ p a, nav a, label a {
 .bg-gray-100 {
   --tw-bg-opacity: 1;
   background-color: rgb(243 244 246 / var(--tw-bg-opacity));
-}
-
-.bg-hannah-blue {
-  --tw-bg-opacity: 1;
-  background-color: rgb(95 152 208 / var(--tw-bg-opacity));
-}
-
-.bg-hannah-green {
-  --tw-bg-opacity: 1;
-  background-color: rgb(71 156 96 / var(--tw-bg-opacity));
-}
-
-.bg-hannah-pink {
-  --tw-bg-opacity: 1;
-  background-color: rgb(191 127 177 / var(--tw-bg-opacity));
-}
-
-.bg-hannah-red {
-  --tw-bg-opacity: 1;
-  background-color: rgb(223 97 57 / var(--tw-bg-opacity));
 }
 
 .bg-orange-500\/10 {
@@ -893,6 +857,16 @@ p a, nav a, label a {
 
 .bg-yellow-500\/20 {
   background-color: rgb(234 179 8 / 0.2);
+}
+
+.bg-afp-green {
+  --tw-bg-opacity: 1;
+  background-color: rgb(71 181 118 / var(--tw-bg-opacity));
+}
+
+.bg-afp-red {
+  --tw-bg-opacity: 1;
+  background-color: rgb(242 87 48 / var(--tw-bg-opacity));
 }
 
 .bg-\[url\(\'\/assets\/artist-photos\/babehoven\.jpg\'\)\] {
@@ -960,14 +934,14 @@ p a, nav a, label a {
   padding-right: 4rem;
 }
 
-.py-4 {
-  padding-top: 1rem;
-  padding-bottom: 1rem;
-}
-
 .px-4 {
   padding-left: 1rem;
   padding-right: 1rem;
+}
+
+.py-4 {
+  padding-top: 1rem;
+  padding-bottom: 1rem;
 }
 
 .py-8 {
@@ -983,10 +957,6 @@ p a, nav a, label a {
   padding-top: 2rem;
 }
 
-.pt-4 {
-  padding-top: 1rem;
-}
-
 .text-left {
   text-align: left;
 }
@@ -997,10 +967,6 @@ p a, nav a, label a {
 
 .font-sans {
   font-family: "Libre Franklin", sans-serif;
-}
-
-.font-yarndings {
-  font-family: "Yarndings 20";
 }
 
 .text-2xl {
@@ -1018,9 +984,13 @@ p a, nav a, label a {
   line-height: 2.5rem;
 }
 
-.text-6xl {
-  font-size: 3.75rem;
+.text-5xl {
+  font-size: 3rem;
   line-height: 1;
+}
+
+.text-\[0\.8em\] {
+  font-size: 0.8em;
 }
 
 .text-\[calc\(1\.1em_\+_0\.25vw\)\] {
@@ -1035,15 +1005,6 @@ p a, nav a, label a {
 .text-xl {
   font-size: 1.25rem;
   line-height: 1.75rem;
-}
-
-.text-\[0\.8em\] {
-  font-size: 0.8em;
-}
-
-.text-5xl {
-  font-size: 3rem;
-  line-height: 1;
 }
 
 .font-black {
@@ -1067,24 +1028,28 @@ p a, nav a, label a {
   font-variant-numeric: var(--tw-ordinal) var(--tw-slashed-zero) var(--tw-numeric-figure) var(--tw-numeric-spacing) var(--tw-numeric-fraction);
 }
 
-.text-hannah-blue {
-  --tw-text-opacity: 1;
-  color: rgb(95 152 208 / var(--tw-text-opacity));
+.tracking-tighter {
+  letter-spacing: -0.05em;
 }
 
-.text-hannah-green {
+.text-afp-green {
   --tw-text-opacity: 1;
-  color: rgb(71 156 96 / var(--tw-text-opacity));
-}
-
-.text-hannah-red {
-  --tw-text-opacity: 1;
-  color: rgb(223 97 57 / var(--tw-text-opacity));
+  color: rgb(71 181 118 / var(--tw-text-opacity));
 }
 
 .text-white {
   --tw-text-opacity: 1;
   color: rgb(255 255 255 / var(--tw-text-opacity));
+}
+
+.text-afp-blue {
+  --tw-text-opacity: 1;
+  color: rgb(42 110 212 / var(--tw-text-opacity));
+}
+
+.text-afp-red {
+  --tw-text-opacity: 1;
+  color: rgb(242 87 48 / var(--tw-text-opacity));
 }
 
 .underline {
@@ -1103,7 +1068,7 @@ p a, nav a, label a {
 
 .link {
   --tw-text-opacity: 1;
-  color: rgb(0 105 198 / var(--tw-text-opacity));
+  color: rgb(42 110 212 / var(--tw-text-opacity));
   text-decoration-line: underline;
   text-decoration-thickness: 2px;
   text-underline-offset: 2px;
@@ -1111,7 +1076,7 @@ p a, nav a, label a {
 
 .button {
   --tw-bg-opacity: 1;
-  background-color: rgb(0 105 198 / var(--tw-bg-opacity));
+  background-color: rgb(42 110 212 / var(--tw-bg-opacity));
   padding-left: 0.75rem;
   padding-right: 0.75rem;
   padding-top: 0.375rem;
@@ -1158,14 +1123,14 @@ p a, nav a, label a {
   }
 }
 
-.selection\:bg-hannah-red *::-moz-selection {
+.selection\:bg-afp-red *::-moz-selection {
   --tw-bg-opacity: 1;
-  background-color: rgb(223 97 57 / var(--tw-bg-opacity));
+  background-color: rgb(242 87 48 / var(--tw-bg-opacity));
 }
 
-.selection\:bg-hannah-red *::selection {
+.selection\:bg-afp-red *::selection {
   --tw-bg-opacity: 1;
-  background-color: rgb(223 97 57 / var(--tw-bg-opacity));
+  background-color: rgb(242 87 48 / var(--tw-bg-opacity));
 }
 
 .selection\:text-white *::-moz-selection {
@@ -1178,14 +1143,14 @@ p a, nav a, label a {
   color: rgb(255 255 255 / var(--tw-text-opacity));
 }
 
-.selection\:bg-hannah-red::-moz-selection {
+.selection\:bg-afp-red::-moz-selection {
   --tw-bg-opacity: 1;
-  background-color: rgb(223 97 57 / var(--tw-bg-opacity));
+  background-color: rgb(242 87 48 / var(--tw-bg-opacity));
 }
 
-.selection\:bg-hannah-red::selection {
+.selection\:bg-afp-red::selection {
   --tw-bg-opacity: 1;
-  background-color: rgb(223 97 57 / var(--tw-bg-opacity));
+  background-color: rgb(242 87 48 / var(--tw-bg-opacity));
 }
 
 .selection\:text-white::-moz-selection {
