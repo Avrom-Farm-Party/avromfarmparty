@@ -11,6 +11,7 @@ module.exports = {
         'cursive': ['"Brush Script MT"', 'cursive'],
         'serif': ['"Averia Serif Libre"', 'serif'],
         'yarndings': ['"Yarndings 20"'],
+        'sans': ['"Libre Franklin"', 'sans-serif'],
       },
       colors: {
         'afp-red': '#F24307',

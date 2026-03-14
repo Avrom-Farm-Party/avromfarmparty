@@ -31,6 +31,10 @@
 		@apply text-afp-blue underline underline-offset-2 decoration-2;
 	}
 
+	.button {
+		@apply bg-afp-blue text-white font-bold no-underline px-3 py-1.5;
+	}
+
 	.site-section-base {
 		@apply bg-white relative mx-4 md:mx-10;
 	}
