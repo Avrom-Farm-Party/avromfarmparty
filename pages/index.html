@@ -3,7 +3,7 @@ layout: default
 permalink: "/"
 ---
 
-<section class="space-y-8">
+<section id="intro" class="space-y-8">
 	<ul class="font-black text-5xl sm:text-6xl">
 		<li>Music,</li>
 		<li>camping,</li>
@@ -30,13 +30,25 @@ permalink: "/"
 		<p><span class="font-bold">Earlybird tickets</span> go on sale March 20, 10AM Central.</p>
 		<p>The lineup will be announced at the end of March, then ticket prices will go up.</p>
 	</div>
+
+	<div class="text-3xl text-center">
+		<a href="{{ site.ticket_link }}" class="button-xl">Buy Tickets</a>
+	</div>
+
+	<div id="countdown">
+		<p class="font-bold text-lg text-center"><span id="days"></span> days until AFP 2026!</p>
+		<script>
+			const target = new Date("2026-08-21");
+			const today = new Date();
+			today.setHours(0,0,0,0);
+
+			const days = Math.ceil((target - today) / (1000 * 60 * 60 * 24));
+			document.getElementById("days").textContent = days;
+		</script>
+	</div>
 </section>
 
-<section id="tickets" class="bg-yellow-500/20 p-8">
-	TICKET FORM w/ perks, ticket info, etc
-</section>
-
-<section id="about" class="space-y-8 border-t-2 pt-8 border-black/10 border-dashed">
+<section id="about" class="site-section">
 	<h2 class="h2">The Story of the Farm</h2>
 
 	<div class="space-y-4">
@@ -46,13 +58,14 @@ permalink: "/"
 		<div class="sm:bg-black/5 sm:p-8">
 			<img src="{% link assets/lester.jpg %}" class="picture sm:max-w-screen-sm mx-auto" alt="Lester Schwartz painting">
 		</div>
-		<p>In the early 2000s, Lester’s grandson Hayden Holbert fell in love with the farm. On frequent trips from home in Chicago, Hayden cultivated his first seeds on the land, returning it to its original use. Hayden would later go on to study regenerative agriculture at Warren Wilson College and turn Avrom Farm into a pasture-based working farm with pigs, chickens, and vegetables working together in a regenerative cycle.</p>
+		<p>In the early 2000s, Lester’s grandson Hayden Holbert fell in love with the farm. On frequent trips from home in Chicago, Hayden cultivated his first seeds on the land, returning it to its original use. Hayden would later go on to study regenerative agriculture at Warren Wilson College and turn Avrom Farm into a pasture-based farm with pigs, chickens, and vegetables working together in a regenerative cycle.</p>
 		<p>Hayden has since closed the farm but still sells pasture-raised chicken at farmer’s markets and festivals around the country. Meanwhile, <span class="font-bold">Avrom Farm Party</span> cooks meals from scratch with ingredients from the farm’s neighbors.</p>
 		<p>Hayden and his longtime friend and bandmate Spencer Tweedy produce <span class="font-bold">Avrom Farm Party</span> alongside Avery Riel, Lily Moore, talented chefs from Chicago and dozens of volunteers.</p>
+		<p><strong>Avrom Farm Party is a 100% non-profit festival.</strong></p>
 	</div>
 </section>
 
-<section id="news" class="space-y-8 border-t-2 pt-8 border-black/10 border-dashed">
+<section id="news" class="site-section">
 	<a href="{% link pages/blog.html %}"><h2 class="h2">Festival News</h2></a>
 	
 	{% include news_grid.html limit=3 %}
@@ -61,42 +74,3 @@ permalink: "/"
 		<script async data-uid="ce8551c0ef" src="https://avrom-farm-party.kit.com/ce8551c0ef/index.js"></script>
 	</div>
 </section>
-
-<section>
-	<p class="font-bold text-3xl text-center"><span id="days"></span> days until Avrom Farm Party 2026!</p>
-	<script>
-		const target = new Date("2026-08-21");
-		const today = new Date();
-		today.setHours(0,0,0,0);
-
-		const days = Math.ceil((target - today) / (1000 * 60 * 60 * 24));
-		document.getElementById("days").textContent = days;
-	</script>
-</section>
-
-<!-- <div class="">
-	<h2 class="">Save the Date</h2>
-	<p><mark>August 21-23, 2026</mark></p>
-	<p>We’ll announce more info as the farm thaws…</p>
-	
-</div>
-	
-<div class="">
-	<h2 class="">A little history…</h2>
-	
-	<div class="space-y-4">
-		<img src="assets/lester.jpg" class="rounded-2xl border-2 border-black" alt="Lester Schwartz applies a brush to a large, geometric painting.">
-		
-		<p>Avrom Farm began its life in the 1950s as the home and workplace of sculptor-painter Lester Schwartz. The land had been a dairy farm. When Lester moved in, he renamed it after his father, Abraham, and built on its highest point an inviting, mid-century modern home imbued with the naturalistic shapes of his sculptures and paintings.</p>
-		
-		<p>Over the next several decades, Lester turned Avrom Farm into a veritable museum and sculpture park. He populated its rolling hills with large works made of farm implements (a tractor!) and surplus bottles from the Miller High Life brewery. He taught students at the nearby Ripon College and created paintings that are collected by the Smithsonian.</p>
-		
-		<p>Meanwhile, Lester’s grandson Hayden Holbert grew up in Chicago making frequent visits to the farm, running around among Lester’s art and eventually planting vegetable seeds in the once-fertile soil, hoping they would grow. Hayden immersed himself in books about animal husbandry and nutrient cycles and in 2013, he enrolled in Warren Wilson College to study sustainable agriculture and to work at the college’s 275-acre pasture-based livestock farm.</p>
-		
-		<p>After receiving his degree, Hayden returned to Avrom Farm and grew it into a full-time, livestock and vegetable pasture. Using centuries-old techniques, Hayden and fellow farmers restored the land’s soil, increased its biodiversity, and created a symbiotic relationship between pigs, chickens, and vegetables to provide delicious, nutrient-rich food to farmers markets, restaurants, and homes in Wisconsin and Illinois.</p>
-		
-		<p>In 2018, Hayden and his longtime friend and bandmate Spencer Tweedy organized <span class="text-afp-red">Avrom</span> <span class="text-afp-blue">Farm</span> <span class="text-afp-green">Party</span> to promote regenerative agriculture and to share great music and food with friends and strangers. Since then, the festival has grown into hundreds of people’s favorite part of the summer, a time to get away from normal life, and an opportunity to discover new artists.</p>
-	</div>
-</div>
-
--->
