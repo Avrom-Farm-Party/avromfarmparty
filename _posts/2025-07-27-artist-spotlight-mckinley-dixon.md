@@ -10,6 +10,4 @@ Now, he’s back with _Magic, Alive_, a brand-new record that keeps pushing his 
 
 Live, McKinley Dixon brings it all to the stage: a full band, electric energy, and the kind of honesty that pulls you in. We’re so excited to welcome him to Avrom Farm Party, and this is a set you won’t want to miss.
 
-```
 <iframe width="560" height="315" src="https://www.youtube.com/embed/uU3899rOJ60?si=JhB5xsXTlTx8nN3Y" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-```

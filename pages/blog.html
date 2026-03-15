@@ -4,17 +4,10 @@ permalink: "/blog"
 title: Blog
 ---
 
-<section class="site-section">
-    <h2 class="font-bold text-4xl mb-8"><span class="font-yarndings relative top-0.5 pr-2 text-afp-green font-normal" aria-hidden="true">o</span>Festival news</h2>
+<section class="space-y-8">
+    <h2 class="h2">Festival News</h2>
 		
-    <div class="space-y-4 mb-8">
-        {% for post in site.posts limit:10 %}
-        <article class="space-y-2">
-            <a href="{{ post.url }}" class="text-2xl link">{{ post.title }}</a>
-            {{ post.excerpt }}
-        </article>
-        {% endfor %}
-    </div>
+    {% include news_grid.html %}
 
-    <p><a href="{{ site.url }}">&larr; Return home</a></p>
+    <p><a href="{{ site.url }}">Back to Home</a></p>
 </section>

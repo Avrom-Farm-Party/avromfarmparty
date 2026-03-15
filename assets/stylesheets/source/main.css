@@ -27,8 +27,16 @@
 }
 
 @layer utilities {
+	.h2 {
+		@apply font-black text-3xl underline decoration-8;
+	}
+
 	.link {
 		@apply text-afp-blue underline underline-offset-2 decoration-2;
+	}
+
+	.picture {
+		@apply border-4 border-black;
 	}
 
 	.button {
