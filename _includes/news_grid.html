@@ -1,0 +1,10 @@
+<div class="grid grid-cols-1 sm:grid-cols-3 gap-4 items-stretch">
+    {% for post in site.posts limit:include.limit %}
+    <article class="bg-yellow-500/20 p-4">
+        <a href="{{ post.url }}" class="space-y-2">
+            <div class="font-bold link">{{ post.title }}</div>
+            <div class="text-sm">{{ post.excerpt | truncate: 150 }}</div>
+        </a>
+    </article>
+    {% endfor %}
+</div>

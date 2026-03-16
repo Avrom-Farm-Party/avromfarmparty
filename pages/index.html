@@ -3,77 +3,89 @@ layout: default
 permalink: "/"
 ---
 
-<section class="site-section">
-	<div class="h-2 bg-hannah-pink absolute -top-2 left-0 right-0 border-y border-black"></div>
-	<div class="w-2 bg-hannah-red absolute -left-2 top-0 bottom-0 border-x border-black"></div>
-	<div class="w-2 bg-hannah-red absolute -right-2 top-0 bottom-0 border-x border-black"></div>
-	<div class="w-2 h-2 bg-black absolute -left-2 -top-2"></div>
-	<div class="w-2 h-2 bg-black absolute -right-2 -top-2"></div>
-	
-	<div class="max-w-[500px] mx-auto">
-		<div class="space-y-4 text-xl text-center">
-			<h2 class="font-bold text-4xl mb-8"><span class="font-yarndings relative top-0.5 pr-2 text-hannah-green font-normal" aria-hidden="true">h</span>Save the Date</h2>
-			<p><mark>August 21-23, 2026</mark></p>
-			<p>We’ll announce more info as the farm thaws…</p>
-			<script async data-uid="ce8551c0ef" src="https://avrom-farm-party.kit.com/ce8551c0ef/index.js"></script>
-		</div>
-	</div>
-</section>
-<section class="site-section-full">
-	<div class="h-2 bg-hannah-pink absolute -top-2 left-0 right-0 border-y border-black"></div>
-	<div class="w-2 bg-hannah-red absolute -left-2 top-0 bottom-0 border-x border-black"></div>
-	<div class="w-2 bg-hannah-red absolute -right-2 top-0 bottom-0 border-x border-black"></div>
-	<div class="w-2 h-2 bg-black absolute -left-2 -top-2"></div>
-	<div class="w-2 h-2 bg-black absolute -right-2 -top-2"></div>
-	<img src="assets/afp23-1.jpg" alt="Attendees sitting on haybales in a grassy field watch an artist perform at Avrom Farm Party." class="w-full">
-</section>
-<section id="about" class="bg-white relative mx-4 md:mx-10 p-8 md:py-16">
-	<div class="h-2 bg-hannah-pink absolute -top-2 left-0 right-0 border-y border-black"></div>
-	<div class="w-2 bg-hannah-red absolute -left-2 top-0 bottom-0 border-x border-black"></div>
-	<div class="w-2 bg-hannah-red absolute -right-2 top-0 bottom-0 border-x border-black"></div>
-	<div class="w-2 h-2 bg-black absolute -left-2 -top-2"></div>
-	<div class="w-2 h-2 bg-black absolute -right-2 -top-2"></div>
-	
-	<div class="max-w-prose mx-auto">
-		<h2 class="font-bold text-4xl mb-4"><span class="font-yarndings relative top-0.5 pr-2 text-hannah-green font-normal" aria-hidden="true">h</span>A little history…</h2>
-		
-		<div class="space-y-4">
-			<img src="assets/lester.jpg" class="rounded-2xl border-2 border-black" alt="Lester Schwartz applies a brush to a large, geometric painting.">
-			
-			<p>Avrom Farm began its life in the 1950s as the home and workplace of sculptor-painter Lester Schwartz. The land had been a dairy farm. When Lester moved in, he renamed it after his father, Abraham, and built on its highest point an inviting, mid-century modern home imbued with the naturalistic shapes of his sculptures and paintings.</p>
-			
-			<p>Over the next several decades, Lester turned Avrom Farm into a veritable museum and sculpture park. He populated its rolling hills with large works made of farm implements (a tractor!) and surplus bottles from the Miller High Life brewery. He taught students at the nearby Ripon College and created paintings that are collected by the Smithsonian.</p>
-			
-			<p>Meanwhile, Lester’s grandson Hayden Holbert grew up in Chicago making frequent visits to the farm, running around among Lester’s art and eventually planting vegetable seeds in the once-fertile soil, hoping they would grow. Hayden immersed himself in books about animal husbandry and nutrient cycles and in 2013, he enrolled in Warren Wilson College to study sustainable agriculture and to work at the college’s 275-acre pasture-based livestock farm.</p>
-			
-			<p>After receiving his degree, Hayden returned to Avrom Farm and grew it into a full-time, livestock and vegetable pasture. Using centuries-old techniques, Hayden and fellow farmers restored the land’s soil, increased its biodiversity, and created a symbiotic relationship between pigs, chickens, and vegetables to provide delicious, nutrient-rich food to farmers markets, restaurants, and homes in Wisconsin and Illinois.</p>
-			
-			<p>In 2018, Hayden and his longtime friend and bandmate Spencer Tweedy organized <span class="text-hannah-red">Avrom</span> <span class="text-hannah-blue">Farm</span> <span class="text-hannah-green">Party</span> to promote regenerative agriculture and to share great music and food with friends and strangers. Since then, the festival has grown into hundreds of people’s favorite part of the summer, a time to get away from normal life, and an opportunity to discover new artists.</p>
-		</div>
-	</div>
-</section>
-<section id="blog" class="bg-white relative mx-4 md:mx-10 p-8 md:py-16">
-	<div class="h-2 bg-hannah-pink absolute -top-2 left-0 right-0 border-y border-black"></div>
-	<div class="w-2 bg-hannah-red absolute -left-2 top-0 bottom-0 border-x border-black"></div>
-	<div class="w-2 bg-hannah-red absolute -right-2 top-0 bottom-0 border-x border-black"></div>
-	<div class="w-2 h-2 bg-black absolute -left-2 -top-2"></div>
-	<div class="w-2 h-2 bg-black absolute -right-2 -top-2"></div>
-	<div class="h-2 bg-hannah-pink absolute -bottom-2 left-0 right-0 border-y border-black"></div>
-	<div class="w-2 h-2 bg-black absolute -left-2 -bottom-2"></div>
-	<div class="w-2 h-2 bg-black absolute -right-2 -bottom-2"></div>
-	
-	<div class="max-w-prose mx-auto">
-		<h2 class="font-bold text-4xl mb-8"><span class="font-yarndings relative top-0.5 pr-2 text-hannah-green font-normal" aria-hidden="true">o</span>Festival news</h2>
-		
-		<div class="space-y-4 mb-8">
-			{% for post in site.posts limit:10 %}
-			<article class="space-y-2">
-				<a href="{{ post.url }}" class="text-2xl link">{{ post.title }}</a>
-				{{ post.excerpt }}
-			</article>
-			{% endfor %}
-		</div>
+<section id="intro" class="space-y-8">
+	<ul class="font-black text-5xl sm:text-6xl">
+		<li>Music,</li>
+		<li>camping,</li>
+		<li>homegrown food</li>
+	</ul>
 
-		<p><a href="{% link pages/blog.html %}">All festival news &rarr;</a></p>
+	<div class="font-bold text-2xl">
+		<details>
+			<summary class="list-none">+ dance party</summary>
+		</details>
+		<details>
+			<summary class="list-none">+ workshops</summary>
+			<p class="font-normal text-base mb-4">Details to come.</p>
+		</details>
+		<details>
+			<summary class="list-none">+ yoga</summary>
+		</details>
+		<details>
+			<summary class="list-none">+ local beer</summary>
+		</details>
+	</div>
+
+	<div class="grid grid-cols-3 gap-2 sm:gap-4">
+		<img class="picture col-span-3 sm:col-span-2 h-full object-cover object-center" src="{% link assets/afp-2025/afp25-006.jpg %}" alt="Artists and guests sit in the dining tent.">
+		<img class="picture hidden sm:block object-cover object-center" src="{% link assets/afp-2025/afp25-005.jpg %}" alt="Booksellers sell books and pickles at the fest.">
+		<img class="picture aspect-square object-cover object-center" src="{% link assets/afp-2025/afp25-004.jpg %}" alt="Emcee Mary Williamson holds a megaphone.">
+		<img class="picture aspect-square object-cover object-center" src="{% link assets/afp-2025/afp25-001.jpg %}" alt="A guest in a poncho.">
+		<img class="picture aspect-square object-cover object-center" src="{% link assets/afp-2025/afp25-000.jpg %}" alt="The sun peeks over the hill at the farm.">
+	</div>
+
+	<div class="text-2xl space-y-4">
+		<p><span class="font-bold">Avrom Farm Party</span> is an annual music and food festival in Green Lake, Wisconsin, three hours north of Chicago, lovingly produced by members of the Chicago music community.</p>
+		<p><span class="font-bold">Earlybird tickets</span> go on sale March 20, 10AM Central.</p>
+		<p>The lineup will be announced at the end of March, then ticket prices will go up.</p>
+	</div>
+
+	<!-- <div class="text-3xl text-center">
+		<a href="{{ site.ticket_link }}" class="button-xl">Buy Tickets</a>
+	</div> -->
+
+	<div class="mx-auto max-w-screen-sm">
+		<p class="text-center font-bold mb-4">Get Notified</p>
+		<script async data-uid="ce8551c0ef" src="https://avrom-farm-party.kit.com/ce8551c0ef/index.js"></script>
+	</div>
+
+	<div id="countdown">
+		<p class="font-bold text-lg text-center"><span id="days"></span> days until AFP 2026!</p>
+		<script>
+			const target = new Date("2026-08-21");
+			const today = new Date();
+			today.setHours(0,0,0,0);
+
+			const days = Math.ceil((target - today) / (1000 * 60 * 60 * 24));
+			document.getElementById("days").textContent = days;
+		</script>
+	</div>
+</section>
+
+<section id="about" class="site-section">
+	<h2 class="h2">The Story of the Farm</h2>
+
+	<div class="space-y-4">
+		<p>Avrom Farm is the former home and studio of renowned artist <strong>Lester Schwartz</strong> (1912-2006).</p>
+		<p>From the 1950s until 2006, Lester lived and worked on the farm, creating paintings and sculptures that are collected by the Smithsonian, the Art Institute of Chicago, and the Metropolitan Museum of Art.</p>
+		<p>Over 50 years, he populated the farm’s rolling hills with towering sculptures assembled from cars and scrap metal. Many of the works have been sold; some of them are still on the farm, including a large sculpture dedicated to Lester’s late wife, Gloria.</p>
+		<div class="sm:bg-black/5 sm:p-8">
+			<img src="{% link assets/lester.jpg %}" class="picture sm:max-w-screen-sm mx-auto" alt="Lester Schwartz painting">
+		</div>
+		<p>In the early 2000s, Lester’s grandson Hayden Holbert fell in love with the farm. On frequent trips from home in Chicago, Hayden cultivated his first seeds on the land, returning it to its original use. Hayden would later go on to study regenerative agriculture at Warren Wilson College and turn Avrom Farm into a pasture-based farm with pigs, chickens, and vegetables working together in a regenerative cycle.</p>
+		<p>Hayden has since closed the farm but still sells pasture-raised chicken at farmer’s markets and festivals around the country. Meanwhile, <span class="font-bold">Avrom Farm Party</span> cooks meals from scratch with ingredients from the farm’s neighbors.</p>
+		<p>Hayden and his longtime friend and bandmate Spencer Tweedy produce <span class="font-bold">Avrom Farm Party</span> alongside Avery Riel, Lily Moore, talented chefs from Chicago and dozens of volunteers.</p>
+		<p><strong>Avrom Farm Party is a 100% non-profit festival.</strong></p>
+	</div>
+</section>
+
+<section id="news" class="site-section">
+	<a href="{% link pages/blog.html %}"><h2 class="h2">Festival News</h2></a>
+	
+	{% include news_grid.html limit=3 %}
+
+	<div class="mx-auto max-w-screen-sm">
+		<p class="text-center font-bold mb-4">Sign Up for Festival News</p>
+		<script async data-uid="ce8551c0ef" src="https://avrom-farm-party.kit.com/ce8551c0ef/index.js"></script>
 	</div>
 </section>

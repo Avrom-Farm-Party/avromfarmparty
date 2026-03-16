@@ -22,24 +22,32 @@
 	}
 	
 	.artist-name {
-		@apply rounded-full inline-block bg-hannah-green border-2 border-black py-2 px-4 text-white font-bold;
+		@apply rounded-full inline-block bg-afp-green border-2 border-black py-2 px-4 text-white font-bold;
 	}
 }
 
 @layer utilities {
+	.h2 {
+		@apply font-black text-3xl underline decoration-8;
+	}
+
 	.link {
 		@apply text-afp-blue underline underline-offset-2 decoration-2;
 	}
 
-	.site-section-base {
-		@apply bg-white relative mx-4 md:mx-10;
+	.picture {
+		@apply border-4 border-black;
+	}
+
+	.button {
+		@apply cursor-pointer bg-afp-blue text-white font-bold no-underline px-3 py-1.5;
+	}
+
+	.button-xl {
+		@apply cursor-pointer bg-afp-blue text-white font-bold no-underline px-6 py-4 box-border inline-block;
 	}
 
 	.site-section {
-		@apply site-section-base py-8 px-8 md:py-16;
-	}
-
-	.site-section-full {
-		@apply site-section-base;
+		@apply space-y-8 border-t-2 pt-8 border-black/10 border-dashed;
 	}
 }

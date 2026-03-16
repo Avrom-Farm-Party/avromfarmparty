@@ -18,7 +18,7 @@
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
 
-title: Avrom Farm Party
+title: Avrom Farm Party 2026
 subtitle: Green Lake, WI &bull; Aug 21-23, 2026
 meta_title: Avrom Farm Party 2026 | Green Lake, Wisconsin music and food festival, camping
 email: admin@avromfarmparty.com
@@ -27,6 +27,7 @@ description: >- # this means to ignore newlines until "baseurl:"
 social_description: Music, farm-fresh food, and camping in Green Lake, Wisconsin.
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://avromfarmparty.com" # the base hostname & protocol for your site, e.g. http://example.com
+ticket_link: https://buytickets.at/avromfarmparty/2119098
 
 # Plausible Analytics
 plausible_domain: avromfarmparty.com
@@ -37,6 +38,13 @@ instagram: avromfarmparty
 # Build settings
 plugins:
   - jekyll-feed
+
+defaults:
+  - scope:
+      path: ""
+      type: "post"
+    values:
+      layout: "post"
 
 # Exclude from processing.
 # The following items will not be processed, by default.
