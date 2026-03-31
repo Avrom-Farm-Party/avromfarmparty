@@ -2,7 +2,7 @@
     {% for post in site.posts limit:include.limit %}
     <article class="bg-yellow-500/20 p-4 space-y-2">
         <a href="{{ post.url }}" class="font-bold link">{{ post.title }}</a>
-        <div class="text-sm">{{ post.excerpt | truncate: 150 }}</div>
+        <div class="text-sm">{{ post.excerpt }}</div>
     </article>
     {% endfor %}
 </div>
