@@ -583,16 +583,16 @@ p a, nav a, label a {
   max-width: 120px;
 }
 
+.max-w-\[50ch\] {
+  max-width: 50ch;
+}
+
 .max-w-screen-sm {
   max-width: 640px;
 }
 
 .max-w-screen-xl {
   max-width: 1280px;
-}
-
-.list-none {
-  list-style-type: none;
 }
 
 .grid-cols-1 {
@@ -655,12 +655,6 @@ p a, nav a, label a {
   scroll-behavior: smooth;
 }
 
-.truncate {
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-}
-
 .border-t-2 {
   border-top-width: 2px;
 }
@@ -687,6 +681,11 @@ p a, nav a, label a {
   background-color: rgb(234 179 8 / 0.2);
 }
 
+.bg-black {
+  --tw-bg-opacity: 1;
+  background-color: rgb(0 0 0 / var(--tw-bg-opacity));
+}
+
 .object-cover {
   -o-object-fit: cover;
      object-fit: cover;
@@ -708,6 +707,11 @@ p a, nav a, label a {
 .px-4 {
   padding-left: 1rem;
   padding-right: 1rem;
+}
+
+.py-2 {
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
 }
 
 .py-8 {
@@ -746,6 +750,10 @@ p a, nav a, label a {
   font-size: 0.8em;
 }
 
+.text-\[1\.4em\] {
+  font-size: 1.4em;
+}
+
 .text-\[calc\(1\.1em_\+_0\.25vw\)\] {
   font-size: calc(1.1em + 0.25vw);
 }
@@ -765,16 +773,17 @@ p a, nav a, label a {
   line-height: 1.25rem;
 }
 
+.text-xl {
+  font-size: 1.25rem;
+  line-height: 1.75rem;
+}
+
 .font-black {
   font-weight: 900;
 }
 
 .font-bold {
   font-weight: 700;
-}
-
-.font-normal {
-  font-weight: 400;
 }
 
 .ordinal {
@@ -911,6 +920,12 @@ p a, nav a, label a {
 
   .sm\:gap-4 {
     gap: 1rem;
+  }
+
+  .sm\:space-y-4 > :not([hidden]) ~ :not([hidden]) {
+    --tw-space-y-reverse: 0;
+    margin-top: calc(1rem * calc(1 - var(--tw-space-y-reverse)));
+    margin-bottom: calc(1rem * var(--tw-space-y-reverse));
   }
 
   .sm\:bg-black\/5 {
