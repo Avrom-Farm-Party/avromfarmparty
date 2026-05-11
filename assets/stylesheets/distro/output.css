@@ -819,12 +819,21 @@ p a, nav a, label a {
   line-height: 1.25rem;
 }
 
+.text-xs {
+  font-size: 0.75rem;
+  line-height: 1rem;
+}
+
 .font-black {
   font-weight: 900;
 }
 
 .font-bold {
   font-weight: 700;
+}
+
+.font-normal {
+  font-weight: 400;
 }
 
 .ordinal {
@@ -1023,5 +1032,9 @@ p a, nav a, label a {
   .sm\:text-xl {
     font-size: 1.25rem;
     line-height: 1.75rem;
+  }
+
+  .sm\:text-\[0\.8em\] {
+    font-size: 0.8em;
   }
 }
