@@ -3,41 +3,26 @@ layout: default
 permalink: "/"
 ---
 
-<section id="intro" class="space-y-8">
-	<ul class="font-black text-5xl sm:text-6xl">
-		<li>Music,</li>
-		<li>camping,</li>
-		<li>homegrown food</li>
-	</ul>
-
-	<div class="font-bold text-2xl">
-		<details>
-			<summary class="list-none">+ dance party</summary>
-		</details>
-		<details>
-			<summary class="list-none">+ workshops</summary>
-			<p class="font-normal text-base mb-4">Details to come.</p>
-		</details>
-		<details>
-			<summary class="list-none">+ yoga</summary>
-		</details>
-		<details>
-			<summary class="list-none">+ local beer</summary>
-		</details>
+<section id="lineup" class="space-y-8">
+	<div class="space-y-2 sm:space-y-4">
+		<div class="grid grid-cols-2 sm:grid-cols-3 gap-4">
+			{% include artist-box.html artist="Indigo De Souza" image="indigo.jpg" note="(solo)" link="https://www.indigodesouza.com/" %}
+			{% include artist-box.html artist="Frankie Cosmos" image="frankie.jpg" link="https://www.frankiecosmosband.com/" %}
+			{% include artist-box.html artist="NNAMDÏ" image="nnamdi.jpg" note="(solo)" link="https://www.instagram.com/nnamdithegreat/" %}
+			{% include artist-box.html artist="Merce Lemon" image="merce.jpg" link="https://mercelemon.com/" %}
+			{% include artist-box.html artist="The Slaps" image="slaps.jpg" link="https://www.theslaps.us/" %}
+			{% include artist-box.html artist="Max Subar" image="max-subar.jpg" link="https://www.instagram.com/max.subar/?hl=en" %}
+			{% include artist-box.html artist="Sleeper’s Bell" image="sleepers-bell.jpg" link="https://sleepersbell.bandcamp.com/album/clover" %}
+			{% include artist-box.html artist="Astrachan" image="astrachan.jpg" link="https://astrachantunes.com/main-page" %}
+			{% include artist-box.html artist="Anaiet Soul" image="anaiet-soul.jpg" link="https://www.instagram.com/anaiet.soul" %}
+			{% include artist-box.html artist="Marian Runk" image="marian-runk.jpg" link="https://marianrunk.com/" %}
+			{% include artist-box.html artist="Butthole" image="butthole.jpg" link="https://buttholeband.bandcamp.com/album/butthole" %}
+			{% include artist-box.html artist="Wagon Pickers Square Dance" image="wagon-pickers.jpg" %}
+		</div>
 	</div>
 
-	<div class="grid grid-cols-3 gap-2 sm:gap-4">
-		<img class="picture col-span-3 sm:col-span-2 h-full object-cover object-center" src="{% link assets/afp-2025/afp25-006.jpg %}" alt="Artists and guests sit in the dining tent.">
-		<img class="picture hidden sm:block object-cover object-center" src="{% link assets/afp-2025/afp25-005.jpg %}" alt="Booksellers sell books and pickles at the fest.">
-		<img class="picture aspect-square object-cover object-center" src="{% link assets/afp-2025/afp25-004.jpg %}" alt="Emcee Mary Williamson holds a megaphone.">
-		<img class="picture aspect-square object-cover object-center" src="{% link assets/afp-2025/afp25-001.jpg %}" alt="A guest in a poncho.">
-		<img class="picture aspect-square object-cover object-center" src="{% link assets/afp-2025/afp25-000.jpg %}" alt="The sun peeks over the hill at the farm.">
-	</div>
-
-	<div class="text-2xl space-y-4">
-		<p><span class="font-bold">Avrom Farm Party</span> is an annual music and food festival in Green Lake, Wisconsin, three hours north of Chicago, lovingly produced by members of the Chicago music community.</p>
-		<p><span class="font-bold">Earlybird tickets</span> are on sale now.</p>
-		<p>The lineup will be announced in mid April, then ticket prices will go up.</p>
+	<div class="text-center text-lg max-w-[50ch] mx-auto">
+		<p><span class="font-black">Plus:</span> Farm-fresh Food, Local Beverages, Camping, Dancing In The Woods, Oddball Market, Workshops, Karaoke, Yoga, Campfire Stories</p>
 	</div>
 
 	<div class="text-3xl text-center">
@@ -57,7 +42,60 @@ permalink: "/"
 	</div>
 </section>
 
+<section id="schedule" class="space-y-4 site-section">
+	<h2 class="h2">Schedule</h2>
+	<div class="grid grid-cols-2 gap-4">
+		<div class="text-center bg-black/5 p-4">
+			<div class="font-black text-lg mb-2">Friday</div>
+			<ol class="divide-y divide-black/20 space-y-2 [&>li]:pt-2 divide-dashed">
+				<li>NNAMDÏ</li>
+				<li>The Slaps</li>
+				<li>Sleeper’s Bell</li>
+				<li>Anaiet Soul</li>
+				<li>Wagon Pickers</li>
+				<li>Dancing In The Woods</li>
+			</ol>
+		</div>
+		<div class="text-center bg-black/5 p-4">
+			<div class="font-black text-lg mb-2">Saturday</div>
+			<ol class="divide-y divide-black/20 space-y-2 [&>li]:pt-2 divide-dashed">
+				<li>Indigo De Souza</li>
+				<li>Frankie Cosmos</li>
+				<li>Merce Lemon</li>
+				<li>Max Subar</li>
+				<li>Astrachan</li>
+				<li>Butthole</li>
+				<li>Marian Runk</li>
+				<li>Wagon Pickers Square Dance</li>
+				<li>Dancing In The Woods</li>
+				<li>Karaoke</li>
+				<li>Morning Movement/Yoga</li>
+			</ol>
+		</div>
+	</div>
+	<p>Times TBA and subject to change!</p>
+</section>
+
 <section id="about" class="site-section">
+	<ul class="font-black text-5xl sm:text-6xl">
+		<li>Music,</li>
+		<li>camping,</li>
+		<li>homegrown food</li>
+	</ul>
+
+	<div class="text-2xl space-y-4">
+		<p><span class="font-bold">Avrom Farm Party</span> is an annual music and food festival in Green Lake, Wisconsin, three hours north of Chicago, lovingly produced by members of the Chicago music community.</p>
+	</div>
+	<div class="grid grid-cols-3 gap-2 sm:gap-4">
+		<img class="picture col-span-3 sm:col-span-2 h-full object-cover object-center" src="{% link assets/afp-2025/afp25-006.jpg %}" alt="Artists and guests sit in the dining tent.">
+		<img class="picture hidden sm:block object-cover object-center" src="{% link assets/afp-2025/afp25-005.jpg %}" alt="Booksellers sell books and pickles at the fest.">
+		<img class="picture aspect-square object-cover object-center" src="{% link assets/afp-2025/afp25-004.jpg %}" alt="Emcee Mary Williamson holds a megaphone.">
+		<img class="picture aspect-square object-cover object-center" src="{% link assets/afp-2025/afp25-001.jpg %}" alt="A guest in a poncho.">
+		<img class="picture aspect-square object-cover object-center" src="{% link assets/afp-2025/afp25-000.jpg %}" alt="The sun peeks over the hill at the farm.">
+	</div>
+</section>
+
+<section id="story" class="site-section">
 	<h2 class="h2">The Story of the Farm</h2>
 
 	<div class="space-y-4">
@@ -71,6 +109,10 @@ permalink: "/"
 		<p>Hayden has since closed the farm but still sells pasture-raised chicken at farmer’s markets and festivals around the country. Meanwhile, <span class="font-bold">Avrom Farm Party</span> cooks meals from scratch with ingredients from the farm’s neighbors.</p>
 		<p>Hayden and his longtime friend and bandmate Spencer Tweedy produce <span class="font-bold">Avrom Farm Party</span> alongside Avery Riel, Lily Moore, talented chefs from Chicago and dozens of volunteers.</p>
 		<p><strong>Avrom Farm Party is a 100% non-profit festival.</strong></p>
+	</div>
+
+	<div class="text-3xl text-center">
+		<a href="{{ site.ticket_link }}" class="button-xl">Buy Tickets</a>
 	</div>
 </section>
 

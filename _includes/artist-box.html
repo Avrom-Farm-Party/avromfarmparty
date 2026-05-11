@@ -1,0 +1,6 @@
+<a href="{{ include.link }}" target="_blank">
+    <div class="text-center space-y-2">
+        {% picture assets/artist-photos/2026/{{ include.image }} --alt {{ include.artist }} photo --img class="picture w-full aspect-square object-cover object-center bg-black" %}
+        <div class="text-lg leading-[1.2em] sm:text-xl font-black">{{ include.artist }} {% if include.note %}<span class="text-[0.8em]">{{ include.note }}</span>{% endif %}</div>
+    </div>
+</a>
