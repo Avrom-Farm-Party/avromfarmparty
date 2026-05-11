@@ -579,6 +579,10 @@ p a, nav a, label a {
   height: 100%;
 }
 
+.w-full {
+  width: 100%;
+}
+
 .max-w-\[120px\] {
   max-width: 120px;
 }
@@ -595,16 +599,16 @@ p a, nav a, label a {
   max-width: 1280px;
 }
 
-.grow {
-  flex-grow: 1;
-}
-
 .grid-cols-1 {
   grid-template-columns: repeat(1, minmax(0, 1fr));
 }
 
 .grid-cols-3 {
   grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.grid-cols-2 {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
 }
 
 .flex-row {
@@ -615,16 +619,20 @@ p a, nav a, label a {
   flex-direction: column;
 }
 
-.flex-wrap {
-  flex-wrap: wrap;
-}
-
 .items-center {
   align-items: center;
 }
 
 .items-stretch {
   align-items: stretch;
+}
+
+.justify-start {
+  justify-content: flex-start;
+}
+
+.justify-end {
+  justify-content: flex-end;
 }
 
 .justify-center {
@@ -641,6 +649,10 @@ p a, nav a, label a {
 
 .gap-4 {
   gap: 1rem;
+}
+
+.gap-8 {
+  gap: 2rem;
 }
 
 .space-y-16 > :not([hidden]) ~ :not([hidden]) {
@@ -702,6 +714,14 @@ p a, nav a, label a {
   background-color: rgb(234 179 8 / 0.2);
 }
 
+.bg-black\/10 {
+  background-color: rgb(0 0 0 / 0.1);
+}
+
+.bg-black\/5 {
+  background-color: rgb(0 0 0 / 0.05);
+}
+
 .object-cover {
   -o-object-fit: cover;
      object-fit: cover;
@@ -728,6 +748,11 @@ p a, nav a, label a {
 .py-8 {
   padding-top: 2rem;
   padding-bottom: 2rem;
+}
+
+.py-4 {
+  padding-top: 1rem;
+  padding-bottom: 1rem;
 }
 
 .pt-8 {
@@ -785,6 +810,15 @@ p a, nav a, label a {
   line-height: 1.75rem;
 }
 
+.text-\[0\.5em\] {
+  font-size: 0.5em;
+}
+
+.text-lg\/5 {
+  font-size: 1.125rem;
+  line-height: 1.25rem;
+}
+
 .font-black {
   font-weight: 900;
 }
@@ -796,6 +830,18 @@ p a, nav a, label a {
 .ordinal {
   --tw-ordinal: ordinal;
   font-variant-numeric: var(--tw-ordinal) var(--tw-slashed-zero) var(--tw-numeric-figure) var(--tw-numeric-spacing) var(--tw-numeric-fraction);
+}
+
+.leading-\[1em\] {
+  line-height: 1em;
+}
+
+.leading-\[10em\] {
+  line-height: 10em;
+}
+
+.leading-\[1\.2em\] {
+  line-height: 1.2em;
 }
 
 .text-afp-green {
@@ -917,10 +963,6 @@ p a, nav a, label a {
     display: block;
   }
 
-  .sm\:flex {
-    display: flex;
-  }
-
   .sm\:max-w-screen-sm {
     max-width: 640px;
   }
@@ -931,10 +973,6 @@ p a, nav a, label a {
 
   .sm\:flex-row {
     flex-direction: row;
-  }
-
-  .sm\:flex-col {
-    flex-direction: column;
   }
 
   .sm\:justify-between {
@@ -951,16 +989,39 @@ p a, nav a, label a {
     margin-bottom: calc(1rem * var(--tw-space-y-reverse));
   }
 
+  .sm\:space-y-16 > :not([hidden]) ~ :not([hidden]) {
+    --tw-space-y-reverse: 0;
+    margin-top: calc(4rem * calc(1 - var(--tw-space-y-reverse)));
+    margin-bottom: calc(4rem * var(--tw-space-y-reverse));
+  }
+
   .sm\:bg-black\/5 {
     background-color: rgb(0 0 0 / 0.05);
+  }
+
+  .sm\:bg-transparent {
+    background-color: transparent;
+  }
+
+  .sm\:bg-none {
+    background-image: none;
   }
 
   .sm\:p-8 {
     padding: 2rem;
   }
 
+  .sm\:p-0 {
+    padding: 0px;
+  }
+
   .sm\:text-6xl {
     font-size: 3.75rem;
     line-height: 1;
+  }
+
+  .sm\:text-xl {
+    font-size: 1.25rem;
+    line-height: 1.75rem;
   }
 }
