@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 @layer base {	
-	p a, nav a, label a {
+	p a, nav a, label a, ul a {
 		@apply link;
 	}
 }
@@ -29,6 +29,10 @@
 @layer utilities {
 	.h2 {
 		@apply font-black text-3xl underline decoration-8;
+	}
+
+	.h3 {
+		@apply text-lg sm:text-xl font-black;
 	}
 
 	.link {
