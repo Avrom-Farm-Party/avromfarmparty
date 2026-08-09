@@ -1,0 +1,540 @@
+---
+title: Avrom Central Station
+permalink: /rideshare
+layout: default
+noindex: true
+---
+
+<section class="space-y-4">
+  <h2 class="h2">Avrom Central Station</h2>
+  <p><strong>RIDESHARE!</strong> Post a ride you’re offering or one you need, and contact each other directly.</p>
+  <p><strong>Note:</strong> Avrom Farm Party isn’t responsible for the safety or success of rides. We don’t vet or endorse riders or drivers. Please use your judgment and tell friends/family your plans.</p>
+
+  <button class="button" id="openForm" aria-expanded="false">+ Post a ride</button>
+
+  <!-- success panel -->
+  <section class="success hidden" id="success" aria-live="polite">
+	<strong id="successTitle">Your post is up.</strong>
+	<p>Save this link to edit or delete your post — it's the only key to it:</p>
+	<code id="editLink"></code>
+	<div class="actions">
+	  <button class="btn reveal" id="copyLink">Copy link</button>
+	  <button class="linkbtn" id="dismissSuccess">Done</button>
+	</div>
+  </section>
+
+  <!-- post / edit form -->
+  <form class="post hidden" id="postForm" novalidate>
+	<h2 id="formTitle">Post a ride</h2>
+
+	<div class="field">
+	  <div class="seg" id="typeSeg">
+		<label><input type="radio" name="type" value="offering" checked>Offering a ride</label>
+		<label><input type="radio" name="type" value="seeking">Need a ride</label>
+	  </div>
+	</div>
+
+	<div class="row2">
+	  <div class="field">
+		<label for="f_name">First name or handle</label>
+		<input id="f_name" maxlength="60" autocomplete="name">
+	  </div>
+	  <div class="field">
+		<label for="f_contact">Contact <span class="hint">email, phone, or IG</span></label>
+		<input id="f_contact" maxlength="120" autocomplete="off">
+	  </div>
+	</div>
+
+	<div class="field">
+	  <label for="f_origin">Leaving from <span class="hint">e.g. "Logan Square, Chicago"</span></label>
+	  <input id="f_origin" maxlength="120">
+	</div>
+
+	<div class="row2">
+	  <div class="field">
+		<label for="f_region">Region</label>
+		<select id="f_region">
+		  <option value="chicago">Chicago</option>
+		  <option value="madison">Madison</option>
+		  <option value="milwaukee">Milwaukee</option>
+		  <option value="twin_cities">Twin Cities</option>
+		  <option value="other">Other</option>
+		</select>
+	  </div>
+	  <div class="field">
+		<label for="f_date">Departure date</label>
+		<input id="f_date" type="date" min="2026-08-14" max="2026-08-31">
+	  </div>
+	</div>
+
+	<div class="row2">
+	  <div class="field">
+		<label for="f_window">Time of day</label>
+		<select id="f_window">
+		  <option value="morning">Morning</option>
+		  <option value="afternoon">Afternoon</option>
+		  <option value="evening">Evening</option>
+		  <option value="flexible">Flexible</option>
+		</select>
+	  </div>
+	  <div class="field" id="seatsField">
+		<label for="f_seats">Seats available</label>
+		<input id="f_seats" type="number" min="1" max="8" inputmode="numeric">
+	  </div>
+	</div>
+
+	<div class="field check">
+	  <input id="f_return" type="checkbox">
+	  <label for="f_return" style="margin:0">Also for the ride back</label>
+	</div>
+
+	<div class="field">
+	  <label for="f_notes">Notes <span class="hint">gear space, pets, smoking, music, cost split</span></label>
+	  <textarea id="f_notes" maxlength="500"></textarea>
+	  <div class="count"><span id="noteCount">0</span>/500</div>
+	</div>
+
+	<div class="hp" aria-hidden="true">
+	  <label>Website <input id="f_website" tabindex="-1" autocomplete="off"></label>
+	</div>
+
+	<p class="err" id="formErr" role="alert"></p>
+	<div class="formfoot">
+	  <button type="submit" class="cta" style="margin:0" id="submitBtn">Post it</button>
+	  <button type="button" class="linkbtn" id="cancelForm">Cancel</button>
+	</div>
+  </form>
+
+  <div class="tabs" role="tablist" aria-label="Ride type">
+	<button role="tab" data-tab="offering" aria-selected="true">Offering</button>
+	<button role="tab" data-tab="seeking" aria-selected="false">Seeking</button>
+  </div>
+
+  <div class="filters">
+	<select id="regionFilter" aria-label="Filter by region">
+	  <option value="">All regions</option>
+	  <option value="chicago">Chicago</option>
+	  <option value="madison">Madison</option>
+	  <option value="milwaukee">Milwaukee</option>
+	  <option value="twin_cities">Twin Cities</option>
+	  <option value="other">Other</option>
+	</select>
+	<select id="dateFilter" aria-label="Filter by date">
+	  <option value="">All dates</option>
+	</select>
+  </div>
+
+  <div id="list" aria-live="polite"><p class="status">Loading rides…</p></div>
+</section>
+
+<style>
+:root{
+  --paper: rgb(243, 244, 246);
+  --card: rgb(243, 244, 246);
+  --ink: #000;
+  --muted: #444;
+  --accent: #2A6ED4;
+  --accent-ink: #fff;
+}
+
+:focus-visible{outline:3px solid var(--accent);outline-offset:2px}
+
+/* post CTA */
+.cta{
+  display:inline-block;background:var(--accent);color:var(--accent-ink);
+  border:2px solid var(--accent);border-radius:999px;padding:.7rem 1.3rem;
+  font-weight:700;font-size:1rem;margin:.2rem 0 1.2rem;
+}
+.cta:active{transform:translateY(1px)}
+
+/* tabs */
+.tabs{display:flex;border:2px solid var(--ink);border-radius:12px;overflow:hidden;margin-bottom:.8rem}
+.tabs button{
+  flex:1;background:transparent;border:0;padding:.65rem .5rem;font-weight:700;color:var(--ink);
+}
+.tabs button[aria-selected="true"]{background:var(--ink);color:var(--paper)}
+
+/* filters */
+.filters{display:flex;gap:.5rem;margin-bottom:1.2rem}
+.filters select{flex:1;min-width:0}
+select,input,textarea{
+  width:100%;background:var(--card);color:var(--ink);
+  border:2px solid var(--ink);border-radius:10px;padding:.55rem .7rem;font:inherit;
+}
+textarea{resize:vertical;min-height:5.5rem}
+
+/* cards */
+.card{border:2px solid var(--ink);border-radius:14px;background:var(--card);padding:1rem;margin-bottom:.9rem}
+.route{font-size:1.35rem;font-weight:800;letter-spacing:-.01em;line-height:1.15}
+.route .to{color:var(--muted);font-weight:600;font-size:1.05rem;white-space:nowrap}
+.meta{display:flex;flex-wrap:wrap;gap:.4rem .8rem;align-items:center;margin:.45rem 0;color:var(--muted);font-weight:600;font-size:.92rem}
+.badge{background:var(--accent);color:var(--accent-ink);border-radius:999px;padding:.15rem .65rem;font-size:.82rem;font-weight:700}
+.who{font-weight:700;margin:.15rem 0}
+.notes{white-space:pre-wrap;overflow-wrap:anywhere;margin:.3rem 0 .6rem;color:var(--ink)}
+.actions{display:flex;flex-wrap:wrap;gap:.5rem;align-items:center}
+.btn{border:2px solid var(--ink);background:transparent;color:var(--ink);border-radius:999px;padding:.4rem .95rem;font-weight:700;font-size:.92rem}
+.btn.reveal{border-color:var(--accent);background:var(--accent);color:var(--accent-ink)}
+.contact-val{font-weight:700;overflow-wrap:anywhere}
+.mine{margin-left:auto;display:flex;gap:.35rem}
+.linkbtn{border:0;background:none;color:var(--muted);text-decoration:underline;font-size:.88rem;padding:.25rem}
+
+.empty{border:2px dashed var(--muted);border-radius:14px;padding:2rem 1rem;text-align:center;color:var(--muted);font-weight:600}
+.status{color:var(--muted);text-align:center;padding:1rem 0}
+
+/* form */
+form.post{border:2px solid var(--ink);border-radius:14px;background:var(--card);padding:1rem;margin-bottom:1.4rem}
+form.post h2{font-size:1.25rem;margin-bottom:.7rem}
+.field{margin-bottom:.75rem}
+.field label{display:block;font-weight:700;font-size:.9rem;margin-bottom:.25rem}
+.field .hint{font-weight:400;color:var(--muted)}
+.row2{display:grid;grid-template-columns:1fr 1fr;gap:.6rem}
+.seg{display:flex;border:2px solid var(--ink);border-radius:10px;overflow:hidden}
+.seg label{flex:1;text-align:center;padding:.5rem;font-weight:700;margin:0}
+.seg input{position:absolute;opacity:0;width:0;height:0}
+.seg label:has(input:checked){background:var(--ink);color:var(--paper)}
+.check{display:flex;gap:.5rem;align-items:center;font-weight:600}
+.check input{width:1.2rem;height:1.2rem}
+.count{font-size:.8rem;color:var(--muted);text-align:right}
+.err{color:var(--accent);font-weight:700;margin:.5rem 0;min-height:1.2em}
+.hp{position:absolute;left:-5000px;top:-5000px}   /* honeypot */
+.formfoot{display:flex;gap:.6rem;align-items:center;margin-top:.4rem}
+
+/* success panel */
+.success{border:2px solid var(--ink);border-radius:14px;background:var(--card);padding:1rem;margin-bottom:1.4rem}
+.success code{display:block;background:var(--paper);border:2px solid var(--muted);border-radius:8px;padding:.5rem;overflow-wrap:anywhere;margin:.5rem 0;font-size:.85rem}
+</style>
+
+<script>
+/* ── config ─────────────────────────────────────────────── */
+const SUPABASE_URL = "https://vwisrkvbqambdijqpqmm.supabase.co";
+const SUPABASE_ANON_KEY = "sb_publishable_nBWPdkz2qMcQxL4kp2AyFw_8ptCPI_t";
+
+const REST = SUPABASE_URL + "/rest/v1";
+const HEADERS = {
+  apikey: SUPABASE_ANON_KEY,
+  Authorization: "Bearer " + SUPABASE_ANON_KEY,
+  "Content-Type": "application/json"
+};
+const COLS = "id,created_at,type,name,contact,origin,origin_region,depart_date,depart_window,return_trip,seats,notes";
+const REGIONS = {chicago:"Chicago", madison:"Madison", milwaukee:"Milwaukee", twin_cities:"Twin Cities", other:"Other"};
+const WINDOWS = {morning:"Morning", afternoon:"Afternoon", evening:"Evening", flexible:"Flexible"};
+
+/* ── state ──────────────────────────────────────────────── */
+let rides = [];
+let tab = "offering";
+let editingId = null;          // null = new post, else id being edited
+let formOpenedAt = 0;
+const $ = id => document.getElementById(id);
+
+const tokens = (() => { try { return JSON.parse(localStorage.getItem("afp_tokens") || "{}"); } catch { return {}; } })();
+const saveTokens = () => localStorage.setItem("afp_tokens", JSON.stringify(tokens));
+
+/* pick up an edit link (#t=<id>.<token>) */
+(function(){
+  const m = location.hash.match(/^#t=([0-9a-f-]{36})\.([0-9a-f-]{36})$/i);
+  if (m) { tokens[m[1]] = m[2]; saveTokens(); history.replaceState(null, "", location.pathname + location.search); }
+})();
+
+/* ── helpers ────────────────────────────────────────────── */
+const b64e = s => btoa(unescape(encodeURIComponent(s)));
+const b64d = s => decodeURIComponent(escape(atob(s)));
+function fmtDate(iso){
+  const [y,mo,d] = iso.split("-").map(Number);
+  return new Date(y, mo-1, d).toLocaleDateString("en-US", {weekday:"short", month:"short", day:"numeric"});
+}
+function contactHref(v){
+  if (v.includes("@") && !v.startsWith("@")) return "mailto:" + v;
+  const digits = v.replace(/\D/g,"");
+  if (digits.length >= 7) return "tel:" + digits;
+  if (v.startsWith("@")) return "https://instagram.com/" + v.slice(1).split(/[\s\/]/)[0];
+  return null;
+}
+
+/* ── load + render ──────────────────────────────────────── */
+async function load(){
+  try{
+	const r = await fetch(`${REST}/rides?deleted=eq.false&select=${COLS}&order=depart_date.asc,created_at.desc`, {headers: HEADERS});
+	if (!r.ok) throw new Error(r.status);
+	rides = await r.json();
+	buildDateFilter();
+	render();
+  }catch(e){
+	$("list").innerHTML = "";
+	const p = document.createElement("p");
+	p.className = "status";
+	p.textContent = "Couldn't load rides. Check your connection and refresh.";
+	$("list").append(p);
+  }
+}
+
+function buildDateFilter(){
+  const sel = $("dateFilter"), keep = sel.value;
+  sel.length = 1;
+  [...new Set(rides.map(r => r.depart_date))].sort().forEach(d => {
+	const o = document.createElement("option");
+	o.value = d; o.textContent = fmtDate(d);
+	sel.append(o);
+  });
+  sel.value = [...sel.options].some(o => o.value === keep) ? keep : "";
+}
+
+function render(){
+  const region = $("regionFilter").value, date = $("dateFilter").value;
+  const shown = rides.filter(r => r.type === tab && (!region || r.origin_region === region) && (!date || r.depart_date === date));
+  const list = $("list");
+  list.innerHTML = "";
+
+  if (!shown.length){
+	const d = document.createElement("div");
+	d.className = "empty";
+	d.textContent = (region || date) ? "Nothing matches those filters." : "No rides posted yet — be the first.";
+	list.append(d);
+	return;
+  }
+  shown.forEach(r => list.append(card(r)));
+}
+
+function card(r){
+  const el = document.createElement("article");
+  el.className = "card";
+
+  const route = document.createElement("h3");
+  route.className = "route";
+  route.append(document.createTextNode(r.origin + " "));
+  const to = document.createElement("span");
+  to.className = "to";
+  to.textContent = "→ Ripon";
+  route.append(to);
+
+  const meta = document.createElement("p");
+  meta.className = "meta";
+  const when = document.createElement("span");
+  when.textContent = fmtDate(r.depart_date) + " · " + (WINDOWS[r.depart_window] || r.depart_window);
+  meta.append(when);
+  if (r.type === "offering" && r.seats){
+	const b = document.createElement("span");
+	b.className = "badge";
+	b.textContent = r.seats + (r.seats === 1 ? " seat" : " seats");
+	meta.append(b);
+  }
+  if (r.return_trip){
+	const rt = document.createElement("span");
+	rt.textContent = "⇄ round trip";
+	meta.append(rt);
+  }
+
+  const who = document.createElement("p");
+  who.className = "who";
+  who.textContent = r.name;
+
+  el.append(route, meta, who);
+
+  if (r.notes){
+	const n = document.createElement("p");
+	n.className = "notes";
+	n.textContent = r.notes;
+	el.append(n);
+  }
+
+  const actions = document.createElement("div");
+  actions.className = "actions";
+
+  const reveal = document.createElement("button");
+  reveal.className = "btn reveal";
+  reveal.textContent = "Show contact";
+  reveal.dataset.c = b64e(r.contact);          // light obfuscation vs. page scrapers
+  reveal.addEventListener("click", () => {
+	const v = b64d(reveal.dataset.c);
+	const href = contactHref(v);
+	let node;
+	if (href){
+	  node = document.createElement("a");
+	  node.href = href;
+	  if (href.startsWith("https")) { node.target = "_blank"; node.rel = "noopener"; }
+	} else {
+	  node = document.createElement("span");
+	}
+	node.className = "contact-val";
+	node.textContent = v;
+	reveal.replaceWith(node);
+  });
+  actions.append(reveal);
+
+  if (tokens[r.id]){
+	const mine = document.createElement("span");
+	mine.className = "mine";
+	const eb = document.createElement("button");
+	eb.className = "linkbtn"; eb.textContent = "Edit";
+	eb.addEventListener("click", () => openForm(r));
+	const db = document.createElement("button");
+	db.className = "linkbtn"; db.textContent = "Delete";
+	db.addEventListener("click", () => removeRide(r.id));
+	mine.append(eb, db);
+	actions.append(mine);
+  }
+
+  el.append(actions);
+  return el;
+}
+
+/* ── form ───────────────────────────────────────────────── */
+function openForm(ride){
+  editingId = ride ? ride.id : null;
+  $("formTitle").textContent = ride ? "Edit your post" : "Post a ride";
+  $("submitBtn").textContent = ride ? "Save changes" : "Post it";
+  $("formErr").textContent = "";
+  $("success").classList.add("hidden");
+
+  if (ride){
+	document.querySelector(`#typeSeg input[value="${ride.type}"]`).checked = true;
+	$("f_name").value = ride.name;
+	$("f_contact").value = ride.contact;
+	$("f_origin").value = ride.origin;
+	$("f_region").value = ride.origin_region;
+	$("f_date").value = ride.depart_date;
+	$("f_window").value = ride.depart_window;
+	$("f_seats").value = ride.seats ?? "";
+	$("f_return").checked = ride.return_trip;
+	$("f_notes").value = ride.notes || "";
+  } else {
+	$("postForm").reset();
+  }
+  $("noteCount").textContent = $("f_notes").value.length;
+  syncSeats();
+  $("postForm").classList.remove("hidden");
+  $("openForm").setAttribute("aria-expanded", "true");
+  formOpenedAt = Date.now();
+  $("postForm").scrollIntoView({behavior:"smooth", block:"start"});
+  $("f_name").focus();
+}
+
+function closeForm(){
+  $("postForm").classList.add("hidden");
+  $("openForm").setAttribute("aria-expanded", "false");
+  editingId = null;
+}
+
+function syncSeats(){
+  const offering = document.querySelector('#typeSeg input:checked').value === "offering";
+  $("seatsField").style.visibility = offering ? "visible" : "hidden";
+}
+
+function formData(){
+  return {
+	type: document.querySelector('#typeSeg input:checked').value,
+	name: $("f_name").value.trim(),
+	contact: $("f_contact").value.trim(),
+	origin: $("f_origin").value.trim(),
+	origin_region: $("f_region").value,
+	depart_date: $("f_date").value,
+	depart_window: $("f_window").value,
+	return_trip: $("f_return").checked,
+	seats: $("f_seats").value ? parseInt($("f_seats").value, 10) : null,
+	notes: $("f_notes").value.trim() || null
+  };
+}
+
+function validate(d){
+  if (!d.name) return "Add your name or a handle.";
+  const digits = d.contact.replace(/\D/g,"");
+  if (!d.contact.includes("@") && digits.length < 7) return "Contact needs an email, IG handle, or phone number.";
+  if (d.origin.length < 2) return "Where are you leaving from?";
+  if (!d.depart_date) return "Pick a departure date.";
+  if (d.type === "offering" && (!d.seats || d.seats < 1 || d.seats > 8)) return "How many seats? (1–8)";
+  if (d.notes && d.notes.length > 500) return "Notes max out at 500 characters.";
+  return null;
+}
+
+$("postForm").addEventListener("submit", async e => {
+  e.preventDefault();
+  const err = $("formErr");
+  err.textContent = "";
+
+  /* spam gates: honeypot → fake success; too fast → gentle stall; rate limit */
+  if ($("f_website").value){ closeForm(); return; }
+  if (Date.now() - formOpenedAt < 3000){ err.textContent = "One sec — give the form a moment."; return; }
+  if (!editingId){
+	const last = parseInt(localStorage.getItem("afp_last_post") || "0", 10);
+	if (Date.now() - last < 60000){ err.textContent = "Easy there — one post per minute."; return; }
+  }
+
+  const d = formData();
+  if (d.type === "seeking") d.seats = null;
+  const problem = validate(d);
+  if (problem){ err.textContent = problem; return; }
+
+  $("submitBtn").disabled = true;
+  try{
+	if (editingId){
+	  const body = { p_id: editingId, p_token: tokens[editingId],
+		p_name: d.name, p_contact: d.contact, p_origin: d.origin, p_origin_region: d.origin_region,
+		p_depart_date: d.depart_date, p_depart_window: d.depart_window,
+		p_return_trip: d.return_trip, p_seats: d.seats, p_notes: d.notes };
+	  const r = await fetch(`${REST}/rpc/update_ride`, {method:"POST", headers:HEADERS, body:JSON.stringify(body)});
+	  if (!r.ok || (await r.json()) !== true) throw new Error("update failed");
+	  closeForm();
+	} else {
+	  const token = crypto.randomUUID();
+	  const r = await fetch(`${REST}/rides?select=id`, {
+		method:"POST",
+		headers:{...HEADERS, Prefer:"return=representation"},
+		body: JSON.stringify({...d, edit_token: token})
+	  });
+	  if (!r.ok) throw new Error("insert failed");
+	  const [row] = await r.json();
+	  tokens[row.id] = token;
+	  saveTokens();
+	  localStorage.setItem("afp_last_post", String(Date.now()));
+	  closeForm();
+	  showSuccess(row.id, token);
+	}
+	await load();
+  }catch(ex){
+	err.textContent = "Something went wrong posting. Try again in a moment.";
+  }finally{
+	$("submitBtn").disabled = false;
+  }
+});
+
+function showSuccess(id, token){
+  const link = location.origin + location.pathname + "#t=" + id + "." + token;
+  $("editLink").textContent = link;
+  $("success").classList.remove("hidden");
+  $("success").scrollIntoView({behavior:"smooth", block:"start"});
+}
+
+async function removeRide(id){
+  if (!confirm("Delete this post?")) return;
+  try{
+	const r = await fetch(`${REST}/rpc/delete_ride`, {
+	  method:"POST", headers:HEADERS,
+	  body: JSON.stringify({p_id: id, p_token: tokens[id]})
+	});
+	if (!r.ok || (await r.json()) !== true) throw new Error();
+	delete tokens[id]; saveTokens();
+	await load();
+  }catch{
+	alert("Couldn't delete it — the edit link may not match this post.");
+  }
+}
+
+/* ── wiring ─────────────────────────────────────────────── */
+document.querySelectorAll(".tabs [role=tab]").forEach(b => b.addEventListener("click", () => {
+  tab = b.dataset.tab;
+  document.querySelectorAll(".tabs [role=tab]").forEach(x => x.setAttribute("aria-selected", x === b));
+  render();
+}));
+$("regionFilter").addEventListener("change", render);
+$("dateFilter").addEventListener("change", render);
+$("openForm").addEventListener("click", () => openForm(null));
+$("cancelForm").addEventListener("click", closeForm);
+$("typeSeg").addEventListener("change", syncSeats);
+$("f_notes").addEventListener("input", () => $("noteCount").textContent = $("f_notes").value.length);
+$("copyLink").addEventListener("click", async () => {
+  try{ await navigator.clipboard.writeText($("editLink").textContent); $("copyLink").textContent = "Copied"; }
+  catch{ /* clipboard blocked; text is selectable */ }
+});
+$("dismissSuccess").addEventListener("click", () => $("success").classList.add("hidden"));
+
+load();
+</script>
