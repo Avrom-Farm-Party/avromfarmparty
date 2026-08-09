@@ -3,13 +3,16 @@
 <head>
 	<meta charset="utf-8">
 
-	<title>{{ site.meta_title }}</title>
+	<title>{% if page.title %}{{ page.title | escape }} &#8942; {{ site.title | escape }}{% else %}{{ site.meta_title | escape }}{% endif %}</title>
 	
 	<!-- Define page stuff -->
 	<meta name="description" content="{{ site.description }}">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link id="favicon" rel="icon" href="favicon.ico" type="image/x-icon">
 	<link rel="stylesheet" href="/assets/stylesheets/distro/output.css">
+	
+	<!-- Conditional no-index -->
+	{% if page.noindex %}<meta name="robots" content="noindex, nofollow">{% endif %}
 	
 	<!-- Import Google Fonts -->
 	<link rel="preconnect" href="https://fonts.googleapis.com">
