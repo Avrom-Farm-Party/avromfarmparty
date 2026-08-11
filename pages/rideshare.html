@@ -7,10 +7,10 @@ noindex: true
 
 <section class="space-y-4">
   <h2 class="h2">Avrom Central Station</h2>
-  <p><strong>RIDESHARE!</strong> Post a ride you’re offering or one you need, and contact each other directly.</p>
+  <p><strong>RIDESHARE!</strong> Do you have room in your car? Post it below. Are you looking for a seat? Browse the rides and reach out to the driver directly.</p>
   <p><strong>Note:</strong> Avrom Farm Party isn’t responsible for the safety or success of rides. We don’t vet or endorse riders or drivers. Please use your judgment and tell friends/family your plans.</p>
 
-  <button class="button" id="openForm" aria-expanded="false">+ Post a ride</button>
+  <button class="button" id="openForm" aria-expanded="false">+ Offer a ride</button>
 
   <!-- success panel -->
   <section class="success hidden" id="success" aria-live="polite">
@@ -25,14 +25,7 @@ noindex: true
 
   <!-- post / edit form -->
   <form class="post hidden" id="postForm" novalidate>
-	<h2 id="formTitle">Post a ride</h2>
-
-	<div class="field">
-	  <div class="seg" id="typeSeg">
-		<label><input type="radio" name="type" value="offering" checked>Offering a ride</label>
-		<label><input type="radio" name="type" value="seeking">Need a ride</label>
-	  </div>
-	</div>
+	<h2 id="formTitle">Offer a ride</h2>
 
 	<div class="row2">
 	  <div class="field">
@@ -78,7 +71,7 @@ noindex: true
 		</select>
 	  </div>
 	  <div class="field" id="seatsField">
-		<label for="f_seats">Seats available</label>
+		<label for="f_seats">Seats available <span class="hint">not counting you</span></label>
 		<input id="f_seats" type="number" min="1" max="8" inputmode="numeric">
 	  </div>
 	</div>
@@ -104,11 +97,6 @@ noindex: true
 	  <button type="button" class="linkbtn" id="cancelForm">Cancel</button>
 	</div>
   </form>
-
-  <div class="tabs" role="tablist" aria-label="Ride type">
-	<button role="tab" data-tab="offering" aria-selected="true">Offering</button>
-	<button role="tab" data-tab="seeking" aria-selected="false">Seeking</button>
-  </div>
 
   <div class="filters">
 	<select id="regionFilter" aria-label="Filter by region">
@@ -147,13 +135,6 @@ noindex: true
 }
 .cta:active{transform:translateY(1px)}
 
-/* tabs */
-.tabs{display:flex;border:2px solid var(--ink);border-radius:12px;overflow:hidden;margin-bottom:.8rem}
-.tabs button{
-  flex:1;background:transparent;border:0;padding:.65rem .5rem;font-weight:700;color:var(--ink);
-}
-.tabs button[aria-selected="true"]{background:var(--ink);color:var(--paper)}
-
 /* filters */
 .filters{display:flex;gap:.5rem;margin-bottom:1.2rem}
 .filters select{flex:1;min-width:0}
@@ -188,10 +169,6 @@ form.post h2{font-size:1.25rem;margin-bottom:.7rem}
 .field label{display:block;font-weight:700;font-size:.9rem;margin-bottom:.25rem}
 .field .hint{font-weight:400;color:var(--muted)}
 .row2{display:grid;grid-template-columns:1fr 1fr;gap:.6rem}
-.seg{display:flex;border:2px solid var(--ink);border-radius:10px;overflow:hidden}
-.seg label{flex:1;text-align:center;padding:.5rem;font-weight:700;margin:0}
-.seg input{position:absolute;opacity:0;width:0;height:0}
-.seg label:has(input:checked){background:var(--ink);color:var(--paper)}
 .check{display:flex;gap:.5rem;align-items:center;font-weight:600}
 .check input{width:1.2rem;height:1.2rem}
 .count{font-size:.8rem;color:var(--muted);text-align:right}
@@ -221,7 +198,6 @@ const WINDOWS = {morning:"Morning", afternoon:"Afternoon", evening:"Evening", fl
 
 /* ── state ──────────────────────────────────────────────── */
 let rides = [];
-let tab = "offering";
 let editingId = null;          // null = new post, else id being edited
 let formOpenedAt = 0;
 const $ = id => document.getElementById(id);
@@ -280,14 +256,14 @@ function buildDateFilter(){
 
 function render(){
   const region = $("regionFilter").value, date = $("dateFilter").value;
-  const shown = rides.filter(r => r.type === tab && (!region || r.origin_region === region) && (!date || r.depart_date === date));
+  const shown = rides.filter(r => (!region || r.origin_region === region) && (!date || r.depart_date === date));
   const list = $("list");
   list.innerHTML = "";
 
   if (!shown.length){
 	const d = document.createElement("div");
 	d.className = "empty";
-	d.textContent = (region || date) ? "Nothing matches those filters." : "No rides posted yet — be the first.";
+	d.textContent = (region || date) ? "Nothing matches those filters." : "No rides posted yet — be the first to offer one.";
 	list.append(d);
 	return;
   }
@@ -311,7 +287,7 @@ function card(r){
   const when = document.createElement("span");
   when.textContent = fmtDate(r.depart_date) + " · " + (WINDOWS[r.depart_window] || r.depart_window);
   meta.append(when);
-  if (r.type === "offering" && r.seats){
+  if (r.seats){
 	const b = document.createElement("span");
 	b.className = "badge";
 	b.textContent = r.seats + (r.seats === 1 ? " seat" : " seats");
@@ -380,13 +356,12 @@ function card(r){
 /* ── form ───────────────────────────────────────────────── */
 function openForm(ride){
   editingId = ride ? ride.id : null;
-  $("formTitle").textContent = ride ? "Edit your post" : "Post a ride";
+  $("formTitle").textContent = ride ? "Edit your post" : "Offer a ride";
   $("submitBtn").textContent = ride ? "Save changes" : "Post it";
   $("formErr").textContent = "";
   $("success").classList.add("hidden");
 
   if (ride){
-	document.querySelector(`#typeSeg input[value="${ride.type}"]`).checked = true;
 	$("f_name").value = ride.name;
 	$("f_contact").value = ride.contact;
 	$("f_origin").value = ride.origin;
@@ -400,7 +375,6 @@ function openForm(ride){
 	$("postForm").reset();
   }
   $("noteCount").textContent = $("f_notes").value.length;
-  syncSeats();
   $("postForm").classList.remove("hidden");
   $("openForm").setAttribute("aria-expanded", "true");
   formOpenedAt = Date.now();
@@ -414,14 +388,9 @@ function closeForm(){
   editingId = null;
 }
 
-function syncSeats(){
-  const offering = document.querySelector('#typeSeg input:checked').value === "offering";
-  $("seatsField").style.visibility = offering ? "visible" : "hidden";
-}
-
 function formData(){
   return {
-	type: document.querySelector('#typeSeg input:checked').value,
+	type: "offering",
 	name: $("f_name").value.trim(),
 	contact: $("f_contact").value.trim(),
 	origin: $("f_origin").value.trim(),
@@ -440,7 +409,7 @@ function validate(d){
   if (!d.contact.includes("@") && digits.length < 7) return "Contact needs an email, IG handle, or phone number.";
   if (d.origin.length < 2) return "Where are you leaving from?";
   if (!d.depart_date) return "Pick a departure date.";
-  if (d.type === "offering" && (!d.seats || d.seats < 1 || d.seats > 8)) return "How many seats? (1–8)";
+  if (!d.seats || d.seats < 1 || d.seats > 8) return "How many seats? (1–8)";
   if (d.notes && d.notes.length > 500) return "Notes max out at 500 characters.";
   return null;
 }
@@ -459,7 +428,6 @@ $("postForm").addEventListener("submit", async e => {
   }
 
   const d = formData();
-  if (d.type === "seeking") d.seats = null;
   const problem = validate(d);
   if (problem){ err.textContent = problem; return; }
 
@@ -519,16 +487,10 @@ async function removeRide(id){
 }
 
 /* ── wiring ─────────────────────────────────────────────── */
-document.querySelectorAll(".tabs [role=tab]").forEach(b => b.addEventListener("click", () => {
-  tab = b.dataset.tab;
-  document.querySelectorAll(".tabs [role=tab]").forEach(x => x.setAttribute("aria-selected", x === b));
-  render();
-}));
 $("regionFilter").addEventListener("change", render);
 $("dateFilter").addEventListener("change", render);
 $("openForm").addEventListener("click", () => openForm(null));
 $("cancelForm").addEventListener("click", closeForm);
-$("typeSeg").addEventListener("change", syncSeats);
 $("f_notes").addEventListener("input", () => $("noteCount").textContent = $("f_notes").value.length);
 $("copyLink").addEventListener("click", async () => {
   try{ await navigator.clipboard.writeText($("editLink").textContent); $("copyLink").textContent = "Copied"; }
